@@ -9,17 +9,11 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
- *= require_tree .
+ *= require reset
+ *= require variables
  *= require_self
+ *= require home
  */
-
-/*==
-
-    RESET
-
-==*/
-
 
 
 
@@ -31,6 +25,7 @@
 
 
 @import "semantic-ui";
+//@import "variables";
 
 $main-gray: #2C332F;
 $dark-gray: #2B2B2B;
@@ -41,6 +36,7 @@ $pale-green: #C2EDD4;
 $author-profile-green: #A7DB72;
 
 
+
 h1, h2, h3, h4, h5, h6, p, a {
     color: $main-gray;
 }
@@ -48,12 +44,27 @@ h1, h2, h3, h4, h5, h6, p, a {
 .logo {
     font-size: 32px;
     color: $dark-green;
+}
+
+nav a:first-child {
     margin-right: auto;
 }
 
 p {
     font-family: 'Crimson Text', serif;
 }
+
+/** BUTTONS **/
+
+.primary-red {
+    background-color: $main-red;
+    padding: 10px 0px;
+    border-radius: 0 8px 0 8px;
+    text-align: center;
+    color: white;
+}
+
+
 /*===
 
     BEGIN MOBILE STYLES
