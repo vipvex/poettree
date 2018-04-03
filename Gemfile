@@ -20,8 +20,14 @@ gem 'semantic-ui-sass'
 
 
 
-#gem 'omniauth'
+# User account management
+gem 'devise'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
+
+# To manage environment variables locally
+gem 'dotenv'
 
 
 # Use Uglifier as compressor for JavaScript assets
