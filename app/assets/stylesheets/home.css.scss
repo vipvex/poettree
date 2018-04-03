@@ -1,0 +1,84 @@
+/*===
+
+    BEGIN BASE STYLES
+
+===*/
+
+
+h1, h2, h3, .author-profile-title. .preview-note, .logo {
+    font-family: 'Love Ya Like A Sister', cursive;
+}
+
+.disclaimer {
+    font-size: 14px;
+}
+
+.testimonial-quote {
+    font-style: italic;
+}
+
+.testimonial-parent {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+/*===
+
+    BEGIN MOBILE STYLES
+    
+===*/
+
+h1 {
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+p {
+    font-size: 15px;
+}
+
+quote {
+    font-size: 100px;
+}
+
+//HERO
+
+.preview {}
+.preview-note {}
+.preview-btn {}
+
+//LEARN FROM SOMEONE LIKE YOU
+
+
+
+//--AUTHOR PROFILE
+
+.author-profile {}
+.author-profile-title {
+    font-size: 15px;
+}
+.author-profile-img {}
+
+/*===
+
+    BEGIN DESKTOP STYLES
+
+===*/
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+p {
+    font-size: 16px;
+}
+
+quote {
+    font-size: 140px;
+}
