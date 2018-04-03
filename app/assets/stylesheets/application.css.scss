@@ -16,3 +16,9 @@
 
 
 @import "semantic-ui";
+
+$main-gray: #2C332F;
+
+h1, h2, h3, h4, h5, h6, p {
+    color: $main-gray;
+}
