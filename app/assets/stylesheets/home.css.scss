@@ -5,7 +5,7 @@
 ===*/
 
 
-h1, h2, h3, .author-profile-title. .preview-note, .logo {
+h1, h2, h3, .author-profile-title. .preview-note, .logo, .card-step {
     font-family: 'Love Ya Like A Sister', cursive;
 }
 
@@ -20,6 +20,11 @@ h1, h2, h3, .author-profile-title. .preview-note, .logo {
 .testimonial-parent {
     font-size: 18px;
     text-transform: uppercase;
+}
+
+.card-step {
+    text-transform: uppercase;
+    font-size: 20px;
 }
 /*===
 
@@ -60,6 +65,13 @@ quote {
     font-size: 15px;
 }
 .author-profile-img {}
+
+//BRANCH OUT
+
+.card {}
+.card-header {}
+.card-step{}
+.card-description{}
 
 /*===
 
