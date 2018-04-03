@@ -1,3 +1,13 @@
+//@import "variables"
+
+$main-gray: #2C332F;
+$dark-gray: #2B2B2B;
+$main-red: #BF5858;
+$dark-green: #2F7A4D;
+$light-green: #2EC746;
+$pale-green: #C2EDD4;
+$author-profile-green: #A7DB72;
+
 /*===
 
     BEGIN BASE STYLES
@@ -9,6 +19,10 @@
 
 h1, h2, h3, .author-profile-title, .preview-note, .logo, .card-step {
     font-family: 'Love Ya Like A Sister', cursive;
+}
+
+nav a {
+    font-family: 'Crimson Text', serif;
 }
 
 .disclaimer {
@@ -33,6 +47,14 @@ h1, h2, h3, .author-profile-title, .preview-note, .logo, .card-step {
 
 nav {
     display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-divider {
+    height: 10px;
+    background: linear-gradient(180deg $dark-green, $light-green);
 }
 
 /*===
@@ -58,6 +80,8 @@ quote {
 }
 
 /* HERO */
+
+
 
 .preview {}
 .preview-note {}
@@ -96,7 +120,7 @@ h2 {
     font-size: 22px;
 }
 
-p {
+p, a {
     font-size: 16px;
 }
 
@@ -109,4 +133,12 @@ quote {
 nav {
     height: 90px;
     padding: 20px;
+}
+
+nav a:nth-child(n + 2) {
+    margin-right: 40px;
+}
+
+.primary-red {
+    width: 100px;
 }
