@@ -281,20 +281,22 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   
-  
-  Devise.setup do |config|
-    # Other configuration...
-  
-    # ==> OmniAuth
-    # Add a OmniAuth providers.
-    User.omniauth_providers.each do |provider_name|
-      if provider_name == :developer
-        config.omniauth :developer
-      else
-        api_key = ENV["#{provider_name.upcase}_API_KEY"]
-        api_secret = ENV["#{provider_name.upcase}_API_SECRET"]
-        config.omniauth provider_name, api_key, api_secret
-      end
+
+  # Other configuration...
+
+  # ==> OmniAuth
+  # Add a OmniAuth providers.
+  User.omniauth_providers.each do |provider_name|
+    puts "\nPRIVIDERS\n"
+    
+    if provider_name == :developer
+      config.omniauth :developer
+    else
+      puts "PRIVDER NAME #{provider_name.upcase}"
+      api_key = "347630703561-bl8namficor2jp2a3hf1g98c4n1ocskv.apps.googleusercontent.com"    #ENV["#{provider_name.upcase}_API_KEY"]
+      puts "\nKEY: #{api_key}\n"
+      api_secret = "mNnpgBk3JWjFX_g06HhoU8g9" # ENV["#{provider_name.upcase}_API_SECRET"]
+      config.omniauth provider_name, api_key, api_secret
     end
   end
 end

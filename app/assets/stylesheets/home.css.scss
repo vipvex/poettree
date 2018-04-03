@@ -5,6 +5,8 @@
 ===*/
 
 
+/** FONTS **/
+
 h1, h2, h3, .author-profile-title, .preview-note, .logo, .card-step {
     font-family: 'Love Ya Like A Sister', cursive;
 }
@@ -26,6 +28,13 @@ h1, h2, h3, .author-profile-title, .preview-note, .logo, .card-step {
     text-transform: uppercase;
     font-size: 20px;
 }
+
+/** NAVIGATION **/
+
+nav {
+    display: flex;
+}
+
 /*===
 
     BEGIN MOBILE STYLES
@@ -48,17 +57,17 @@ quote {
     font-size: 100px;
 }
 
-//HERO
+/* HERO */
 
 .preview {}
 .preview-note {}
 .preview-btn {}
 
-//LEARN FROM SOMEONE LIKE YOU
+/** LEARN FROM SOMEONE LIKE YOU **/
 
 
 
-//--AUTHOR PROFILE
+/** AUTHOR PROFILE **/
 
 .author-profile {}
 .author-profile-title {
@@ -66,7 +75,7 @@ quote {
 }
 .author-profile-img {}
 
-//BRANCH OUT
+/** BRANCH OUT **/
 
 .card {}
 .card-header {}
@@ -93,4 +102,11 @@ p {
 
 quote {
     font-size: 140px;
+}
+
+/** NAVIGATION **/
+
+nav {
+    height: 90px;
+    padding: 20px;
 }

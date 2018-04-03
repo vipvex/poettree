@@ -14,24 +14,26 @@
  *= require_self
  */
 
+
 @import "semantic-ui";
 
---main-gray: #2C332F;
---dark-gray: #2B2B2B;
---main-red: #BF5858;
---dark-green: #2F7A4D;
---light-green: #2EC746;
---pale-green: #C2EDD4;
---author-profile-green: #A7DB72;
+$main-gray: #2C332F;
+$dark-gray: #2B2B2B;
+$main-red: #BF5858;
+$dark-green: #2F7A4D;
+$light-green: #2EC746;
+$pale-green: #C2EDD4;
+$author-profile-green: #A7DB72;
 
 
 h1, h2, h3, h4, h5, h6, p, a {
-    color: var(--main-gray);
+    color: $main-gray;
 }
 
 .logo {
     font-size: 32px;
-    color: var(--dark-green);
+    color: $dark-green;
+    margin-right: auto;
 }
 
 p {
