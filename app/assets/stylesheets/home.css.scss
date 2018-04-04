@@ -115,30 +115,51 @@ nav a:nth-child(n + 2) {
 
 
 #hamburger.open span:nth-child(1) {
-  top: 7px;
-  width: 0%;
-  left: 50%;
+    top: 7px;
+    width: 0%;
+    left: 50%;
 }
 
 #hamburger.open span:nth-child(2) {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 #hamburger.open span:nth-child(3) {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 
 #hamburger.open span:nth-child(4) {
-  top: 7px;
-  width: 0%;
-  left: 50%;
+    top: 7px;
+    width: 0%;
+    left: 50%;
 }
+
+/** HERO **/
+
+.hero {
+    background: image-url("teaching.JPG");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.hero-heading-ctr {
+    border-radius: 0px 10px 10px 0px;
+    padding: 60px 60px;
+    background: linear-gradient(rgba(47, 122, 77, 0.8), rgba(47, 122, 77, 0.8));
+}
+
+.hero-heading-ctr h1 {
+    color: white;
+    font-weight: normal;
+}
+
 /*===
 
     BEGIN MOBILE STYLES
@@ -169,6 +190,14 @@ quote {
 }
 
 /* HERO */
+
+.hero {
+    height: 400px;
+}
+
+.hero-heading-ctr {
+    max-width: 65%;
+}
 
 .preview {}
 
@@ -228,13 +257,23 @@ quote {
         margin-right: 80px;
     }
 
+    /* HERO */
+    .hero {
+        height: 500px;
+    }
+
+    .hero-heading-ctr {
+        max-width: 50%;
+    }
+
+
     /** NAVIGATION **/
     nav {
         height: 90px;
         padding: 20px;
     }
 
-    nav a:nth-child(n + 2) {
+    nav a:nth-child(n+2) {
         display: inline;
         margin-right: 40px;
     }
