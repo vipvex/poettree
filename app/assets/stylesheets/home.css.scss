@@ -1,5 +1,4 @@
 //@import "variables"
-
 $main-gray: #2C332F;
 $dark-gray: #2B2B2B;
 $main-red: #BF5858;
@@ -14,10 +13,15 @@ $author-profile-green: #A7DB72;
 
 ===*/
 
-
 /** FONTS **/
 
-h1, h2, h3, .author-profile-title, .preview-note, .logo, .card-step {
+h1,
+h2,
+h3,
+.author-profile-title,
+.preview-note,
+.logo,
+.card-step {
     font-family: 'Love Ya Like A Sister', cursive;
 }
 
@@ -54,9 +58,87 @@ nav {
 
 .nav-divider {
     height: 10px;
-    background: linear-gradient(180deg $dark-green, $light-green);
+    background: linear-gradient(90deg, $dark-green, $light-green);
 }
 
+nav a:nth-child(n + 2) {
+    display: none;
+}
+
+#hamburger {
+    display: block;
+    width: 25px;
+    height: 20px;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+#hamburger span {
+    background: linear-gradient(90deg, $dark-green, $light-green);
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    border-radius: 1px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+#hamburger span:nth-child(1) {
+    top: 0px;
+}
+
+#hamburger span:nth-child(2),
+#hamburger span:nth-child(3) {
+    top: 7px;
+}
+
+#hamburger span:nth-child(4) {
+    top: 14px;
+}
+
+
+#hamburger.open span:nth-child(1) {
+  top: 7px;
+  width: 0%;
+  left: 50%;
+}
+
+#hamburger.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#hamburger.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#hamburger.open span:nth-child(4) {
+  top: 7px;
+  width: 0%;
+  left: 50%;
+}
 /*===
 
     BEGIN MOBILE STYLES
@@ -79,32 +161,42 @@ quote {
     font-size: 100px;
 }
 
+/** LAYOUT **/
+
+.ctr-margin {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 /* HERO */
 
-
-
 .preview {}
+
 .preview-note {}
+
 .preview-btn {}
 
 /** LEARN FROM SOMEONE LIKE YOU **/
 
-
-
 /** AUTHOR PROFILE **/
 
 .author-profile {}
+
 .author-profile-title {
     font-size: 15px;
 }
+
 .author-profile-img {}
 
 /** BRANCH OUT **/
 
 .card {}
+
 .card-header {}
-.card-step{}
-.card-description{}
+
+.card-step {}
+
+.card-description {}
 
 /*===
 
@@ -112,33 +204,45 @@ quote {
 
 ===*/
 
-h1 {
-    font-size: 28px;
-}
+@media screen and (min-width: 800px) {
+    h1 {
+        font-size: 28px;
+    }
 
-h2 {
-    font-size: 22px;
-}
+    h2 {
+        font-size: 22px;
+    }
 
-p, a {
-    font-size: 16px;
-}
+    p,
+    nav a {
+        font-size: 16px;
+    }
 
-quote {
-    font-size: 140px;
-}
+    quote {
+        font-size: 140px;
+    }
 
-/** NAVIGATION **/
+    /** LAYOUT **/
+    .ctr-margin {
+        margin-left: 80px;
+        margin-right: 80px;
+    }
 
-nav {
-    height: 90px;
-    padding: 20px;
-}
+    /** NAVIGATION **/
+    nav {
+        height: 90px;
+        padding: 20px;
+    }
 
-nav a:nth-child(n + 2) {
-    margin-right: 40px;
-}
+    nav a:nth-child(n + 2) {
+        display: inline;
+        margin-right: 40px;
+    }
 
-.primary-red {
-    width: 100px;
+    .primary-red {
+        width: 100px;
+    }
+    #hamburger {
+        display: none;
+    }
 }
