@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   devise :rememberable, :trackable, :omniauthable,
-         :omniauth_providers => [:facebook, :google_oauth2,
-                                 *(:developer if Rails.env.development?)]
+         :omniauth_providers => [:facebook, :google_oauth2
+                                 ]
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
