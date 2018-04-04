@@ -291,8 +291,8 @@ Devise.setup do |config|
     if provider_name == :developer
       config.omniauth :developer
     else
-      api_key = "347630703561-bl8namficor2jp2a3hf1g98c4n1ocskv.apps.googleusercontent.com"    #ENV["#{provider_name.upcase}_API_KEY"]
-      api_secret = "mNnpgBk3JWjFX_g06HhoU8g9"# ENV["#{provider_name.upcase}_API_SECRET"]
+      api_key = ENV["#{provider_name.upcase}_API_KEY"]
+      api_secret = ENV["#{provider_name.upcase}_API_SECRET"]
       config.omniauth provider_name, api_key, api_secret
     end
   end
