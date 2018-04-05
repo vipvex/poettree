@@ -15,3 +15,8 @@
 //= require semantic-ui
 //= require_tree .
 
+$(document).ready(function(){
+	$('#hamburger').click(function(){
+		$(this).toggleClass('open');
+	});
+});

@@ -1,11 +1,23 @@
-<nav>
+<nav class="ctr-margin">
     <a href="#"><p class="logo">iPoetTree</p></a>
     <a href="#">Donate</a>
     <a href="#">About Us</a>
+    <a href="#" class="primary-red">Donate</a>
     <% if user_signed_in? -%>
-        <%= link_to 'Log out', destroy_user_session_path, :method => :delete %>
-    <% else -%>
-        <%= link_to 'Log in', new_user_session_path %>
-    <% end -%>    <a href="#" class="primary-red">Donate</a>
+      <%= link_to 'Log out', destroy_user_session_path, :method => :delete %>
+    <% else %>
+      <%= link_to 'Sign Up', new_user_session_path, class: 'primary-red' %>
+    <% end %>    
+    <div id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 </nav>
 <div class="nav-divider"></div>
+<div class="hero">
+  <div class="hero-heading-ctr">
+    <h1>Learn How to Write through Poetry and Become a Famous Child Author</h1>
+  </div>
+</div>

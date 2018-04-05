@@ -1,4 +1,6 @@
 Rails.application.configure do
+  
+  config.action_controller.perform_caching = true
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -40,7 +42,7 @@ Rails.application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
-  config.assets.debug = true
+  #config.assets.debug = true
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
