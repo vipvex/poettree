@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lesson Groups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Order</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lesson_groups.each do |lesson_group| %>
+      <tr>
+        <td><%= lesson_group.title %></td>
+        <td><%= lesson_group.order %></td>
+        <td><%= link_to 'Show', lesson_group %></td>
+        <td><%= link_to 'Edit', edit_lesson_group_path(lesson_group) %></td>
+        <td><%= link_to 'Destroy', lesson_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lesson Group', new_lesson_group_path %>

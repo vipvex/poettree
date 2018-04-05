@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lesson Completeds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lesson</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lesson_completeds.each do |lesson_completed| %>
+      <tr>
+        <td><%= lesson_completed.lesson %></td>
+        <td><%= lesson_completed.user %></td>
+        <td><%= link_to 'Show', lesson_completed %></td>
+        <td><%= link_to 'Edit', edit_lesson_completed_path(lesson_completed) %></td>
+        <td><%= link_to 'Destroy', lesson_completed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lesson Completed', new_lesson_completed_path %>
