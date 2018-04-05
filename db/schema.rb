@@ -10,10 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180403200834) do
+ActiveRecord::Schema.define(version: 20180404034659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "lesson_completeds", force: :cascade do |t|
+    t.bigint "lesson_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lesson_id"], name: "index_lesson_completeds_on_lesson_id"
+    t.index ["user_id"], name: "index_lesson_completeds_on_user_id"
+  end
+
+  create_table "lesson_groups", force: :cascade do |t|
+    t.string "title"
+    t.integer "order"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.integer "order"
+    t.string "lesson_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "lesson_group_id"
+    t.index ["lesson_group_id"], name: "index_lessons_on_lesson_group_id"
+  end
+
+  create_table "poems", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.bigint "user_id"
+    t.string "image_url"
+    t.boolean "shared"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_poems_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: ""
@@ -30,4 +68,8 @@ ActiveRecord::Schema.define(version: 20180403200834) do
     t.index ["email"], name: "index_users_on_email"
   end
 
+  add_foreign_key "lesson_completeds", "lessons"
+  add_foreign_key "lesson_completeds", "users"
+  add_foreign_key "lessons", "lesson_groups"
+  add_foreign_key "poems", "users"
 end

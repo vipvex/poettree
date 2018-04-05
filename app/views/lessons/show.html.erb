@@ -1,0 +1,22 @@
+<div class = "ui text container">
+
+  <h1><%= @lesson_group.title %></h1>
+  <h2><%= current_user.lesson_completeds.in_lesson_group(@lesson_group).count %>/<%= @lesson_group.lessons.count %></h2>
+  
+  
+  <h1><%= @lesson.title %> | <%= @lesson.lesson_type %></h1>
+  
+  <%= link_to 'Next Lesson', current_user.next_lesson %>
+  
+  <h2>Resources<h2/>
+  <p><%= @lesson.content %></p>
+    
+  <h2>Lessons<h2/>
+  <% @lesson_group.lessons.each do |l| %>
+  
+    <%= link_to [@lesson_group, l] do |a| %>
+      <h3><%= l.title %></h3>
+    <% end %>
+  
+  <% end %>
+</div>

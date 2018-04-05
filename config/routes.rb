@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  resources :lesson_completeds
+  
+  resources :lesson_groups do
+    resources :lessons
+  end
+  
+  
+  resources :poems
   devise_for :users, :controllers => {
       :omniauth_callbacks => "users/omniauth_callbacks" 
     }
@@ -11,6 +19,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   
   get 'about_us', to: 'static_pages#about_us'
+  get 'dashboard', to: 'static_pages#dashboard'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

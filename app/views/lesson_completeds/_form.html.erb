@@ -1,0 +1,27 @@
+<%= form_with(model: lesson_completed, local: true) do |form| %>
+  <% if lesson_completed.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lesson_completed.errors.count, "error") %> prohibited this lesson_completed from being saved:</h2>
+
+      <ul>
+      <% lesson_completed.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :lesson_id %>
+    <%= form.text_field :lesson_id, id: :lesson_completed_lesson_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :lesson_completed_user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

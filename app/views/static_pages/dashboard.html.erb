@@ -1,0 +1,22 @@
+<div class = "ui text container">
+  <h1>Your progress</h1>
+  <h3>Lessons completed</h3>
+  <h2><%= current_user.lesson_completeds.count %> lessons</h2>
+  <h3>Lessons poems shared</h3>
+  <h2><%= current_user.poems.count %> poems</h2>
+
+  
+  
+  <h1>Your lessons</h1>
+  <% @lesson_groups.each do |lg| %>
+  
+    <div class="ui segment">
+      <h3><%= lg.title %></h3>
+      <h4><%= "Level #{lg.order}" %></h4>
+      <h4><%= "0 / #{lg.lessons.count}" %></h4>
+      
+      <%= link_to 'Continue', [lg, lg.lessons.first] %>
+    </div>
+    
+  <% end %>
+</div>
