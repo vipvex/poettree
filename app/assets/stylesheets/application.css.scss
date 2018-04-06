@@ -36,6 +36,10 @@ $pale-green: #C2EDD4;
 $author-profile-green: #A7DB72;
 
 
+/** VERTICAL RYHTHM **/
+p {
+    line-height: 1.8;
+}
 
 h1, h2, h3, h4, h5, h6, p, a {
     color: $main-gray;

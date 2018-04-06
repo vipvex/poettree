@@ -207,6 +207,12 @@ nav a:nth-child(n + 2) {
     box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.6);
 }
 
+/** SOMEONE LIKE YOU **/
+
+.someone-like-you {
+    height: 500px;
+}
+
 /*===
 
     BEGIN MOBILE STYLES
@@ -265,7 +271,9 @@ quote {
 
 .someone-like-you {
     background-color: #EBEBEB;
+    padding: 100px 0;
 }
+
 
 .author-descrip-ctr {
     display: flex;
@@ -274,7 +282,28 @@ quote {
 
 /** AUTHOR PROFILE **/
 
-.author-profile {}
+.author-ctr {
+    min-width: 250px;
+    max-width: 80%;
+    margin: auto;
+}
+
+.author-profile {
+    margin: auto;
+    margin-top: 25px;
+    width: 75%;
+    height: 225px;
+    background: image-url("author-profile.png") bottom center/150px 200px no-repeat, radial-gradient(#C4C4C4 30%, #A7DB72);
+    border-radius: 0 20px 0 0px;
+}
+
+.author-profile-title-ctr {
+    margin: auto;
+    background-color: white;
+    padding: 15px;
+    border-radius: 0 0 20px 0;
+    width: 75%;
+}
 
 .author-profile-title {
     font-size: 15px;
@@ -372,6 +401,9 @@ quote {
     .author-ctr {
         max-width: 900px;
         margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
     .author-descrip-ctr {
         max-width: 45%;
@@ -379,7 +411,7 @@ quote {
     .author-profile {
         width: 350px;
         height: 300px;
-        background: image-url("author-profile.png") bottom center/200px 275px no-repeat, radial-gradient(#C4C4C4, #A7DB72);
+        background: image-url("author-profile.png") bottom center/200px 275px no-repeat, radial-gradient(#C4C4C4 30%, #A7DB72);
         border-radius: 0 20px 0 0px;
     }
 
@@ -391,6 +423,7 @@ quote {
         background-color: white;
         padding: 15px;
         border-radius: 0 0 20px 0;
+        width: 350px;
     }
 
     .author-profile-img {}
