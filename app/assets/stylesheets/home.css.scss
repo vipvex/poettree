@@ -256,7 +256,7 @@ nav a:nth-child(n + 2) {
     width: 100px;
     height: 5px;
     background-color: #65A37E;
-    margin-top: 15px; margin-bottom: 15px;
+    margin-top: 25px; margin-bottom: 25px;
 }
 
 .generic-divider {
@@ -350,12 +350,16 @@ p {
     border-radius: 0 20px 0 0px;
 }
 
+.author-profile-ctr {
+}
+
 .author-profile-title-ctr {
     margin: auto;
     background-color: white;
     padding: 15px;
     border-radius: 0 0 20px 0;
     width: 75%;
+    box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.6);    
 }
 
 .author-profile-title {
@@ -578,9 +582,6 @@ p {
     .parents-ctr {
         max-width: 900px;
         margin: auto;
-    }
-    .parents h2 {
-        margin-bottom: 50px;
     }
     .quote-box {
         display: flex;
