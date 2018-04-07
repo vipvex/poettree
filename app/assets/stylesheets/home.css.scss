@@ -35,7 +35,7 @@ h3,
 .preview-note,
 .logo,
 .card-step,
-.testimonial-parent{
+.testimonial-parent {
     font-family: 'Love Ya Like A Sister', cursive;
 }
 
@@ -256,13 +256,18 @@ nav a:nth-child(n + 2) {
     width: 100px;
     height: 5px;
     background-color: #65A37E;
-    margin-top: 25px; margin-bottom: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .generic-divider {
     height: 1px;
     opacity: 0.22;
+    background-color: white;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
+
 /*===
 
     BEGIN MOBILE STYLES
@@ -321,7 +326,10 @@ p {
 /** LEARN FROM SOMEONE LIKE YOU **/
 
 .someone-like-you {
-    background-color: #EBEBEB;
+    background-color: #fff;
+    background-image: linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+    linear-gradient(#eee .1em, transparent .1em);
+    background-size: 100% 1.2em;
     padding: 100px 0;
 }
 
@@ -350,8 +358,7 @@ p {
     border-radius: 0 20px 0 0px;
 }
 
-.author-profile-ctr {
-}
+.author-profile-ctr {}
 
 .author-profile-title-ctr {
     margin: auto;
@@ -359,7 +366,7 @@ p {
     padding: 15px;
     border-radius: 0 0 20px 0;
     width: 75%;
-    box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.6);    
+    box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.6);
 }
 
 .author-profile-title {
