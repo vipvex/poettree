@@ -34,7 +34,8 @@ h3,
 .author-profile-title,
 .preview-note,
 .logo,
-.card-step {
+.card-step,
+.testimonial-parent{
     font-family: 'Love Ya Like A Sister', cursive;
 }
 
@@ -52,11 +53,15 @@ nav a {
 
 .testimonial-quote {
     font-style: italic;
+    color: white;
+    text-align: center;
 }
 
 .testimonial-parent {
     font-size: 18px;
     text-transform: uppercase;
+    color: white;
+    letter-spacing: 0.35rem;
 }
 
 .card-step {
@@ -213,6 +218,51 @@ nav a:nth-child(n + 2) {
 
 /** SOMEONE LIKE YOU **/
 
+/* GET PUBLISHED */
+
+.get-published {
+    padding: 50px 0px;
+    background: linear-gradient(324deg, #d8ffe8 4%, transparent 4%) -70px 43px,
+    linear-gradient( 36deg, #d8ffe8 4%, transparent 4%) 30px 43px,
+    linear-gradient( 72deg, #fff 8.5%, transparent 8.5%) 30px 43px,
+    linear-gradient(288deg, #fff 8.5%, transparent 8.5%) -70px 43px,
+    linear-gradient(216deg, #fff 7.5%, transparent 7.5%) -70px 23px,
+    linear-gradient(144deg, #fff 7.5%, transparent 7.5%) 30px 23px,
+
+    linear-gradient(324deg, #d8ffe8 4%, transparent 4%) -20px 93px,
+    linear-gradient( 36deg, #d8ffe8 4%, transparent 4%) 80px 93px,
+    linear-gradient( 72deg, #fff 8.5%, transparent 8.5%) 80px 93px,
+    linear-gradient(288deg, #fff 8.5%, transparent 8.5%) -20px 93px,
+    linear-gradient(216deg, #fff 7.5%, transparent 7.5%) -20px 73px,
+    linear-gradient(144deg, #fff 7.5%, transparent 7.5%) 80px 73px;
+    background-color: #d8ffe8;
+    background-size: 100px 100px;
+    ;
+}
+
+/* PARENTS */
+
+.parents {
+    background-color: $dark-gray;
+}
+
+.parents h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.quote-divider {
+    width: 100px;
+    height: 5px;
+    background-color: #65A37E;
+    margin-top: 15px; margin-bottom: 15px;
+}
+
+.generic-divider {
+    height: 1px;
+    opacity: 0.22;
+}
 /*===
 
     BEGIN MOBILE STYLES
@@ -231,8 +281,9 @@ p {
     font-size: 15px;
 }
 
-quote {
+.smart {
     font-size: 100px;
+    color: #65A37E;
 }
 
 .preview-note {
@@ -335,7 +386,7 @@ quote {
 
 .value-prop {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 30px;
 }
 
@@ -346,12 +397,27 @@ quote {
 
 .value-prop p {
     width: 75%;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 .value-prop img {
-    height: 50px;
+    height: 30px;
 }
+
+.laptop-ctr {
+    text-align: center;
+}
+
+/* GET PUBLISHED */
+
+.get-published-descrip-ctr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    width: 80%;
+}
+
 
 /** BRANCH OUT **/
 
@@ -383,8 +449,9 @@ quote {
         font-size: 16px;
     }
 
-    quote {
+    .smart {
         font-size: 140px;
+        margin-bottom: -65px;
     }
 
     .preview-note {
@@ -478,8 +545,15 @@ quote {
         margin: 125px 0px;
     }
 
+    .value-prop {
+        justify-content: space-between;
+    }
     .value-prop-img {
         width: 500px;
+    }
+
+    .value-prop img {
+        height: 50px;
     }
     .value-prop p {
         width: 225px;
@@ -487,5 +561,30 @@ quote {
     }
     .value-prop-img-ctr {
         flex-direction: column;
+    }
+    .laptop-ctr {
+        text-align: left;
+    }
+
+    /* GET PUBLISHED */
+    .cassidys-book {
+        height: 300px;
+    }
+
+    /* PARENTS */
+    .parents {
+        padding: 100px 0;
+    }
+    .parents-ctr {
+        max-width: 900px;
+        margin: auto;
+    }
+    .parents h2 {
+        margin-bottom: 50px;
+    }
+    .quote-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
