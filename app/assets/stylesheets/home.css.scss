@@ -432,12 +432,59 @@ p {
 
 /** BRANCH OUT **/
 
-.card {}
+.branch-out {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.branch-out h2 {
+    text-align: center;
+    margin-top: 50px; margin-bottom: 100px;
+}
+.card {
+    width: 250px;
+    height: 250px;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
 
-.card-header {}
+.card-header {
+    height: 70px;
+    border-radius: 5px 5px 0 0;
+    padding-top: 20px;
+}
+
+.card-header-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF;
+    margin: auto;
+}
+
+.card-header-1 {
+    background: linear-gradient(90deg, $dark-green, $light-green);
+}
+
+.card-header-2 {
+    background: $light-green;
+}
+
+.card-header-3 {
+    background: linear-gradient(90deg, $light-green, $dark-green);
+}
 
 .card-step {}
 
+.card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
 .card-description {}
 
 /*===
@@ -594,5 +641,14 @@ p {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    /* BRANCH OUT */
+    .card-ctr {
+        margin: auto;
+        display: flex;
+        max-width: 900px;
+        flex-direction: row;
+        justify-content: space-between;
     }
 }
