@@ -64,6 +64,10 @@ nav a {
     font-size: 20px;
 }
 
+.value-prop p {
+    font-size: 18px;
+}
+
 .author-profile-title {
     text-align: center;
 }
@@ -209,10 +213,6 @@ nav a:nth-child(n + 2) {
 
 /** SOMEONE LIKE YOU **/
 
-.someone-like-you {
-    height: 500px;
-}
-
 /*===
 
     BEGIN MOBILE STYLES
@@ -278,6 +278,8 @@ quote {
 .author-descrip-ctr {
     display: flex;
     flex-direction: column;
+    margin: auto;
+    width: 75%;
 }
 
 /** AUTHOR PROFILE **/
@@ -310,6 +312,46 @@ quote {
 }
 
 .author-profile-img {}
+
+/* HAVE FUN */
+
+.have-fun {
+    margin: 125px 0px;
+}
+
+.have-fun h2 {
+    margin-bottom: 25px;
+}
+
+.value-prop-img-ctr {
+    display: flex;
+}
+
+.value-prop-ctr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.value-prop {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.value-prop-img {
+    min-width: 250px;
+    max-width: 80%;
+}
+
+.value-prop p {
+    width: 75%;
+    margin-left: 20px;
+}
+
+.value-prop img {
+    height: 50px;
+}
 
 /** BRANCH OUT **/
 
@@ -372,7 +414,9 @@ quote {
         width: 125px;
         height: 125px;
     }
-
+    .someone-like-you {
+        height: 500px;
+    }
 
     /** NAVIGATION **/
     nav {
@@ -406,6 +450,7 @@ quote {
         justify-content: space-between;
     }
     .author-descrip-ctr {
+        margin: 0;
         max-width: 45%;
     }
     .author-profile {
@@ -427,4 +472,20 @@ quote {
     }
 
     .author-profile-img {}
+
+    /* HAVE FUN */
+    .have-fun {
+        margin: 125px 0px;
+    }
+
+    .value-prop-img {
+        width: 500px;
+    }
+    .value-prop p {
+        width: 225px;
+        margin-left: 25px;
+    }
+    .value-prop-img-ctr {
+        flex-direction: column;
+    }
 }
