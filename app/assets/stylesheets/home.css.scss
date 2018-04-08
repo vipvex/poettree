@@ -429,17 +429,36 @@ p {
     width: 80%;
 }
 
+/* PARENTS */
 
-/** BRANCH OUT **/
+.parents {
+    padding: 50px 0;
+}
+
+.parents-ctr {
+    max-width: 500px;
+    margin: auto;
+}
+
+.quote-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* BRANCH OUT */
 
 .branch-out {
     padding-top: 50px;
     padding-bottom: 50px;
 }
+
 .branch-out h2 {
     text-align: center;
-    margin-top: 50px; margin-bottom: 100px;
+    margin-top: 50px;
+    margin-bottom: 100px;
 }
+
 .card {
     width: 250px;
     height: 250px;
@@ -485,6 +504,7 @@ p {
     align-items: center;
     padding: 50px;
 }
+
 .card-description {}
 
 /*===
@@ -635,12 +655,6 @@ p {
     }
     .parents-ctr {
         max-width: 900px;
-        margin: auto;
-    }
-    .quote-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 
     /* BRANCH OUT */
