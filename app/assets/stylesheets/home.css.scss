@@ -538,6 +538,13 @@ p {
 
 /* SUPPORT */
 
+.support .generic-divider {
+    width: 50%;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
 .support h2,
 .support p {
     text-align: center;
@@ -547,6 +554,7 @@ p {
     max-width: 350px;
     margin: auto;
 }
+
 .support a {
     width: 200px;
     margin: auto;
@@ -555,6 +563,16 @@ p {
 
 .support img {
     display: none;
+}
+
+/* FOOTER */
+
+footer {
+    padding-bottom: 25px;
+}
+
+footer p {
+    text-align: center;
 }
 
 /*===
@@ -729,8 +747,8 @@ p {
     }
     .support .generic-divider {
         width: 75%;
-        margin: auto;
         margin-top: 50px;
+        margin-bottom: 0;
     }
     .support .row {
         display: flex;
@@ -750,5 +768,10 @@ p {
     .support a {
         width: 100%;
         margin-top: 0;
+    }
+
+    /* FOOTER */
+    footer {
+        padding-bottom: 50px;
     }
 }
