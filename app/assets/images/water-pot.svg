@@ -1,0 +1,68 @@
+<svg width="210" height="234" viewBox="0 0 210 234" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Group 4</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-21332 -7891)">
+<g id="Group 4">
+<g id="Group 3.2">
+<g id="Ellipse 3.1">
+<use xlink:href="#path0_fill" transform="translate(21450.3 8110.77)" fill="#BF5858"/>
+</g>
+<g id="Vector 2">
+<use xlink:href="#path1_fill" transform="translate(21440.3 8063.56)" fill="#BF5858"/>
+</g>
+<g id="Ellipse 3">
+<use xlink:href="#path2_fill" transform="translate(21440.2 8055.05)" fill="#8C4E3B"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path3_fill" transform="matrix(0.707107 -0.707107 0.707107 0.707107 21465 7999.94)" fill="#2F7A4D"/>
+</g>
+<g id="Vector 2">
+<use xlink:href="#path4_fill" transform="translate(21486 7991.46)" fill="#F29274"/>
+</g>
+<g id="Rectangle 8">
+<use xlink:href="#path5_fill" transform="translate(21486 7996.98)" fill="#77BD93"/>
+</g>
+<g id="Rectangle 8.2">
+<use xlink:href="#path6_fill" transform="translate(21486 7991.46)" fill="#E09B9B"/>
+</g>
+<g id="Rectangle 8.1">
+<use xlink:href="#path5_fill" transform="translate(21486 8001.04)" fill="#77BD93"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path3_fill" transform="matrix(0.783352 0.621578 -0.621578 0.783352 21501.5 7994.22)" fill="#459666"/>
+</g>
+</g>
+<g id="Vector">
+<use xlink:href="#path7_fill" transform="matrix(-0.522572 -0.852595 -0.852595 0.522572 21423.2 7985.73)" fill="#1C364F"/>
+</g>
+<g id="Ellipse">
+<use xlink:href="#path8_fill" transform="matrix(-0.938988 -0.343949 -0.343949 0.938988 21431.2 7976.42)" fill="#406282"/>
+</g>
+<g id="Vector 2.3">
+<use xlink:href="#path9_fill" transform="matrix(0.753274 -0.657707 0.657707 0.753274 21431.2 8006.09)" fill="#A1B5C7"/>
+</g>
+<g id="Vector 2.4">
+<use xlink:href="#path9_fill" transform="matrix(0.753274 -0.657707 0.657707 0.753274 21444.5 8010.35)" fill="#A1B5C7"/>
+</g>
+<g id="Vector 2.5">
+<use xlink:href="#path9_fill" transform="matrix(0.753274 -0.657707 0.657707 0.753274 21443.8 8024.21)" fill="#A1B5C7"/>
+</g>
+<g id="Subtract">
+<use xlink:href="#path10_fill" transform="translate(21332.3 7891.96)" fill="#1C364F"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 80.753 6.72941C 80.753 10.446 62.6758 13.4588 40.3765 13.4588C 18.0772 13.4588 0 10.446 0 6.72941C 0 3.01286 18.0772 0 40.3765 0C 62.6758 0 80.753 3.01286 80.753 6.72941Z"/>
+<path id="path1_fill" d="M 10.0888 54.4327L 0 0.168862L 100.824 0L 90.7354 54.2428L 10.0888 54.4327Z"/>
+<path id="path2_fill" d="M 100.941 8.41177C 100.941 13.0575 78.3447 16.8235 50.4706 16.8235C 22.5965 16.8235 0 13.0575 0 8.41177C 0 3.76608 22.5965 0 50.4706 0C 78.3447 0 100.941 3.76608 100.941 8.41177Z"/>
+<path id="path3_fill" d="M 0.00540764 16.6206C -0.202336 13.9331 5.63186 5.77597 7.79587 3.18268L 9.87332 0C 10.5658 1.06089 15.846 5.30446 16.1057 8.13351C 16.3653 10.9626 18.4428 12.7307 19.7412 16.6206C 21.0396 20.5106 14.0282 27.76 9.87332 26.3455C 5.71842 24.931 0.265087 19.9801 0.00540764 16.6206Z"/>
+<path id="path4_fill" d="M 0 0L 0 72.0991L 9.36567 72.0991L 9.36567 0L 0 0Z"/>
+<path id="path5_fill" d="M 0 0L 9.36567 0L 9.36567 2.47396L 0 2.47396L 0 0Z"/>
+<path id="path6_fill" d="M 0 0L 9.36567 0L 9.36567 5.52022L 0 5.52022L 0 0Z"/>
+<path id="path7_fill" d="M 43.7928 67.843L 0 10.7687L 6.82015 0L 45.9466 29.0756L 43.7928 67.843Z"/>
+<path id="path8_fill" d="M 12.6103 14.0314C 12.6103 21.7807 9.78738 28.0628 6.30514 28.0628C 2.82291 28.0628 0 21.7807 0 14.0314C 0 6.28206 2.82291 0 6.30514 0C 9.78738 0 12.6103 6.28206 12.6103 14.0314Z"/>
+<path id="path9_fill" d="M 0.00775245 7.66559C -0.211153 5.58495 4.27853 0 4.27853 0C 4.27853 0 7.6734 5.69446 7.6735 7.66559C 7.67361 9.63672 6.14136 10.8476 4.27853 11.0604C 2.16173 11.3023 0.226658 9.74623 0.00775245 7.66559Z"/>
+<path id="path10_fill" fill-rule="evenodd" d="M 0 99.0317L 52.0918 64.3046C 58.7988 59.8325 60.7734 50.8584 56.5605 43.9853L 33.9922 7.16353C 29.8359 0.384231 21.1133 -1.97466 14.1074 1.78609L 0 9.35884L 0 99.0317Z"/>
+</defs>
+</svg>
