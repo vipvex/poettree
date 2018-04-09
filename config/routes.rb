@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   resources :lesson_completeds
   
   resources :lesson_groups do
-    resources :lessons
+    resources :lessons do
+      member do
+        post :complete, as: :complete
+      end
+    end
   end
   
   

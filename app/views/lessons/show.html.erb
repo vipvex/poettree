@@ -1,12 +1,15 @@
 <div class = "ui text container">
-
   <h1><%= @lesson_group.title %></h1>
-  <h2><%= current_user.lesson_completeds.in_lesson_group(@lesson_group).count %>/<%= @lesson_group.lessons.count %></h2>
+  <h2><%= current_user.lesson_completeds.in_lesson_group(@lesson_group).count %>/<%= @lesson_group.lessons.count %> Lessons Completed</h2>
   
   
-  <h1><%= @lesson.title %> | <%= @lesson.lesson_type %></h1>
+  <h1><%= @lesson.title %> <%= @lesson.lesson_type %></h1>
   
-  <%= link_to 'Next Lesson', current_user.next_lesson %>
+  <%= link_to complete_lesson_group_lesson_path, method: :post do %>
+    <button>Next Lesson</button>
+  <% end %>
+  
+   <iframe width="420" height="315" src="<%=@lesson.video_link%>?autoplay=0"> </iframe> 
   
   <h2>Resources<h2/>
   <p><%= @lesson.content %></p>
@@ -15,7 +18,10 @@
   <% @lesson_group.lessons.each do |l| %>
   
     <%= link_to [@lesson_group, l] do |a| %>
-      <h3><%= l.title %></h3>
+
+      <h4><%= l.title %></h4>
+      <%= image_tag l.video? ? 'video.png' : 'assignment.png' %>
+      <%= image_tag 'star.png' if l.completed_by?(current_user) %>
     <% end %>
   
   <% end %>
