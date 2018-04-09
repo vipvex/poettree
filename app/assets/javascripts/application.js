@@ -15,8 +15,47 @@
 //= require semantic-ui
 //= require_tree .
 
-$(document).ready(function(){
-	$('#hamburger').click(function(){
+
+
+$(document).ready(function() {
+	$('#hamburger').click(function() {
 		$(this).toggleClass('open');
-	});
-});
+	})
+
+
+	// Find Elements
+	const previewBtn = document.querySelector(".preview-btn")
+	const body = document.querySelector("body")
+
+	// Create & Mutate Elements
+	const overlay = document.createElement("div")
+	overlay.className = "hidden overlay"
+	const modal = document.createElement("div")
+	modal.className = "hidden modal"
+
+	//Add Elements to Page
+	body.appendChild(overlay)
+	body.appendChild(modal)
+
+	// Event Functions
+
+	const overlayToggle = () => {
+		overlay.classList.toggle("hidden")
+	}
+	const modalToggle = () => {
+		modal.classList.toggle("hidden")
+	}
+
+	// Attach Event Listeners
+
+
+	previewBtn.addEventListener("click", () => {
+		overlayToggle()
+		modalToggle()
+	})
+	overlay.addEventListener("click", () => {
+		overlayToggle()
+		modalToggle()
+	})
+
+})
