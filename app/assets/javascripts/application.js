@@ -39,23 +39,38 @@ $(document).ready(function() {
 
 	// Event Functions
 
-	const overlayToggle = () => {
+	const modalOverlayToggle = () => {
 		overlay.classList.toggle("hidden")
-	}
-	const modalToggle = () => {
 		modal.classList.toggle("hidden")
+	}
+	
+	const previewVideoModalToggle = () => {
+		modal.classList.toggle("preview-video-modal")
+	}
+	
+	const renderPreviewModalContent = () => {
+		const heading = document.createElement("h2")
+		heading.innerText = "This is What We Do"
+		const iframe = document.createElement("iframe")
+		iframe.classList.add("preview-video")
+		iframe.setAttribute("src", "https://www.youtube.com/embed/rA9pZwDn6mU")
+		iframe.setAttribute("frameborder", 0)
+		iframe.setAttribute("allow", "encrypted-media")
+		
+		modal.appendChild(heading)
+		modal.appendChild(iframe)
 	}
 
 	// Attach Event Listeners
 
 
 	previewBtn.addEventListener("click", () => {
-		overlayToggle()
-		modalToggle()
+		modalOverlayToggle()
+		previewVideoModalToggle()
+		renderPreviewModalContent()
 	})
 	overlay.addEventListener("click", () => {
-		overlayToggle()
-		modalToggle()
+		modalOverlayToggle()
 	})
 
 })
