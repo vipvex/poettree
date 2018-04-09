@@ -1,4 +1,8 @@
 <div class = "ui text container">
+  <%= link_to current_user.next_lesson_with_group do %>
+    <button>Next Lesson</button>
+  <% end %>
+  
   <h1>Your progress</h1>
   <h3>Lessons completed</h3>
   <h2><%= current_user.lesson_completeds.count %> lessons</h2>
@@ -13,7 +17,7 @@
     <div class="ui segment">
       <h3><%= lg.title %></h3>
       <h4><%= "Level #{lg.order}" %></h4>
-      <h4><%= "0 / #{lg.lessons.count}" %></h4>
+      <h4><%= "#{} / #{lg.lessons.count}" %></h4>
       
       <%= link_to 'Continue', [lg, lg.lessons.first] %>
     </div>
