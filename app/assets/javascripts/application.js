@@ -41,13 +41,14 @@ $(document).ready(function() {
 
 	const modalOverlayToggle = () => {
 		overlay.classList.toggle("hidden")
+		modal.innerHTML = ""
 		modal.classList.toggle("hidden")
 	}
-	
+
 	const previewVideoModalToggle = () => {
 		modal.classList.toggle("preview-video-modal")
 	}
-	
+
 	const renderPreviewModalContent = () => {
 		const heading = document.createElement("h2")
 		heading.innerText = "This is What We Do"
@@ -56,7 +57,7 @@ $(document).ready(function() {
 		iframe.setAttribute("src", "https://www.youtube.com/embed/rA9pZwDn6mU")
 		iframe.setAttribute("frameborder", 0)
 		iframe.setAttribute("allow", "encrypted-media")
-		
+
 		modal.appendChild(heading)
 		modal.appendChild(iframe)
 	}
@@ -71,6 +72,7 @@ $(document).ready(function() {
 	})
 	overlay.addEventListener("click", () => {
 		modalOverlayToggle()
+		previewVideoModalToggle()
 	})
 
 })
