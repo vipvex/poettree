@@ -353,13 +353,17 @@ p {
 }
 
 .login-greeting-panel {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .login-auth-panel {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #474747;
+    padding: 25px 0;
 }
 
 .login-greeting-panel>* {
@@ -378,6 +382,10 @@ p {
     justify-content: space-between;
 }
 
+.poetree-pot {
+    display: none;
+}
+
 .login-greeting-panel .footer .logo {
     align-self: flex-end;
 }
@@ -387,6 +395,7 @@ p {
     color: white;
     font-size: 14px;
     margin-top: 40px;
+    width: 100%;
 }
 
 .login-auth-panel p a {
@@ -720,11 +729,16 @@ footer p {
     .login-modal {
         flex-direction: row;
     }
+    .login-greeting-panel {
+        width: 50%;
+    }
+    .poetree-pot {
+        display: block;
+    }
     .login-auth-panel {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color: #474747;
         width: 50%;
     }
     .login-auth-link {
