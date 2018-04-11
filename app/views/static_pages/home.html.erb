@@ -160,6 +160,18 @@ little bit of work each day.”</p>
         Login with Facebook
       <% end %>
       
+      <%- if devise_mapping.omniauthable? %>
+        <ul class="image-list signin-icons">
+          <%- resource_class.omniauth_providers.each do |provider| %>
+            <li><%= link_to omniauth_authorize_path(resource_name, provider), :title => "Sign in with #{provider.to_s.titleize}" do %>
+              <%#= image_tag "oauth_#{provider}.png", :alt => "Sign in with #{provider.to_s.titleize}" %>
+              <%= provider.to_s.titleize %>
+              <% end -%>
+            </li>
+          <% end %>
+        </ul>
+      <% end -%>
+      
       <p>By signing into iPoetTree, you agree to our <a>Terms of Service</a></p>
     </div>
     <div class="login-greeting-panel">

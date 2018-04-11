@@ -21,10 +21,7 @@
     <%= form.text_area :body, id: :poem_body %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, id: :poem_user_id %>
-  </div>
+  <%= form.hidden_field :user_id, id: :poem_user_id, value: current_user.id %>
 
   <div class="field">
     <%= form.label :image_url %>
@@ -32,11 +29,11 @@
   </div>
 
   <div class="field">
-    <%= form.label :shared %>
+    <%= form.label :add_to_poet_tree %>
     <%= form.check_box :shared, id: :poem_shared %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Save' %>
   </div>
 <% end %>
