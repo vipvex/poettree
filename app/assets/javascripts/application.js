@@ -26,7 +26,9 @@ $(document).ready(function() {
 	// Find Elements
 	const previewBtn = document.querySelector(".preview-btn")
 	const body = document.querySelector("body")
-
+	const loginModal = document.querySelector(".login-modal-ctr")
+	const signUp = document.querySelector("nav .primary-red")
+	const videoPreview = document.querySelector(".preview-video-ctr")
 	// Create & Mutate Elements
 	const overlay = document.createElement("div")
 	overlay.className = "hidden overlay"
@@ -39,40 +41,55 @@ $(document).ready(function() {
 
 	// Event Functions
 
+
+	const overlayToggle = () => {
+		overlay.classList.toggle("hidden")
+	}
+	const modalToggle = () => {
+		modal.innerHTML = ""
+		modal.classList.toggle("hidden")
+	}
 	const modalOverlayToggle = () => {
 		overlay.classList.toggle("hidden")
 		modal.innerHTML = ""
 		modal.classList.toggle("hidden")
 	}
 
-	const previewVideoModalToggle = () => {
-		modal.classList.toggle("preview-video-modal")
+	const modalChildClassToggle = (className) => {
+		const ele = document.querySelector("." + className)
+		ele.classList.toggle("hidden")
 	}
 
-	const renderPreviewModalContent = () => {
-		const heading = document.createElement("h2")
-		heading.innerText = "This is What We Do"
-		const iframe = document.createElement("iframe")
-		iframe.classList.add("preview-video")
-		iframe.setAttribute("src", "https://www.youtube.com/embed/rA9pZwDn6mU")
-		iframe.setAttribute("frameborder", 0)
-		iframe.setAttribute("allow", "encrypted-media")
+	const renderVideoPreviewModal = () => {
+		videoPreview.classList.toggle("hidden")
+		overlay.setAttribute('data', 'preview-video-ctr')
+		modal.appendChild(videoPreview)
+	}
 
-		modal.appendChild(heading)
-		modal.appendChild(iframe)
+	const renderLoginModal = () => {
+		loginModal.classList.toggle("hidden")
+		overlay.setAttribute('data', 'login-modal-ctr')
+		modal.appendChild(loginModal)
 	}
 
 	// Attach Event Listeners
 
+	signUp.addEventListener("click", (e) => {
+		e.preventDefault()
+		modalOverlayToggle()
+		renderLoginModal()
 
+	})
 	previewBtn.addEventListener("click", () => {
 		modalOverlayToggle()
-		previewVideoModalToggle()
-		renderPreviewModalContent()
+		renderVideoPreviewModal()
 	})
-	overlay.addEventListener("click", () => {
+
+	overlay.addEventListener("click", (e) => {
+		const className = e.target.getAttribute("data")
+		modalChildClassToggle(className)
 		modalOverlayToggle()
-		previewVideoModalToggle()
+		overlay.setAttribute("data", "")
 	})
 
 })

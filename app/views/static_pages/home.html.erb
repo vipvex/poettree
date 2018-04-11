@@ -3,11 +3,7 @@
     <a href="#">Donate</a>
     <a href="#">About Us</a>
     <a href="#">Login</a>
-    <% if user_signed_in? -%>
-      <%= link_to 'Log out', destroy_user_session_path, :method => :delete %>
-    <% else %>
-      <%= link_to 'Sign Up', new_user_session_path, class: 'primary-red' %>
-    <% end %>    
+    <a href="#" class="primary-red" data="login-modal-ctr">Sign Up</a>
     <div id="hamburger">
       <span></span>
       <span></span>
@@ -23,7 +19,7 @@
 </div>
 <div class="preview">
   <p class="preview-note">Watch How it Works</p>
-  <div class="preview-btn">
+  <div class="preview-btn" data="preview-video-modal">
     <%= image_tag("green-play.svg") %>
   </div>
 </div>
@@ -152,3 +148,36 @@ little bit of work each day.”</p>
 <footer>
   <p>iPoetTree is is a 501 (c)(3) | <a href="">privacy policy</a> | <a href="">terms</a>  | ©2018</p>
 </footer>
+<div class="login-modal-ctr hidden">
+  <div class="login-modal">
+    <div class="login-auth-panel">
+      <a class="login-modal-link google"  href="#">Login with Google</a>
+      <a class="login-modal-link facebook" href="#">Login with Facebook</a>
+      <p>By signing into iPoetTree, you agree to our <a>Terms of Service</a></p>
+    </div>
+    <div class="login-greeting-panel">
+      <h2><span class="green-highlight">Grow</span> Your Writing Skills With Us</h2>
+      <p>learn with free video lessons - share with peers - express yourself</p>
+      <div class="footer">
+        <p class="logo">iPoetTree</p>
+        <%= image_tag("poetree-pot.svg") %>
+      </div>
+    </div>
+  </div>  
+</div>
+<div class="preview-video-ctr hidden">
+  <h2>This is What We Do</h2>
+  <iframe class="preview-video" frameborder="0" allow="encrpyted-media" src="https://www.youtube.com/embed/rA9pZwDn6mU"></iframe>
+  
+</div>
+
+
+<!--TODO 
+  Move Sign In Code to Login Modal
+-->
+
+<%# if user_signed_in? -%>
+  <%#= link_to 'Log out', destroy_user_session_path, :method => :delete %>
+<%# else %>
+  <%#= link_to 'Sign Up', new_user_session_path, class: 'primary-red' %>
+<%# end %>  

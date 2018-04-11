@@ -13,8 +13,6 @@ $author-profile-green: #A7DB72;
 
 ===*/
 
-
-
 /** FLEX **/
 
 .col {
@@ -336,16 +334,95 @@ p {
 
 }
 
-.preview-video-modal {
-    height: 500px;
-}
 .preview-video {
     width: 100%;
     height: 350px;
 }
+
 .modal h2 {
     text-align: center;
 }
+
+.login-modal-ctr {
+    height: 500px;
+}
+
+.login-modal {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-greeting-panel {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-auth-panel {
+    display: flex;
+}
+
+.login-greeting-panel>* {
+    margin: auto;
+    padding: 10px 50px;
+}
+
+.login-greeting-panel h2 {
+    font-size: 28px;
+    margin-top: 50px;
+}
+
+.login-greeting-panel .footer {
+    display: flex;
+    margin: 0;
+    justify-content: space-between;
+}
+
+.login-greeting-panel .footer .logo {
+    align-self: flex-end;
+}
+
+.login-auth-panel p {
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+.login-auth-panel p a {
+    text-decoration: underline;
+    color: white;
+    font-size: 14px;
+}
+
+.green-highlight {
+    color: #2F7A4D;
+}
+
+.login-auth-panel p a {
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.facebook {
+    background-color: #3B5998;
+    color: #FFF;
+    margin-top: 10px;
+}
+
+.google {
+    background-color: #FFF;
+    color: #4D4D4D;
+}
+
+.login-modal-link {
+    width: 250px;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px 0;
+}
+
 
 
 /** LEARN FROM SOMEONE LIKE YOU **/
@@ -638,6 +715,21 @@ footer p {
     }
     .someone-like-you {
         height: 500px;
+    }
+
+    .login-modal {
+        flex-direction: row;
+    }
+    .login-auth-panel {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #474747;
+        width: 50%;
+    }
+    .login-auth-link {
+        width: 300px;
+        text-align: center;
     }
 
     /** NAVIGATION **/
