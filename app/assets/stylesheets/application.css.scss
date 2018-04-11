@@ -13,6 +13,7 @@
  *= require variables
  *= require_self
  *= require home
+ *= require static_pages
  */
 
 /*===
@@ -101,6 +102,7 @@ p {
 .modal {
     background-color: white;
     max-width: 700px;
+    height: 500px;
     border-radius: 20px 0 20px 0;
     position: fixed;
     margin: auto;
