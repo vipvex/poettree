@@ -15,18 +15,14 @@
  *= require home
  */
 
-
-
 /*===
 
     BEGIN BASE STYLES
 
 ===*/
 
-
 //@import "semantic-ui";
 //@import "variables";
-
 $main-gray: #2C332F;
 $dark-gray: #2B2B2B;
 $main-red: #BF5858;
@@ -35,13 +31,40 @@ $light-green: #2EC746;
 $pale-green: #C2EDD4;
 $author-profile-green: #A7DB72;
 
+/* UTILITY */
+
+.transparent {
+    opacity: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 
 /** VERTICAL RYHTHM **/
+
 p {
     line-height: 1.8;
 }
 
-h1, h2, h3, h4, h5, h6, p, a {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
     color: $main-gray;
 }
 
@@ -75,6 +98,18 @@ p {
     
 ===*/
 
+.modal {
+    background-color: white;
+    max-width: 700px;
+    border-radius: 20px 0 20px 0;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
 .logo {
     font-size: 22px;
 }
@@ -85,3 +120,9 @@ p {
     BEGIN DESKTOP STYLES
 
 ===*/
+
+@media screen and (min-width: 800px) {
+    .modal {
+        padding: 30px;
+    }
+}
