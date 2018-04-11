@@ -151,8 +151,15 @@ little bit of work each day.”</p>
 <div class="login-modal-ctr hidden">
   <div class="login-modal">
     <div class="login-auth-panel">
-      <a class="login-modal-link google"  href="#">Login with Google</a>
-      <a class="login-modal-link facebook" href="#">Login with Facebook</a>
+
+      <%= link_to omniauth_authorize_path(resource_name, :google_oauth2), class: 'login-modal-link google' do |a| %>
+        Login with Google
+      <% end %>
+      
+      <%= link_to omniauth_authorize_path(resource_name, :facebook), class: 'login-modal-link facebook' do |a| %>
+        Login with Facebook
+      <% end %>
+      
       <p>By signing into iPoetTree, you agree to our <a>Terms of Service</a></p>
     </div>
     <div class="login-greeting-panel">
