@@ -1,26 +1,37 @@
 
 <!-- DIASBLED NEXT LESSON BUTTON TO PREVIEW DASHBOARD -->
 <%#= link_to current_user.next_lesson_with_group do %>
-  <a href="#" class="next-lesson-full">Next Lesson</a>
+  <a href="#">
+    <div class="next-lesson-full">
+      <p>Next Lesson</p>
+      <%= image_tag("right-arrow.svg") %>
+    </div>
+  </a>
 <%# end %>
-
-<h1>Your progress</h1>
-<h3>Lessons completed</h3>
-<h2><%#= current_user.lesson_completeds.count %> lessons</h2>
-<h3>Lessons poems shared</h3>
-<h2><%#= current_user.poems.count %> poems</h2>
-
-
-
-<h1>Your lessons</h1>
-<% @lesson_groups.each do |lg| %>
-
-  <div class="ui segment">
-    <h3><%= lg.title %></h3>
-    <h4><%= "Level #{lg.order}" %></h4>
-    <h4><%= "#{} / #{lg.lessons.count}" %></h4>
+<div class="dashboard-bg">
+  <div class="dashboard-ctr">
+    <h1>Your progress</h1>
+    <h3>Lessons completed</h3>
+    <h2><%#= current_user.lesson_completeds.count %> lessons</h2>
+    <h3>Lessons poems shared</h3>
+    <h2><%#= current_user.poems.count %> poems</h2>
     
-    <%= link_to 'Continue', [lg, lg.lessons.first] %>
+    
+    
+    <h1>Your lessons</h1>
+    <% @lesson_groups.each do |lg| %>
+    
+      <div class="ui segment">
+        <h3><%= lg.title %></h3>
+        <h4><%= "Level #{lg.order}" %></h4>
+        <h4><%= "#{} / #{lg.lessons.count}" %></h4>
+        
+        <%= link_to 'Continue', [lg, lg.lessons.first] %>
+      </div>
+      
+<% end %>
+    
   </div>
   
-<% end %>
+
+</div>
