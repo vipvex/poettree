@@ -9,17 +9,30 @@
     <button>Next Lesson</button>
   <% end %>
   
-   <iframe width="420" height="315" src="<%=@lesson.video_link%>?autoplay=0"> </iframe> 
+  <% if @lesson.video? %>
+    
+    <iframe width="420" height="315" src="<%=@lesson.video_link%>?autoplay=0"> </iframe> 
+    
+    <h2>Resources<h2/>
+    <p><%= @lesson.content %></p>
+      
+  <% else %>
   
-  <h2>Resources<h2/>
-  <p><%= @lesson.content %></p>
+    <h2>Instruction<h2/>
+    <p><%= @lesson.content %></p>
+    
+    <h2>Your Poem<h2/>
+    <%= render 'poems/form', poem: @poem %>
+
+  
+  <% end %>
     
   <h2>Lessons<h2/>
   <% @lesson_group.lessons.each do |l| %>
   
     <%= link_to [@lesson_group, l] do |a| %>
 
-      <h4><%= l.title %></h4>
+      <h4><%= l.title %> <%= '(current lesson)' if l == @lesson %> </h4>
       <%= image_tag l.video? ? 'video.png' : 'assignment.png' %>
       <%= image_tag 'star.png' if l.completed_by?(current_user) %>
     <% end %>
