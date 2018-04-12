@@ -10,13 +10,13 @@
 <%# end %>
 <div class="dashboard-bg">
   <div class="dashboard-ctr">
-    <h1>Your progress</h1>
-    <h3>Lessons completed</h3>
-    <h2><%#= current_user.lesson_completeds.count %> lessons</h2>
-    <h3>Lessons poems shared</h3>
-    <h2><%#= current_user.poems.count %> poems</h2>
-    
-    
+    <div class="progress-ctr">
+      <h1>Your progress</h1>
+      <h3>Lessons completed</h3>
+      <h2><%#= current_user.lesson_completeds.count %> lessons</h2>
+      <h3>Lessons poems shared</h3>
+      <h2><%#= current_user.poems.count %> poems</h2>      
+    </div>
     
     <h1>Your lessons</h1>
     <% @lesson_groups.each do |lg| %>

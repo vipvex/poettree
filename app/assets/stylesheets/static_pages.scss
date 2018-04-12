@@ -34,14 +34,43 @@ $pale-green: #C2EDD4;
 
 .dashboard-bg {
     background-color: #F2F2F2;
+    padding: 10px 0;
 }
+
+.dashboard-ctr {
+    width: 95%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.dashboard-ctr h1 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.35rem;
+}
+
+.progress-ctr {
+    background-color: #FFF;
+    border-radius: 5px;
+    padding: 40px 0;
+}
+
+
 /*===
 
     BEGIN DESKTOP STYLES
     
 ===*/
 
+.dashboard-bg {
+    padding: 40px 0;
+}
+
 .dashboard-ctr {
+    width: 90%;
     max-width: 1024px;
-    padding: 40px 80px;
+}
+
+.progress-ctr {
+    padding: 30px 0;
 }
