@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
   has_many :poems
   has_many :lesson_completeds
 
+  def name
+    "#{self.first_name} #{self.last_name}" || 'Name not set'
+  end
+
   def next_lesson
     return LessonGroup.all.order(:order).first.lessons.first if last_lesson.nil?
     
@@ -39,8 +43,11 @@ class User < ActiveRecord::Base
   end
 
   def self.from_omniauth(auth)
+    puts "\n#{auth}\n"
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
+      # Might break stuff
+      user.first_name = auth.info.try(:name)
     end
   end
   

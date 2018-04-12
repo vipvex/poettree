@@ -11,7 +11,14 @@ Rails.application.routes.draw do
   end
   
   
-  resources :poems
+  resources :poems do
+  
+    collection do
+      get :search
+    end
+    
+  end
+  
   devise_for :users, :controllers => {
       :omniauth_callbacks => "users/omniauth_callbacks" 
     }
