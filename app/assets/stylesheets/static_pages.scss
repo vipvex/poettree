@@ -47,12 +47,42 @@ $pale-green: #C2EDD4;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.35rem;
+    margin-bottom: 20px;
 }
 
 .progress-ctr {
     background-color: #FFF;
     border-radius: 5px;
     padding: 40px 0;
+}
+
+.progress-ctr h2 {
+    margin-bottom: 0;
+}
+
+.progress-icons-ctr {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+}
+
+.completed-ctr {
+    display: flex;
+}
+
+.progress-icon-videos {
+    width: 45px;
+    margin-right: 45px;
+}
+
+.progress-icon-poems {
+    width: 30px;
+    margin-right: 45px;
+    margin-left: 40px;
+}
+.total {
+    font-size: 45px;
 }
 
 
@@ -62,15 +92,26 @@ $pale-green: #C2EDD4;
     
 ===*/
 
-.dashboard-bg {
-    padding: 40px 0;
-}
+@media screen and (min-width: 800px) {
+    .dashboard-bg {
+        padding: 40px 0;
+    }
 
-.dashboard-ctr {
-    width: 90%;
-    max-width: 1024px;
-}
+    .dashboard-ctr {
+        width: 90%;
+        max-width: 1024px;
+    }
 
-.progress-ctr {
-    padding: 30px 0;
+    .progress-ctr {
+        padding: 30px 0;
+    }
+
+    .progress-icons-ctr {
+        flex-direction: row;
+        max-width: 500px;
+        width: 80%;
+        margin: auto;
+    }
+
+
 }

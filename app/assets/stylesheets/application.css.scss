@@ -33,7 +33,10 @@ $pale-green: #C2EDD4;
 $author-profile-green: #A7DB72;
 
 /* UTILITY */
-
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
 .transparent {
     opacity: 0;
 }

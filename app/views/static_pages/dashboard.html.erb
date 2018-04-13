@@ -12,10 +12,22 @@
   <div class="dashboard-ctr">
     <div class="progress-ctr">
       <h1>Your progress</h1>
-      <h3>Lessons completed</h3>
-      <h2><%#= current_user.lesson_completeds.count %> lessons</h2>
-      <h3>Lessons poems shared</h3>
-      <h2><%#= current_user.poems.count %> poems</h2>      
+      <div class="progress-icons-ctr">
+        <div class="completed-ctr">
+          <%= image_tag("videos-complete.svg", class:"progress-icon-videos")%>
+          <div class="flex-column">
+            <h3>Lessons completed</h3>
+            <h2><span class="total"><%#= current_user.lesson_completeds.count %>11</span>&nbsp; lessons</h2>          
+          </div>
+        </div>
+        <div class="completed-ctr">
+          <%= image_tag("poems-shared.svg", class:"progress-icon-poems")%>
+          <div class="flex-column">
+            <h3>Poems shared</h3>
+            <h2><span class="total"><%#= current_user.poems.count %>8</span>&nbsp; poems</h2>  
+          </div>
+        </div>
+      </div>
     </div>
     
     <h1>Your lessons</h1>
