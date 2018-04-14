@@ -1,0 +1,21 @@
+<svg width="76" height="86" viewBox="0 0 76 86" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" fill="none">
+<g id="Group 2">
+<g id="Rectangle 9.2">
+<rect width="75.7533" height="50" rx="10" transform="translate(0.0429688 35.8633)" fill="white"/>
+</g>
+<g id="Group 3.2">
+<g id="Ellipse 3.3">
+<circle cx="5.24851" cy="5.24851" r="5.24851" transform="translate(32.6719 51.8535)" fill="#A8A8A8"/>
+</g>
+<g id="Polygon">
+<path d="M 4.2049 0L 7.84644 13.6459L 0.563349 13.6459L 4.2049 0Z" transform="translate(33.7148 57.5977)" fill="#A8A8A8"/>
+</g>
+</g>
+<g id="Subtract">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M 38.2227 32.9219L 38.2227 21.6113C 38.2227 12.4375 30.7852 5 21.6113 5C 12.4375 5 5 12.4375 5 21.6113L 5 32.9219L 0 32.9219L 0 21.6113C 0 9.67578 9.67578 0 21.6113 0C 33.5469 0 43.2227 9.67578 43.2227 21.6113L 43.2227 32.9219L 38.2227 32.9219Z" transform="translate(16.3086 0.462891)" fill="white"/>
+</g>
+</g>
+</g>
+</svg>
+

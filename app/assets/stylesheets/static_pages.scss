@@ -37,6 +37,11 @@ $pale-green: #C2EDD4;
     padding: 10px 0;
 }
 
+.dashboard-bg h1:nth-child(2) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .dashboard-ctr {
     width: 95%;
     max-width: 600px;
@@ -81,8 +86,117 @@ $pale-green: #C2EDD4;
     margin-right: 45px;
     margin-left: 40px;
 }
+
 .total {
     font-size: 45px;
+}
+
+////////// LESSONS ////////////////
+.lessons-ctr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 500px;
+    max-width: 1024px;
+}
+
+.lesson-card {
+    width: 260px;
+    height: 460px;
+    background-color: #FFF;
+    border-radius: 5px;
+    margin-top: 25px;
+    transition: all 0.32s;
+}
+
+.lesson-card:hover {
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
+    transform: translateY(-5px);
+}
+
+.lesson-card .header {
+    height: 90px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px 5px 0 0;
+}
+
+.lesson-card .header>* {
+    color: white;
+}
+
+.lesson-card .unlocked {
+    background-color: $dark-green;
+}
+
+.lesson-card .locked {
+    background-color: $main-gray;
+}
+
+.lesson-card .body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 370px;
+}
+
+.lesson-card .body .course-image-unlocked {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #E0E0E0;
+    border: 2px solid #C2C2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.lesson-card .body .course-image-locked {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #C2C2C2;
+    border: 2px solid #E0E0E0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.lesson-card .body .btn {
+    width: 185px;
+    height: 45px;
+    border-radius: 12px 0 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.lesson-card .body .btn img {
+    height: 15px;
+    margin-left: 25px;
+}
+
+.lesson-card .body .btn > * {
+    color: white;
+}
+
+.lesson-card .body .btn-unlocked {
+    background-color: $dark-green;
+}
+
+.lesson-card .body .btn-locked {
+    background-color: $main-gray;
+}
+
+.lessons-complete {
+    font-size: 26px;
+    margin-top: 22px;
 }
 
 
@@ -96,7 +210,11 @@ $pale-green: #C2EDD4;
     .dashboard-bg {
         padding: 40px 0;
     }
+    .dashboard-bg h1:nth-child(2) {
+        margin-top: 45px;
+        margin-bottom: 45px;
 
+    }
     .dashboard-ctr {
         width: 90%;
         max-width: 1024px;
@@ -111,7 +229,14 @@ $pale-green: #C2EDD4;
         max-width: 500px;
         width: 80%;
         margin: auto;
+    } ////////// LESSONS ////////////////
+    .lessons-ctr {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        max-width: 1024px;
     }
-
-
+    .lesson-card {
+        margin-top: 0;
+    }
 }
