@@ -1,13 +1,12 @@
 
 <!-- DIASBLED NEXT LESSON BUTTON TO PREVIEW DASHBOARD -->
-<%#= link_to current_user.next_lesson_with_group do %>
-  <a href="#">
-    <div class="next-lesson-full">
-      <p>Next Lesson</p>
-      <%= image_tag("right-arrow.svg") %>
-    </div>
-  </a>
-<%# end %>
+<%= link_to current_user.next_lesson_with_group do %>
+  <div class="next-lesson-full">
+    <p>Next Lesson</p>
+    <%= image_tag("right-arrow.svg") %>
+  </div>
+<% end %>
+
 <div class="dashboard-bg">
   <div class="dashboard-ctr">
     <div class="progress-ctr">
@@ -17,83 +16,55 @@
           <%= image_tag("videos-complete.svg", class:"progress-icon-videos")%>
           <div class="flex-column">
             <h3>Lessons completed</h3>
-            <h2><span class="total"><%#= current_user.lesson_completeds.count %>11</span>&nbsp; lessons</h2>          
+            <h2><span class="total"><%= current_user.lesson_completeds.count %></span>&nbsp; lessons</h2>          
           </div>
         </div>
         <div class="completed-ctr">
           <%= image_tag("poems-shared.svg", class:"progress-icon-poems")%>
           <div class="flex-column">
             <h3>Poems shared</h3>
-            <h2><span class="total"><%#= current_user.poems.count %>8</span>&nbsp; poems</h2>  
+            <h2><span class="total"><%= current_user.poems.count %></span>&nbsp; poems</h2>  
           </div>
         </div>
       </div>
     </div>
     
     <h1>Your lessons</h1>
+    
     <div class="lessons-ctr">
-      <div class="lesson-card"> 
-        <div class="header unlocked">
-          <h3>Haikus</h3>
-          <p>Level 1</p>
-        </div>
-        <div class="body">
-          <div class="course-image-unlocked">
-             <%= image_tag("course-default.svg")%>        
+      
+      <% @lesson_groups.each do |lg| %>
+
+        <% locked = lg.locked_for?(current_user) %>
+        <% locked_class = locked ? 'locked' : 'unlocked' %>
+
+        <div class="lesson-card"> 
+        
+          <div class="header <%= locked_class %>">
+            
+            <h3><%= lg.title %></h3>
+            <p>Level <%= lg.order %></p>
           </div>
-          <p class="lessons-complete">2/11</p>
-          <a href="" class="btn btn-unlocked">
-            <p>Continue</p>
-            <%= image_tag("right-arrow.svg") %>
-          </a>
-        </div>
-      </div>
-      <div class="lesson-card"> 
-        <div class="header locked">
-          <h3>Concrete Poems</h3>
-          <p>Level 2</p>
-        </div>
-        <div class="body">
-          <div class="course-image-locked">
-             <%= image_tag("course-locked.svg")%>        
+          
+          <div class="body">
+            
+            <div class="course-image-<%= locked_class %>">
+               <%= image_tag(locked ? "course-locked.svg" : "course-default.svg")%>        
+            </div>
+            
+            <p class="lessons-complete"><%= "#{lg.completed_lessons_by(current_user).count} / #{lg.lessons.count}" %></p>
+            
+            <%= link_to locked ? '#' : current_user.next_lesson_with_group, class: "btn btn-#{locked_class}" do %>
+              <p><%= locked ? "Locked" : "Continue" %></p>
+              <%= image_tag(locked ? "course-locked.svg" : "right-arrow.svg") %>
+            <% end %>
+            
           </div>
-          <p class="lessons-complete">0/11</p>
-          <a href="" class="btn btn-locked">
-            <p>Locked</p>
-            <%= image_tag("course-locked.svg") %>
-          </a>
         </div>
-      </div>
-      <div class="lesson-card"> 
-        <div class="header locked">
-          <h3>Couplets</h3>
-          <p>Level 3</p>
-        </div>
-        <div class="body">
-          <div class="course-image-locked">
-             <%= image_tag("course-locked.svg")%>        
-          </div>
-          <p class="lessons-complete">0/11</p>
-          <a href="" class="btn btn-locked">
-            <p>Locked</p>
-            <%= image_tag("course-locked.svg") %>
-          </a>
-        </div>
-      </div>
+        
+      <% end %>
     </div>
 
-    <% @lesson_groups.each do |lg| %>
-    
-      <div class="ui segment">
-        <h3><%= lg.title %></h3>
-        <h4><%= "Level #{lg.order}" %></h4>
-        <h4><%= "#{} / #{lg.lessons.count}" %></h4>
-        
-        <%= link_to 'Continue', [lg, lg.lessons.first] %>
-      </div>
-      
-<% end %>
-    
   </div>
   
 
