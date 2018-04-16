@@ -12,6 +12,37 @@ $pale-green: #C2EDD4;
 
 ===*/
 
+//// ABOUT US ////
+.about-us-ctr {
+    margin: auto;
+    width: 90%;
+    max-width: 500px;
+    padding: 50px 0;
+}
+
+.about-us-ctr p:nth-of-type(2) {
+    margin-top: 25px;
+}
+
+.mission {
+    background: linear-gradient(90deg, $dark-green, $light-green);
+}
+
+.mission .about-us-ctr h2,
+.mission .about-us-ctr p {
+    color: #FFF;
+}
+
+
+.poetree-and-cassidy {
+    height: 375px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0 20px 0 20px;
+    margin-bottom: 25px;
+}
+    
+//// DASHBOARD ////
 .next-lesson-full {
     display: flex;
     justify-content: center;
@@ -182,7 +213,7 @@ $pale-green: #C2EDD4;
     margin-left: 25px;
 }
 
-.lesson-card .body .btn > * {
+.lesson-card .body .btn>* {
     color: white;
 }
 
@@ -207,6 +238,12 @@ $pale-green: #C2EDD4;
 ===*/
 
 @media screen and (min-width: 800px) {
+
+    //// ABOUT US ////
+    .about-us-ctr {
+        padding: 75px 0;
+        max-width: 900px;
+    } //// DASHBOARD ////
     .dashboard-bg {
         padding: 40px 0;
     }
