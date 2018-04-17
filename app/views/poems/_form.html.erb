@@ -12,28 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :poem_title %>
+    <%= form.text_field :title, id: :poem_title, placeholder: "Title*" %>
   </div>
 
   <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body, id: :poem_body %>
+    <%= form.text_area :body, id: :poem_body, placeholder: "Type your poem in here and click the save button to save your work*" %>
   </div>
 
-  <%= form.hidden_field :user_id, id: :poem_user_id, value: current_user.id %>
-
-  <div class="field">
-    <%= form.label :image_url %>
-    <%= form.text_field :image_url, id: :poem_image_url %>
-  </div>
+  <!--TODO UNCOMMENT BEFORE PRODUCTION, COMMENTED OUT HIDDEN FIELD TO TEST UI -->
+  <%#= form.hidden_field :user_id, id: :poem_user_id, value: current_user.id %>
 
   <div class="field">
-    <%= form.label :add_to_poet_tree %>
-    <%= form.check_box :shared, id: :poem_shared %>
+    <%= form.text_field :image_url, id: :poem_image_url, placeholder: "Enter a URL for your Image (optional)" %>
+  </div>
+  
+  <div class="poem-btn-row">
+      <div class="field">
+        <%= form.check_box :shared, id: :poem_shared %>
+      </div>
+      <div class="actions">
+        <%= form.submit 'Save', class: 'save-poem-btn' %>
+      </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit 'Save' %>
-  </div>
 <% end %>

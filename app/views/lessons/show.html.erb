@@ -28,12 +28,19 @@
     <p><%= @lesson.content %></p>
       
   <% else %>
-  
-    <h2>Instruction<h2/>
-    <p><%= @lesson.content %></p>
-    
-    <h2>Your Poem<h2/>
-    <%= render 'poems/form', poem: @poem %>
+    <div class="assignment-poem-form">
+      <div class="instructions-ctr">
+        <h2>Instructions<h2/>
+        <p><%= @lesson.content %></p>
+      </div>
+
+      <div class="assignment-ctr">
+        <h2>Your Poem<h2/>
+        <%= render 'poems/form', poem: @poem %>  
+      </div>
+
+    </div>
+
 
   
   <% end %>

@@ -126,6 +126,7 @@ p {
 }
 
 // LESSONS //
+//// PROGRESS CTR ////
 .lesson-progress-ctr {
     background-color: $dark-green;
     padding: 35px 50px;
@@ -176,11 +177,12 @@ p {
 .leson-type {
     font-size: 20px;
 }
+
 .next-lesson-btn {
     width: 150px;
     height: 40px;
     background-color: $dark-green;
-    border-radius: 15px 0 15px 0;
+    border-radius: 5px 0 5px 0;
     color: white;
     display: flex;
     align-items: center;
@@ -244,7 +246,117 @@ p {
     color: #C4C4C4;
 }
 
-//// PROGRESS CTR ////
+//// POEM FORM ////
+.assignment-poem-form {
+    margin: 45px 0;
+    border-radius: 20px 0 20px 0;
+    padding: 30px 20px;
+    border-left: 15px solid #2F7A4D;
+    border-top: 1px solid #C4C4C4;
+    border-bottom: 1px solid #C4C4C4;
+    border-right: 1px solid #C4C4C4;
+}
+
+.assignment-poem-form .instructions-ctr {
+    border-bottom: 1px solid #C4C4C4;
+    padding-bottom: 10px;
+}
+
+.assignment-poem-form .assignment-ctr {
+    margin-top: 10px;
+}
+
+.instructions-ctr p {
+    padding-left: 20px;
+}
+
+.assignment-ctr input,
+.assignment-ctr textarea,
+.picture-upload,
+.poem-btn-row {
+    margin-left: 15px;
+}
+
+.assignment-ctr input,
+.assignment-ctr textarea,
+.picture-upload {
+    margin-bottom: 25px;
+}
+
+.assignment-ctr input,
+.assignment-ctr textarea {
+    padding: 5px 0;
+    text-indent: 10px;
+    display: block;
+}
+
+.assignment-ctr input {
+    width: 250px;
+}
+
+.assignment-ctr textarea {
+    width: 100%;
+    height: 150px;
+}
+
+.picture-upload {
+    height: 200px;
+    width: 250px;
+    border: 2px dashed #C4C4C4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.picture-upload p {
+    text-align: center;
+    max-width: 150px;
+    color: #C4C4C4;
+}
+
+.picture-upload-btn {
+    width: 35px;
+    height: 35px;
+}
+
+.poem-btn-row {
+    display: flex;
+}
+
+.poem-btn-row .save-poem-btn,
+.poem-btn-row .add-to-poettree-btn {
+    width: 150px;
+    height: 40px;
+    border-radius: 5px 0 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.save-poem-btn {
+    border: none;
+    color: white;
+    background-color: #2F7A4D;
+    transition: all 0.32s;
+}
+
+.save-poem-btn:hover {
+    transform: translateY(-3.5px);
+}
+
+.add-to-poettree-btn {
+    color: #2F7A4D;
+    background-color: #FFF;
+    border: 0.5px solid #2F7A4D;
+    margin-left: 25px;
+    transition: all 0.32s;
+}
+
+.add-to-poettree-btn:hover {
+    transform: translateY(-3.5px)
+}
+
 /*===
 
     BEGIN DESKTOP STYLES
@@ -254,10 +366,7 @@ p {
 @media screen and (min-width: 800px) {
     .modal {
         padding: 30px;
-    }
-
-    // LESSONS //
-
+    } // LESSONS //
     .lesson-progress-ctr {
         flex-direction: row;
         justify-content: space-between;
@@ -277,13 +386,4 @@ p {
     .lesson-nav .current-lesson {
         font-size: 14px;
     }
-}
-
-
-
-.ui.text.container {
-
-    width: 800px;
-    margin: auto;
-
 }
