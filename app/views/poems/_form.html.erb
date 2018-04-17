@@ -26,13 +26,15 @@
     <%= form.text_field :image_url, id: :poem_image_url, placeholder: "Enter a URL for your Image (optional)" %>
   </div>
   
-  <div class="poem-btn-row">
       <div class="field">
-        <%= form.check_box :shared, id: :poem_shared %>
+        <h2>Click below make sure your poem is on the PoetTree</h2>
+        <div class="poettree-checkbox">
+            <%= form.check_box :shared, id: :poem_shared, class: 'poettree-checkbox' %>
+            <label for="poem_shared"></label>
+        </div>
       </div>
       <div class="actions">
         <%= form.submit 'Save', class: 'save-poem-btn' %>
       </div>
-  </div>
 
 <% end %>

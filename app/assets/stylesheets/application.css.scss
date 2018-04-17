@@ -323,8 +323,7 @@ p {
     display: flex;
 }
 
-.poem-btn-row .save-poem-btn,
-.poem-btn-row .add-to-poettree-btn {
+.save-poem-btn {
     width: 150px;
     height: 40px;
     border-radius: 5px 0 5px 0;
@@ -332,29 +331,70 @@ p {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-}
-
-.save-poem-btn {
     border: none;
     color: white;
     background-color: #2F7A4D;
     transition: all 0.32s;
+    margin-top: 45px;
 }
+
 
 .save-poem-btn:hover {
     transform: translateY(-3.5px);
 }
 
-.add-to-poettree-btn {
-    color: #2F7A4D;
-    background-color: #FFF;
-    border: 0.5px solid #2F7A4D;
-    margin-left: 25px;
-    transition: all 0.32s;
+.poettree-checkbox {
+    width: 120px;
+    height: 40px;
+    background: #333;
+    margin: 20px 20px;
+
+    border-radius: 50px;
+    position: relative;
 }
 
-.add-to-poettree-btn:hover {
-    transform: translateY(-3.5px)
+.poettree-checkbox:before {
+    content: 'On';
+    position: absolute;
+    top: 12px;
+    left: 13px;
+    height: 2px;
+    color: $author-profile-green;
+    font-size: 16px;
+}
+
+.poettree-checkbox:after {
+    content: 'Off';
+    position: absolute;
+    top: 12px;
+    left: 84px;
+    height: 2px;
+    color: #ddd;
+    font-size: 16px;
+}
+
+.poettree-checkbox input[type=checkbox] {
+    visibility: hidden;
+}
+
+.poettree-checkbox label {
+    display: block;
+    width: 52px;
+    height: 22px;
+    border-radius: 50px;
+
+    transition: all .5s ease;
+    cursor: pointer;
+    position: absolute;
+    top: 9px;
+    z-index: 1;
+    left: 12px;
+    background: #ddd;
+}
+
+.poettree-checkbox input[type=checkbox]:checked+label {
+    left: 60px;
+    background: $author-profile-green;
 }
 
 /*===
