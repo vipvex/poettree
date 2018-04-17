@@ -189,6 +189,84 @@ little bit of work each day.”</p>
   <iframe class="preview-video" frameborder="0" allow="encrpyted-media" src="https://www.youtube.com/embed/rA9pZwDn6mU"></iframe>
   
 </div>
+<script>
+  $(document).ready(function() {
+	$('#hamburger').click(function() {
+		$(this).toggleClass('open');
+	})
+
+
+	// Find Elements
+	const previewBtn = document.querySelector(".preview-btn")
+	const body = document.querySelector("body")
+	const loginModal = document.querySelector(".login-modal-ctr")
+	const signUp = document.querySelector("nav .primary-red")
+	const videoPreview = document.querySelector(".preview-video-ctr")
+	// Create & Mutate Elements
+	const overlay = document.createElement("div")
+	overlay.className = "hidden overlay"
+	const modal = document.createElement("div")
+	modal.className = "hidden modal"
+
+	//Add Elements to Page
+	body.appendChild(overlay)
+	body.appendChild(modal)
+
+	// Event Functions
+
+
+	const overlayToggle = () => {
+		overlay.classList.toggle("hidden")
+	}
+	const modalToggle = () => {
+		modal.innerHTML = ""
+		modal.classList.toggle("hidden")
+	}
+	const modalOverlayToggle = () => {
+		overlay.classList.toggle("hidden")
+		modal.innerHTML = ""
+		modal.classList.toggle("hidden")
+	}
+
+	const modalChildClassToggle = (className) => {
+		const ele = document.querySelector("." + className)
+		ele.classList.toggle("hidden")
+	}
+
+	const renderVideoPreviewModal = () => {
+		videoPreview.classList.toggle("hidden")
+		overlay.setAttribute('data', 'preview-video-ctr')
+		modal.appendChild(videoPreview)
+	}
+
+	const renderLoginModal = () => {
+		loginModal.classList.toggle("hidden")
+		overlay.setAttribute('data', 'login-modal-ctr')
+		modal.appendChild(loginModal)
+	}
+
+	// Attach Event Listeners
+
+	signUp.addEventListener("click", (e) => {
+		e.preventDefault()
+		modalOverlayToggle()
+		renderLoginModal()
+
+	})
+	previewBtn.addEventListener("click", () => {
+		modalOverlayToggle()
+		renderVideoPreviewModal()
+	})
+
+	overlay.addEventListener("click", (e) => {
+		const className = e.target.getAttribute("data")
+		modalChildClassToggle(className)
+		modalOverlayToggle()
+		overlay.setAttribute("data", "")
+	})
+
+})
+</script>
 
 
 <!--TODO 

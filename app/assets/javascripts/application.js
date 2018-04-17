@@ -16,7 +16,7 @@
 //= require_tree .
 
 
-
+/*
 $(document).ready(function() {
 	$('#hamburger').click(function() {
 		$(this).toggleClass('open');
@@ -93,3 +93,4 @@ $(document).ready(function() {
 	})
 
 })
+*/

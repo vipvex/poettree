@@ -1,7 +1,7 @@
 <div class="lesson-progress-ctr">
   <div class="lesson-progress-description">
     <h3><%= @lesson_group.title %></h3>
-    <p><%#= current_user.lesson_completeds.in_lesson_group(@lesson_group).count %><%#= @lesson_group.lessons.count %>3/4 Lessons Completed</p>
+    <p><%#= current_user.lesson_completeds.in_lesson_group(@lesson_group).count %><%#= @lesson_group.lessons.count %><span id="completed-lessons">3</span>/<span id="total-lessons">4</span> Lessons Completed</p>
   </div>
   <div class="progress-bar">
     <div class="progress-bar-fill"></div>  
@@ -59,3 +59,29 @@
   
   <% end %>
 </main>
+<script>
+  $(document).ready(function() {
+    //Find Elements
+    const lessonsComplete = document.getElementById("completed-lessons")
+    const totalLessons = document.getElementById("total-lessons")
+    const progressFill = document.querySelector(".progress-bar-fill")
+    
+    //Convert text for lessons to Integers
+    const lessonsCompleteInt = +(lessonsComplete.innerText)
+    const totalLessonsInt = +(totalLessons.innerText)
+    const convertToStringPercent = (completed, total) => {
+      const decimal = Math.floor((completed / total) * 100)
+      return `${decimal}%`
+    }
+
+    //Define and call function to mutate width of progress bar on load
+    const adjustProgressBarWidth = () => {
+      const percent = convertToStringPercent(lessonsCompleteInt, totalLessonsInt)
+      progressFill.style.width = percent
+      }
+    
+    adjustProgressBarWidth()
+
+    })
+  
+</script>
