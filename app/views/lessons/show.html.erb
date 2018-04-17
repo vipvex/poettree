@@ -1,6 +1,5 @@
-<div class = "ui text container">
-  <h1><%= @lesson_group.title %></h1>
-  <h2><%= current_user.lesson_completeds.in_lesson_group(@lesson_group).count %>/<%= @lesson_group.lessons.count %> Lessons Completed</h2>
+  <h3><%= @lesson_group.title %></h3>
+  <p><%= current_user.lesson_completeds.in_lesson_group(@lesson_group).count %>/<%= @lesson_group.lessons.count %> Lessons Completed</p>
   
   
   <h1><%= @lesson.title %> <%= @lesson.lesson_type %></h1>
@@ -38,4 +37,3 @@
     <% end %>
   
   <% end %>
-</div>
