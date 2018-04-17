@@ -1,0 +1,13 @@
+<svg width="27" height="33" viewBox="0 0 27 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" fill="none">
+<g id="Group 5.1">
+<g id="Rectangle 7.1">
+<rect x="0.5" y="0.5" width="17.5413" height="26.1541" rx="8.77064" transform="translate(4.31641 0.919922)" stroke="#C4C4C4"/>
+</g>
+<g id="Subtract">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M 26.8184 0L 0 0L 0 20.1133L 26.8184 20.1133L 26.8184 0ZM 13.4102 12.2246C 15.3867 12.2246 16.9902 10.6211 16.9902 8.64453C 16.9902 6.66797 15.3867 5.06445 13.4102 5.06445C 12.0059 5.06445 10.7891 5.875 10.2031 7.05469C 9.96484 7.5332 9.83008 8.07227 9.83008 8.64453C 9.83008 9.87109 10.4473 10.9531 11.3887 11.5996C 11.9629 11.9941 12.6602 12.2246 13.4102 12.2246Z" transform="translate(0.177734 12.6523)" fill="#C4C4C4"/>
+</g>
+</g>
+</g>
+</svg>
+

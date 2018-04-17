@@ -46,6 +46,48 @@ $pale-green: #C2EDD4;
   background-color: #42FF63;
 }
 
+//// VIDEO LESSON ////
+
+//// LESSON NAVIGATION ////
+
+.lesson-nav {
+  display: flex;
+  padding: 25px 10px;
+}
+.lesson-nav a {
+  margin-left: 30px;
+  margin-top: 5px;
+  align-self: center;
+  font-size: 16px;
+}
+
+.lesson-nav .current-lesson {
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.lesson-play-icon,
+.lesson-completed-icon, 
+.lesson-locked-icon {
+  height: 30px;
+  width: 30px;
+}
+
+.lesson-completed-icon,
+.lesson-locked-icon {
+  margin-left: auto;
+  margin-right: 25px;
+}
+
+.lesson-nav-top, 
+.lesson-nav-mid {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.lesson-nav-locked a {
+  color: #C4C4C4;
+}
+
 @media screen and (min-width: 800px) {
   .lesson-progress-ctr {
     flex-direction: row;
@@ -59,5 +101,13 @@ $pale-green: #C2EDD4;
   .lesson-progress-description h3,
   .lesson-progress-description p {
     margin: 0;
+  }
+  
+  //// LESSON NAVIGATION ////
+  .lesson-nav a {
+  font-size: 18px;
+  }
+  .lesson-nav .current-lesson {
+  font-size: 14px;
   }
 }

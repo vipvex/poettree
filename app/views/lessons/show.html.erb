@@ -1,5 +1,13 @@
-  <h3><%= @lesson_group.title %></h3>
-  <p><%= current_user.lesson_completeds.in_lesson_group(@lesson_group).count %>/<%= @lesson_group.lessons.count %> Lessons Completed</p>
+<div class="lesson-progress-ctr">
+  <div class="lesson-progress-description">
+    <h3><%= @lesson_group.title %></h3>
+    <p><%= current_user.lesson_completeds.in_lesson_group(@lesson_group).count %>/<%= @lesson_group.lessons.count %> Lessons Completed</p>
+  </div>
+  <div class="progress-bar">
+    <div class="progress-bar-fill"></div>  
+</div>
+</div>
+
   
   
   <h1><%= @lesson.title %> <%= @lesson.lesson_type %></h1>
@@ -32,8 +40,8 @@
     <%= link_to [@lesson_group, l] do |a| %>
 
       <h4><%= l.title %> <%= '(current lesson)' if l == @lesson %> </h4>
-      <%= image_tag l.video? ? 'video.png' : 'assignment.png' %>
-      <%= image_tag 'star.png' if l.completed_by?(current_user) %>
+      <%= image_tag l.video? ? 'lesson-video.svg' : 'assignment.svg' %>
+      <%= image_tag 'star.svg' if l.completed_by?(current_user) %>
     <% end %>
   
   <% end %>
