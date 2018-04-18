@@ -75,7 +75,7 @@
       return `${decimal}%`
     }
 
-    //Define and call function to mutate width of progress bar on load
+    //Define and call function to mutate width of progress bar on doc load
     const adjustProgressBarWidth = () => {
       const percent = convertToStringPercent(lessonsCompleteInt, totalLessonsInt)
       progressFill.style.width = percent

@@ -13,7 +13,7 @@ h3,
 .card-step {
   font-family: 'Love Ya Like A Sister', cursive; }
 
-nav a {
+.logged-out-nav a {
   font-family: 'Crimson Text', serif; }
 
 .disclaimer {
@@ -31,7 +31,7 @@ nav a {
   font-size: 20px; }
 
 /** NAVIGATION **/
-nav {
+.logged-out-nav {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -41,7 +41,7 @@ nav {
   height: 10px;
   background: linear-gradient(90deg, #2F7A4D, #2EC746); }
 
-nav a:nth-child(n + 2) {
+.logged-out-nav a:nth-child(n + 2) {
   display: none; }
 
 #hamburger {
@@ -158,7 +158,7 @@ quote {
     font-size: 22px; }
 
   p,
-  nav a {
+  .logged-out-nav a {
     font-size: 16px; }
 
   quote {
@@ -184,11 +184,11 @@ quote {
     font-weight: normal; }
 
   /** NAVIGATION **/
-  nav {
+  .logged-out-nav {
     height: 90px;
     padding: 20px; }
 
-  nav a:nth-child(n+2) {
+  .logged-out-nav a:nth-child(n+2) {
     display: inline;
     margin-right: 40px; }
 

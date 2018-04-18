@@ -44,7 +44,7 @@ h3,
     font-family: 'Love Ya Like A Sister', cursive;
 }
 
-nav a {
+.logged-out-nav a {
     font-family: 'Crimson Text', serif;
 }
 
@@ -90,7 +90,7 @@ h2 {
 
 /** NAVIGATION **/
 
-nav {
+.logged-out-nav {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -102,7 +102,7 @@ nav {
     background: linear-gradient(90deg, $dark-green, $light-green);
 }
 
-nav a:nth-child(n + 2) {
+.logged-out-nav a:nth-child(n + 2) {
     display: none;
 }
 
@@ -686,7 +686,7 @@ footer p {
     }
 
     p,
-    nav a {
+    .logged-out-nav a {
         font-size: 16px;
     }
 
@@ -747,12 +747,12 @@ footer p {
     }
 
     /** NAVIGATION **/
-    nav {
+    .logged-out-nav {
         height: 90px;
         padding: 20px;
     }
 
-    nav a:nth-child(n+2) {
+    .logged-out-nav a:nth-child(n+2) {
         display: inline;
         margin-right: 40px;
     }

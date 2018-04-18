@@ -125,6 +125,20 @@ p {
     font-size: 22px;
 }
 
+// GLOBAL NAVIGATION //
+.logged-in-nav {
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logged-in-nav a:nth-child(n+2) {
+    display: inline;
+    margin-right: 20px;
+}
+
 // LESSONS //
 //// PROGRESS CTR ////
 .lesson-progress-ctr {
@@ -425,5 +439,16 @@ p {
     }
     .lesson-nav .current-lesson {
         font-size: 14px;
+    } // GLOBAL NAVIGATION //
+    .logged-in-nav {
+        height: 90px;
+        padding: 20px;
     }
+    .logged-in-nav a:nth-child(n+2) {
+        margin-right: 40px;
+    }
+    .logged-in-nav a {
+        font-family: 'Crimson Text', serif;
+    }
+
 }
