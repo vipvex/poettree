@@ -47,7 +47,7 @@ class User < ActiveRecord::Base
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       # Might break stuff
-      user.first_name = auth.info.try(:name)
+      #user.first_name = auth.info.try(:name)
     end
   end
   
