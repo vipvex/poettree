@@ -162,7 +162,7 @@ little bit of work each day.”</p>
         Login with Facebook
       <% end %>
       
-      <%- if devise_mapping.omniauthable? %>
+      <%- if devise_mapping.omniauthable? && Rails.env.development? %>
         <ul class="image-list signin-icons">
           <%- resource_class.omniauth_providers.each do |provider| %>
             <li><%= link_to omniauth_authorize_path(resource_name, provider), :title => "Sign in with #{provider.to_s.titleize}" do %>
