@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   end
   
   def next_lesson_with_group
-    return dashboard_path if next_lesson == '#'
+    return '/dashboard' if next_lesson == '#'
     nl = next_lesson
     return [nl.lesson_group, nl]
   end
