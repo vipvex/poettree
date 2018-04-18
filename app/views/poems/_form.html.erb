@@ -1,4 +1,4 @@
-<%= form_with(model: poem, local: true) do |form| %>
+<%= form_with(model: poem, remote: true, html: { id: 'poem_form' }) do |form| %>
   <% if poem.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(poem.errors.count, "error") %> prohibited this poem from being saved:</h2>
@@ -19,8 +19,7 @@
     <%= form.text_area :body, id: :poem_body, placeholder: "Type your poem in here and click the save button to save your work*" %>
   </div>
 
-  <!--TODO UNCOMMENT BEFORE PRODUCTION, COMMENTED OUT HIDDEN FIELD TO TEST UI -->
-  <%#= form.hidden_field :user_id, id: :poem_user_id, value: current_user.id %>
+  <%= form.hidden_field :user_id, id: :poem_user_id, value: current_user.id %>
 
   <div class="field">
     <%= form.text_field :image_url, id: :poem_image_url, placeholder: "Enter a URL for your Image (optional)" %>
@@ -38,3 +37,9 @@
       </div>
 
 <% end %>
+
+<script>
+  
+  $("#poem_form").bind('ajax:complete', function(xhr, status) { $("#poem_form").html("<h3>Thank you! Your poem was saved.</h3>") });
+  
+</script>

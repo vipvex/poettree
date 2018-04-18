@@ -1,8 +1,9 @@
 <%= render 'nav' %> 
+
 <div class="lesson-progress-ctr">
   <div class="lesson-progress-description">
     <h3><%= @lesson_group.title %></h3>
-    <p><%#= current_user.lesson_completeds.in_lesson_group(@lesson_group).count %><%#= @lesson_group.lessons.count %><span id="completed-lessons">3</span>/<span id="total-lessons">4</span> Lessons Completed</p>
+    <p><span id="completed-lessons"><%= current_user.lesson_completeds.in_lesson_group(@lesson_group).count %></span>/<span id="total-lessons"><%= @lesson_group.lessons.count %></span> Lessons Completed</p>
   </div>
   <div class="progress-bar">
     <div class="progress-bar-fill"></div>  
@@ -13,8 +14,8 @@
 <main class="lesson-body">
   <div class="lesson-header">
     <h1><%= @lesson.title %> <span class="lesson-type"><%= @lesson.lesson_type.titleize %></span></h1>
-      <%= link_to complete_lesson_group_lesson_path, method: :post do %>
-        <a class="next-lesson-btn">Next Lesson</a>
+      <%= link_to complete_lesson_group_lesson_path, method: :post, class: 'next-lesson-btn' do %>
+        Next Lesson
       <% end %>
     
   </div>
@@ -53,8 +54,8 @@
        <div class="lesson-nav lesson-nav-top">
        <%= image_tag l.video? ? 'lesson-video.svg' : 'assignment.svg', class:'lesson-play-icon' %>
        <a><%= l.title %> <%= '(current lesson)' if l == @lesson %> </a>
-       <%= image_tag 'star.svg', class:"lesson-completed-icon" %>
-      <%#= image_tag 'star.svg' if l.completed_by?(current_user) %>
+       <%= image_tag 'star.svg', class:"lesson-completed-icon" if l.completed_by?(current_user) %>
+      <%#= image_tag 'star.svg'  %>
       </div>
     <% end %>
   
