@@ -13,6 +13,12 @@
       <span></span>
     </div>
 </nav>
+<div class="ctr-margin mobile-nav-box hidden">
+  <a href="#">Donate</a>
+  <a href="/about_us">About Us</a>
+  <a href="#">Login</a>
+  <a href="#">Sign Up</a>
+</div>
 <div class="mission">
     <div class="about-us-ctr">
         <h2>Our Mission</h2>
@@ -78,6 +84,7 @@ While writing her books, Cassidy realized how much fun it was to write. But she 
    $(document).ready(function() {
 	$('#hamburger').click(function() {
 		$(this).toggleClass('open');
+		$('.mobile-nav-box').toggleClass('hidden')
 	})
 
 

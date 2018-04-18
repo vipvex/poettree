@@ -55,7 +55,6 @@
        <%= image_tag l.video? ? 'lesson-video.svg' : 'assignment.svg', class:'lesson-play-icon' %>
        <a><%= l.title %> <%= '(current lesson)' if l == @lesson %> </a>
        <%= image_tag 'star.svg', class:"lesson-completed-icon" if l.completed_by?(current_user) %>
-      <%#= image_tag 'star.svg'  %>
       </div>
     <% end %>
   

@@ -13,6 +13,12 @@
       <span></span>
     </div>
 </nav>
+<div class="ctr-margin mobile-nav-box hidden">
+  <a href="#">Donate</a>
+  <a href="/about_us">About Us</a>
+  <a href="#">Login</a>
+  <a href="#">Sign Up</a>
+</div>
 <div class="nav-divider"></div>
 <div class="hero">
   <div class="hero-heading-ctr">
@@ -193,8 +199,10 @@ little bit of work each day.”</p>
 </div>
 <script>
   $(document).ready(function() {
+    
 	$('#hamburger').click(function() {
 		$(this).toggleClass('open');
+		$('.mobile-nav-box').toggleClass('hidden')
 	})
 
 

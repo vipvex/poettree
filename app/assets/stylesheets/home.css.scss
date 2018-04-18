@@ -89,6 +89,25 @@ h2 {
 }
 
 /** NAVIGATION **/
+.mobile-nav-box {
+    
+}
+
+.mobile-nav-box a {
+    font-size: 22px;
+    font-family: 'Love Ya Like A Sister', cursive;
+    display: block;
+    margin-top: 15px;
+    color: $dark-green;
+}
+
+.mobile-nav-box a:first-child {
+    margin-top: 0;
+}
+
+.mobile-nav-box a:last-child {
+    margin-bottom: 15px;
+}
 
 .logged-out-nav {
     display: flex;
