@@ -1,3 +1,4 @@
+<%= render 'lessons/nav' %>
 
 <!-- DIASBLED NEXT LESSON BUTTON TO PREVIEW DASHBOARD -->
 <%= link_to current_user.next_lesson_with_group do %>
@@ -31,13 +32,16 @@
     
     <h1>Your lessons</h1>
     
-    <div class="lessons-ctr">
-      
-      <% @lesson_groups.each do |lg| %>
-
+    <% index = 0 %>
+    <% @lesson_groups.each_with_index do |lg, i| %>
+    
+      <% if index == 0 %>
+        <div class="lessons-ctr">
+      <% end %>
+  
         <% locked = lg.locked_for?(current_user) %>
         <% locked_class = locked ? 'locked' : 'unlocked' %>
-
+  
         <div class="lesson-card"> 
         
           <div class="header <%= locked_class %>">
@@ -62,8 +66,13 @@
           </div>
         </div>
         
+      <% index += 1 %>
+      <% if index == 3 %>
+        <% index = 0 %>
+        </div>
       <% end %>
-    </div>
+      
+      <% end %>
 
   </div>
   
