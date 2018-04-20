@@ -13,6 +13,12 @@
   <div class="poettree-icon-btn poettree-search-btn">
     <%= image_tag('search-icon.svg', class:'poettree-search-icon') %>
   </div>
+  <div class="poettree-icon-btn poettree-info-btn">
+    <%= image_tag('search-icon.svg', class:'poettree-search-icon') %>
+  </div>
+  <div class="poettree-icon-btn poettree-my-poems-btn">
+    <%= image_tag('my-poems-icon.svg', class:'poettree-my-poems-icon') %>
+  </div>
   <%= form_for poems_path, method: :get do |f| %>
 
   <%= text_field_tag :search, params[:search] %>

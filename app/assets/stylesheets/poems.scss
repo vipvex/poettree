@@ -37,10 +37,12 @@ $author-profile-green: #A7DB72;
     cursor: pointer;
 }
 
-.poettree-search-icon {
+.poettree-search-icon,
+.poettree-my-poems-icon {
     height: 20px;
     width: 20px;
 }
+
 .poettree-search-btn {
     z-index: 1;
     background-color: $main-red;
@@ -52,12 +54,17 @@ $author-profile-green: #A7DB72;
 .poettree-info-btn {
     z-index: 2;
     background-color: #FFF;
-
+    position: absolute;
+    left: 1.5%;
+    bottom: 3.5%;
 }
 
 .poettree-my-poems-btn {
     z-index: 3;
-    background-color: #FFF
+    background-color: #FFF;
+    position: absolute;
+    right: 1.5%;
+    bottom: 3.5%;
 }
 
 /*===
@@ -69,8 +76,7 @@ $author-profile-green: #A7DB72;
 @media screen and (min-width: 800px) {
 
 
-    .poettree-icon-btn {
-    }
+    .poettree-icon-btn {}
 
 
 }
