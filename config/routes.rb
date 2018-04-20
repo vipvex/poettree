@@ -10,10 +10,10 @@ Rails.application.routes.draw do
     end
   end
   
+  get '/poettree' => 'poems#index'
+
   
   resources :poems do
-  
-    get '/poettree' => 'index#poems'
   
     collection do
       get :search

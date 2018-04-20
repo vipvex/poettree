@@ -24,7 +24,7 @@
   
   <% if @lesson.video? %>
     
-    <iframe src="https://www.youtube.com/embed/<%=@lesson.video_link%>" frameborder="0" allow="autoplay; encrypted-media" class="video-lesson" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/<%=@lesson.video_link%>" frameborder="0" allow="autoplay; encrypted-media" class="video-lesson" style="width: 100%; min-height: 500px;" allowfullscreen></iframe>
     
     <h2>Resources<h2/>
     <p><%= @lesson.content %></p>
