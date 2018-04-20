@@ -34,6 +34,9 @@ Rails.application.routes.draw do
   get 'about_us', to: 'static_pages#about_us'
   get 'dashboard', to: 'static_pages#dashboard', as: :dashboard
 
+  get 'tos', to: 'static_pages#tos'
+  get 'privacy', to: 'static_pages#privacy'
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

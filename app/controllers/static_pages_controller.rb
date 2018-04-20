@@ -8,4 +8,12 @@ class StaticPagesController < ApplicationController
   def dashboard
     @lesson_groups = LessonGroup.includes(:lessons)
   end
+  
+  def tos
+  
+  end
+  
+  def privacy
+    
+  end
 end
