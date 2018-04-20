@@ -7,7 +7,7 @@
         <li><%= link_to omniauth_authorize_path(resource_name, provider), :title => "Sign in with #{provider.to_s.titleize}" do %>
           <%#= image_tag "oauth_#{provider}.png", :alt => "Sign in with #{provider.to_s.titleize}" %>
           <%= provider.to_s.titleize %>
-          <% end -%>
+          <% end %>
         </li>
       <% end %>
     </ul>
