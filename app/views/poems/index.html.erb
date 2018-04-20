@@ -1,21 +1,35 @@
+<nav class="ctr-margin logged-in-nav poettree-nav">
+    <%= link_to dashboard_url do %>
+      <p class="logo">iPoetTree</p>
+    <% end %>
+    <%= link_to 'Lessons', dashboard_url %>
+    <!--<a href="#">PoetTree</a> -->
+    <a href="#">Account Stuff</a>
+</nav>
+
 <p id="notice"><%= notice %></p>
 
-<h1>Poems</h1>
-
-<%= form_for poems_path, method: :get do |f| %>
+<main class="poettree-bg">
+  <div class="poettree-icon-btn poettree-search-btn">
+    <%= image_tag('search-icon.svg', class:'poettree-search-icon') %>
+  </div>
+  <%= form_for poems_path, method: :get do |f| %>
 
   <%= text_field_tag :search, params[:search] %>
   <%= f.submit 'Search' %>
 
-<% end %>
+  <% end %>
+  
+  <% @poems.each do |poem| %>
+    <h3><%= poem.title %></h3>
+    <h3><%= poem.user.name %></h3>
+  <% end %>
 
-<% @poems.each do |poem| %>
-  <h3><%= poem.title %></h3>
-  <h3><%= poem.user.name %></h3>
-<% end %>
+  <%= paginate @poems %>
 
-<%= paginate @poems %>
+  <br>
 
-<br>
+  <%= link_to 'New Poem', new_poem_path %>
 
-<%= link_to 'New Poem', new_poem_path %>
+</main>
+
