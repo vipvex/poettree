@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
   end
 
   def self.from_omniauth(auth)
-    puts "\n#{auth}\n"
+    puts "AUTH:\n#{auth}\n"
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
       # Might break stuff

@@ -4,5 +4,6 @@
     <% end %>
     <%= link_to 'Lessons', dashboard_url %>
     <!--<a href="#">PoetTree</a> -->
-    <a href="#">Account Stuff</a>
+    <a href="#"><%= current_user.email %></a>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
 </nav>
