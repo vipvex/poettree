@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   
   resources :poems do
   
+    get '/poettree' => 'index#poems'
+  
     collection do
       get :search
     end
