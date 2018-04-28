@@ -66,6 +66,27 @@ $author-profile-green: #A7DB72;
     right: 1.5%;
     bottom: 3.5%;
 }
+.poettree-ctr {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.poettree-trunk {
+    width: 200px;
+    height: 95%;
+    background-color: #5E3B22;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.poettree-hole {
+    border-radius: 50%;
+    height: 95px;
+    width: 90px;
+    background-color: #C49B7E;
+    border: 9px solid #855B3D;
+}
 
 /*===
 
