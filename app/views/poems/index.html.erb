@@ -1,17 +1,13 @@
-<nav class="ctr-margin logged-in-nav poettree-nav">
-    <%= link_to dashboard_url do %>
-      <p class="logo">iPoetTree</p>
-    <% end %>
-    <%= link_to 'Lessons', dashboard_url %>
-    <!--<a href="#">PoetTree</a> -->
-    <a href="#">Account Stuff</a>
-</nav>
+<%= render 'lessons/nav' %>
 
 <p id="notice"><%= notice %></p>
 
 <main class="poettree-bg">
   <div class="poettree-ctr">
     <div class="poettree-trunk">
+      
+      <p class="branch branch-1 branch-left"><%= @poems[0].title %></p>
+      <p class="branch branch-1 branch-left"><%= @poems[0].user.name %></p>
       <%= image_tag('left-branch.svg', class:'branch branch-1 branch-left') %>
       <%= image_tag('leaves.svg', class:'leaf leaf-1 leaf-left') %>
       <%= image_tag('right-branch.svg', class:'branch branch-2 branch-right') %>
@@ -20,12 +16,31 @@
       <%= image_tag('leaves.svg', class:'leaf leaf-3 leaf-left') %>
       <%= image_tag('right-branch.svg', class:'branch branch-4 branch-right') %>
       <%= image_tag('leaves.svg', class:'leaf leaf-4 leaf-right') %>
+      <!-- COMMENTED OUT DYNAMIC POEM RENDERING -->
+<!--      <p class="branch branch-2 branch-right"><%= @poems[1].title %></p>
+      <p class="branch branch-2 branch-right"><%= @poems[1].user.name %></p>
+      <%#= image_tag('right-branch.svg', class:'branch branch-2 branch-right') %>
+      
+      <p class="branch branch-3 branch-left"><%= @poems[2].title %></p>
+      <p class="branch branch-3 branch-left"><%= @poems[2].user.name %></p>
+      <%#= image_tag('left-branch.svg', class:'branch branch-3 branch-left') %>
+      
+      <p class="branch branch-4 branch-right"><%= @poems[3].title %></p>
+      <p class="branch branch-4 branch-right"><%= @poems[3].user.name %></p>
+      <%#= image_tag('right-branch.svg', class:'branch branch-4 branch-right') %>
+      
+      <p class="branch branch-5 branch-left"><%= @poems[4].title %></p>
+      <p class="branch branch-5 branch-left"><%= @poems[4].user.name %></p>-->
       <%= image_tag('left-branch.svg', class:'branch branch-5 branch-left') %>
       <%= image_tag('leaves.svg', class:'leaf leaf-5 leaf-left') %>
 
       <div class="poettree-hole"></div>
+      
     </div>
   </div>
+
+  <%= paginate @poems %>
+
   <div class="poettree-icon-btn poettree-search-btn">
     <%= image_tag('search-icon.svg', class:'poettree-search-icon') %>
   </div>
@@ -41,17 +56,6 @@
   <%= f.submit 'Search' %>
 
   <% end %>
-  
-  <% @poems.each do |poem| %>
-    <h3><%= poem.title %></h3>
-    <h3><%= poem.user.name %></h3>
-  <% end %>
-
-  <%= paginate @poems %>
-
-  <br>
-
-  <%= link_to 'New Poem', new_poem_path %>
 
 </main>
 
