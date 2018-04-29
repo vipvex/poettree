@@ -66,11 +66,13 @@ $author-profile-green: #A7DB72;
     right: 1.5%;
     bottom: 3.5%;
 }
+
 .poettree-ctr {
     height: 100%;
     display: flex;
     justify-content: center;
 }
+
 .poettree-trunk {
     width: 200px;
     height: 95%;
@@ -93,27 +95,68 @@ $author-profile-green: #A7DB72;
 .branch {
     position: absolute;
 }
+
 .branch-1 {
     top: 15%;
 }
+
 .branch-2 {
     top: 30%;
 }
+
 .branch-3 {
     top: 45%;
 }
+
 .branch-4 {
     top: 60%;
 }
+
 .branch-5 {
     top: 75%;
 }
+
 .branch-left {
     left: -45%;
 }
+
 .branch-right {
     right: -45%;
 }
+
+.leaf {
+    position: absolute;
+    width: 255px;
+}
+
+.leaf-1 {
+    top: 1%;
+}
+
+.leaf-2 {
+    top: 15%;
+}
+
+.leaf-3 {
+    top: 29%;
+}
+
+.leaf-4 {
+    top: 44%;
+}
+
+.leaf-5 {
+    top: 60%;
+}
+
+.leaf-left {
+    left: -88%;
+}
+
+.leaf-right {
+    right: -88%;
+}
+
 /*===
 
     BEGIN DESKTOP STYLES
