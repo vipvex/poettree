@@ -109,15 +109,19 @@ $author-profile-green: #A7DB72;
 .leaf-branch-ctr-1 {
     top: 20%;
 }
+
 .leaf-branch-ctr-2 {
     top: 35%;
 }
+
 .leaf-branch-ctr-3 {
     top: 47%;
 }
+
 .leaf-branch-ctr-4 {
     top: 62%;
 }
+
 .leaf-branch-ctr-5 {
     top: 75%;
 }
@@ -135,9 +139,7 @@ $author-profile-green: #A7DB72;
     top: -3%;
 }
 
-.branch-1 {
-
-}
+.branch-1 {}
 
 .branch-2 {
     top: 30%;
@@ -191,12 +193,37 @@ $author-profile-green: #A7DB72;
 }
 
 /* Don't ask me why I'm not using leaf-left but I am using leaf-right */
+
 /*.leaf-left {
     left: -88%;
 }*/
 
 .leaf-right {
     left: 28%;
+}
+
+.poem-details-ctr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -28%;
+    width: 250px;
+    height: 150px;
+}
+
+.poettree-poem-title,
+.poettree-poem-author {
+    color: #FFF;
+    position: absolute;
+}
+
+.poettree-poem-title {
+}
+
+.poettree-poem-author {
+    top: 15%;
 }
 
 /*===
