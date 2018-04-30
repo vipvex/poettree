@@ -73,6 +73,14 @@
   <% end %>
 
 </main>
+<div class="poettree-search-modal hidden">
+  <h2>Search for Poems</h2>
+  <div class="poettree-search-bar">
+    <input class="poettree-search-bar-input" type="search" placeholder="Enter an author, a title, or words from a poem">
+    <a class="poettree-search-bar-btn" href="#">Search</a>
+  </div>
+</div>
+
 <script>
   $(document).ready(function() {
     
@@ -81,6 +89,7 @@
   const search = document.getElementById("search")
   const info = document.getElementById("info")
   const myPoems = document.getElementById("myPoems")
+  const searchModal = document.querySelector(".poettree-search-modal")
   const btns = [search, info, myPoems]
 	// Create & Mutate Elements
 	const overlay = document.createElement("div")
@@ -105,14 +114,20 @@
 		modal.classList.toggle("hidden")
 	}
 	
+	const searchModalToggle = () => {
+    searchModal.classList.toggle("hidden")
+	}
+	
 	//Attach Events
 	btns.map((ele) => {
-	  ele.addEventListener("click", modalOverlayToggle)
+	  ele.addEventListener("click", overlayToggle)
 	})
+	
+	search.addEventListener("click", searchModalToggle)
 	
 	overlay.addEventListener("click", (e) => {
 		const className = e.target.getAttribute("data")
-		modalOverlayToggle()
+		modalToggle()
 	})
 })
 </script>
