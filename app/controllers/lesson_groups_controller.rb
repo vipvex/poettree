@@ -24,7 +24,11 @@ class LessonGroupsController < ApplicationController
   # POST /lesson_groups
   # POST /lesson_groups.json
   def create
+        photo.save
+
+    
     @lesson_group = LessonGroup.new(lesson_group_params)
+
 
     respond_to do |format|
       if @lesson_group.save
@@ -69,6 +73,6 @@ class LessonGroupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_group_params
-      params.require(:lesson_group).permit(:title, :order)
+      params.require(:lesson_group).permit(:title, :order, :photo)
     end
 end

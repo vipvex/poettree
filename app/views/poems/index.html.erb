@@ -5,34 +5,55 @@
 <main class="poettree-bg">
   <div class="poettree-ctr">
     <div class="poettree-trunk">
-            <!-- COMMENTED OUT DYNAMIC POEM RENDERING -->
 
-<!--      <p class="branch branch-1 branch-left"><%#= @poems[0].title %></p>
-      <p class="branch branch-1 branch-left"><%#= @poems[0].user.name %></p>-->
       <div class="leaf-branch-ctr-1 leaf-branch-ctr-left leaf-branch-ctr">
           <%= image_tag('left-branch.svg', class:'branch branch-left') %>
           <%= image_tag('leaves.svg', class:'leaf') %>
           <div class="poem-details-ctr">
+<<<<<<< HEAD
+            <p class="poettree-poem-title"> <%= @poems[0].title %></p>
+            <p class="poettree-poem-author"><%= @poems[0].user.email.split('@')[0] %></p>            
+=======
             <p class="poettree-poem-author">I'm an author bro</p>
             <p class="poettree-poem-title">Hey I'm a title whats up</p>            
+>>>>>>> a5b6e40ffb6ab168ae9d2773d3d74939121a5cbe
           </div>
       </div>
       <div class="leaf-branch-ctr-2 leaf-branch-ctr-right leaf-branch-ctr">
           <%= image_tag('right-branch.svg', class:'branch branch-right') %>
           <%= image_tag('leaves.svg', class:'leaf leaf-right') %>
+           <div class="poem-details-ctr">
+            <p class="poettree-poem-title"> <%= @poems[1].title %></p>
+            <p class="poettree-poem-author"><%= @poems[1].user.email.split('@')[0] %></p>            
+          </div>
       </div>
       <div class="leaf-branch-ctr-3 leaf-branch-ctr-left leaf-branch-ctr">
           <%= image_tag('left-branch.svg', class:'branch branch-left') %>
           <%= image_tag('leaves.svg', class:'leaf') %>
+           <div class="poem-details-ctr">
+            <p class="poettree-poem-title"> <%= @poems[2].title %></p>
+            <p class="poettree-poem-author"><%= @poems[2].user.email.split('@')[0] %></p>            
+          </div>
       </div>
       <div class="leaf-branch-ctr-4 leaf-branch-ctr-right leaf-branch-ctr">
           <%= image_tag('right-branch.svg', class:'branch branch-right') %>
           <%= image_tag('leaves.svg', class:'leaf leaf-right') %>
+           <div class="poem-details-ctr">
+            <p class="poettree-poem-title"> <%= @poems[3].title %></p>
+            <p class="poettree-poem-author"><%= @poems[3].user.email.split('@')[0] %></p>            
+          </div>
       </div>      
       <div class="leaf-branch-ctr-5 leaf-branch-ctr-left leaf-branch-ctr">
           <%= image_tag('left-branch.svg', class:'branch branch-left') %>
           <%= image_tag('leaves.svg', class:'leaf') %>
+           <div class="poem-details-ctr">
+            <p class="poettree-poem-title"> <%= @poems[4].title %></p>
+            <p class="poettree-poem-author"><%= @poems[4].user.email.split('@')[0] %></p>            
+          </div>
       </div>
+<<<<<<< HEAD
+
+=======
       
 <!--      <p class="branch branch-2 branch-right"><%#= @poems[1].title %></p>
       <p class="branch branch-2 branch-right"><%#= @poems[1].user.name %></p>
@@ -48,6 +69,7 @@
       
       <p class="branch branch-5 branch-left"><%#= @poems[4].title %></p>
       <p class="branch branch-5 branch-left"><%#= @poems[4].user.name %></p>-->
+>>>>>>> a5b6e40ffb6ab168ae9d2773d3d74939121a5cbe
 
       <div class="poettree-hole"></div>
       
