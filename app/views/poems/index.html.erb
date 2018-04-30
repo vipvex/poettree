@@ -9,14 +9,34 @@
 
 <!--      <p class="branch branch-1 branch-left"><%#= @poems[0].title %></p>
       <p class="branch branch-1 branch-left"><%#= @poems[0].user.name %></p>-->
-      <%= image_tag('left-branch.svg', class:'branch branch-1 branch-left') %>
-      <%= image_tag('leaves.svg', class:'leaf leaf-1 leaf-left') %>
-      <%= image_tag('right-branch.svg', class:'branch branch-2 branch-right') %>
-      <%= image_tag('leaves.svg', class:'leaf leaf-2 leaf-right') %>
-      <%= image_tag('left-branch.svg', class:'branch branch-3 branch-left') %>
-      <%= image_tag('leaves.svg', class:'leaf leaf-3 leaf-left') %>
-      <%= image_tag('right-branch.svg', class:'branch branch-4 branch-right') %>
-      <%= image_tag('leaves.svg', class:'leaf leaf-4 leaf-right') %>
+      <div class="leaf-branch-ctr-1 leaf-branch-ctr-left leaf-branch-ctr">
+          <%= image_tag('left-branch.svg', class:'branch branch-left') %>
+          <%= image_tag('leaves.svg', class:'leaf') %>
+      </div>
+      <div class="leaf-branch-ctr-2 leaf-branch-ctr-right leaf-branch-ctr">
+          <%= image_tag('right-branch.svg', class:'branch branch-right') %>
+          <%= image_tag('leaves.svg', class:'leaf leaf-right') %>
+      </div>
+      <div class="leaf-branch-ctr-3 leaf-branch-ctr-left leaf-branch-ctr">
+          <%= image_tag('left-branch.svg', class:'branch branch-left') %>
+          <%= image_tag('leaves.svg', class:'leaf') %>
+      </div>
+      <div class="leaf-branch-ctr-4 leaf-branch-ctr-right leaf-branch-ctr">
+          <%= image_tag('right-branch.svg', class:'branch branch-right') %>
+          <%= image_tag('leaves.svg', class:'leaf leaf-right') %>
+      </div>      
+      <div class="leaf-branch-ctr-5 leaf-branch-ctr-left leaf-branch-ctr">
+          <%= image_tag('left-branch.svg', class:'branch branch-left') %>
+          <%= image_tag('leaves.svg', class:'leaf') %>
+      </div>
+      <%#= image_tag('right-branch.svg', class:'branch branch-2 branch-right') %>
+      <%#= image_tag('leaves.svg', class:'leaf leaf-2 leaf-right') %>
+      <%#= image_tag('left-branch.svg', class:'branch branch-3 branch-left') %>
+      <%#= image_tag('leaves.svg', class:'leaf leaf-3 leaf-left') %>
+      <%#= image_tag('right-branch.svg', class:'branch branch-4 branch-right') %>
+      <%#= image_tag('leaves.svg', class:'leaf leaf-4 leaf-right') %>
+      
+      
 <!--      <p class="branch branch-2 branch-right"><%#= @poems[1].title %></p>
       <p class="branch branch-2 branch-right"><%#= @poems[1].user.name %></p>
       <%#= image_tag('right-branch.svg', class:'branch branch-2 branch-right') %>
@@ -31,8 +51,11 @@
       
       <p class="branch branch-5 branch-left"><%#= @poems[4].title %></p>
       <p class="branch branch-5 branch-left"><%#= @poems[4].user.name %></p>-->
-      <%= image_tag('left-branch.svg', class:'branch branch-5 branch-left') %>
-      <%= image_tag('leaves.svg', class:'leaf leaf-5 leaf-left') %>
+      
+      
+      
+      <%#= image_tag('left-branch.svg', class:'branch branch-5 branch-left') %>
+      <%#= image_tag('leaves.svg', class:'leaf leaf-5 leaf-left') %>
 
       <div class="poettree-hole"></div>
       
