@@ -220,10 +220,24 @@ $author-profile-green: #A7DB72;
 }
 
 .poettree-poem-title {
+    top: 15%;
 }
 
-.poettree-poem-author {
-    top: 15%;
+.poettree-poem-author {}
+
+/* MODAL */
+
+.poettree-modal {
+    background-color: white;
+    max-width: 700px;
+    height: 500px;
+    border-radius: 20px 0 20px 0;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 
 /*===

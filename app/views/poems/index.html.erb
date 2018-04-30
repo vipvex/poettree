@@ -10,8 +10,13 @@
           <%= image_tag('left-branch.svg', class:'branch branch-left') %>
           <%= image_tag('leaves.svg', class:'leaf') %>
           <div class="poem-details-ctr">
+<<<<<<< HEAD
             <p class="poettree-poem-title"> <%= @poems[0].title %></p>
             <p class="poettree-poem-author"><%= @poems[0].user.email.split('@')[0] %></p>            
+=======
+            <p class="poettree-poem-author">I'm an author bro</p>
+            <p class="poettree-poem-title">Hey I'm a title whats up</p>            
+>>>>>>> a5b6e40ffb6ab168ae9d2773d3d74939121a5cbe
           </div>
       </div>
       <div class="leaf-branch-ctr-2 leaf-branch-ctr-right leaf-branch-ctr">
@@ -46,7 +51,25 @@
             <p class="poettree-poem-author"><%= @poems[4].user.email.split('@')[0] %></p>            
           </div>
       </div>
+<<<<<<< HEAD
 
+=======
+      
+<!--      <p class="branch branch-2 branch-right"><%#= @poems[1].title %></p>
+      <p class="branch branch-2 branch-right"><%#= @poems[1].user.name %></p>
+      <%#= image_tag('right-branch.svg', class:'branch branch-2 branch-right') %>
+      
+      <p class="branch branch-3 branch-left"><%#= @poems[2].title %></p>
+      <p class="branch branch-3 branch-left"><%#= @poems[2].user.name %></p>
+      <%#= image_tag('left-branch.svg', class:'branch branch-3 branch-left') %>
+      
+      <p class="branch branch-4 branch-right"><%#= @poems[3].title %></p>
+      <p class="branch branch-4 branch-right"><%#= @poems[3].user.name %></p>
+      <%#= image_tag('right-branch.svg', class:'branch branch-4 branch-right') %>
+      
+      <p class="branch branch-5 branch-left"><%#= @poems[4].title %></p>
+      <p class="branch branch-5 branch-left"><%#= @poems[4].user.name %></p>-->
+>>>>>>> a5b6e40ffb6ab168ae9d2773d3d74939121a5cbe
 
       <div class="poettree-hole"></div>
       
@@ -55,13 +78,13 @@
 
   <%= paginate @poems %>
 
-  <div class="poettree-icon-btn poettree-search-btn">
+  <div id="search" class="poettree-icon-btn poettree-search-btn">
     <%= image_tag('search-icon.svg', class:'poettree-search-icon') %>
   </div>
-  <div class="poettree-icon-btn poettree-info-btn">
+  <div id="info" class="poettree-icon-btn poettree-info-btn">
     <p>?</p>
   </div>
-  <div class="poettree-icon-btn poettree-my-poems-btn">
+  <div id="myPoems" class="poettree-icon-btn poettree-my-poems-btn">
     <%= image_tag('my-poems-icon.svg', class:'poettree-my-poems-icon') %>
   </div>
   <%= form_for poems_path, method: :get do |f| %>
@@ -72,4 +95,46 @@
   <% end %>
 
 </main>
+<script>
+  $(document).ready(function() {
+    
+	// Find Elements
+	const body = document.querySelector("body")
+  const search = document.getElementById("search")
+  const info = document.getElementById("info")
+  const myPoems = document.getElementById("myPoems")
+  const btns = [search, info, myPoems]
+	// Create & Mutate Elements
+	const overlay = document.createElement("div")
+	overlay.className = "hidden overlay"
+	const modal = document.createElement("div")
+	modal.className = "hidden poettree-modal"
 
+	//Add Elements to Page
+	body.appendChild(overlay)
+	body.appendChild(modal)
+
+	// Event Functions
+
+
+	const overlayToggle = () => {
+		overlay.classList.toggle("hidden")
+	}
+	
+	const modalOverlayToggle = () => {
+		overlay.classList.toggle("hidden")
+		modal.innerHTML = ""
+		modal.classList.toggle("hidden")
+	}
+	
+	//Attach Events
+	btns.map((ele) => {
+	  ele.addEventListener("click", modalOverlayToggle)
+	})
+	
+	overlay.addEventListener("click", (e) => {
+		const className = e.target.getAttribute("data")
+		modalOverlayToggle()
+	})
+})
+</script>
