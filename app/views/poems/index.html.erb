@@ -86,7 +86,7 @@
 	const overlay = document.createElement("div")
 	overlay.className = "hidden overlay"
 	const modal = document.createElement("div")
-	modal.className = "hidden modal"
+	modal.className = "hidden poettree-modal"
 
 	//Add Elements to Page
 	body.appendChild(overlay)
@@ -99,9 +99,20 @@
 		overlay.classList.toggle("hidden")
 	}
 	
+	const modalOverlayToggle = () => {
+		overlay.classList.toggle("hidden")
+		modal.innerHTML = ""
+		modal.classList.toggle("hidden")
+	}
+	
 	//Attach Events
 	btns.map((ele) => {
-	  ele.addEventListener("click", overlayToggle)
+	  ele.addEventListener("click", modalOverlayToggle)
+	})
+	
+	overlay.addEventListener("click", (e) => {
+		const className = e.target.getAttribute("data")
+		modalOverlayToggle()
 	})
 })
 </script>
