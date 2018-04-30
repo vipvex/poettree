@@ -94,3 +94,11 @@ $(document).ready(function() {
 
 })
 */
+
+$(document).ready(function() {
+  
+	$('.donate').click(function() {
+	  $("#donate-form").submit();
+	});
+
+});

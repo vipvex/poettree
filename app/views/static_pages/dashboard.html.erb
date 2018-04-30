@@ -53,7 +53,14 @@
           <div class="body">
             
             <div class="course-image-<%= locked_class %>">
-               <%= image_tag(locked ? "course-locked.svg" : "course-default.svg")%>        
+              <% if locked %>
+                <%= image_tag("course-locked.svg") %>       
+              <% elsif lg.photo %>
+               <%= image_tag("https://drive.google.com/uc?export=view&id=#{lg.photo}") %>       
+              <% else %>
+               <%= image_tag("course-default.svg") %>       
+              <% end %>
+               
             </div>
             
             <p class="lessons-complete"><%= "#{lg.completed_lessons_by(current_user).count} / #{lg.lessons.count}" %></p>
