@@ -44,7 +44,7 @@ While writing her books, Cassidy realized how much fun it was to write. But she 
         </ul>
       <% end -%>
       
-      <p>By signing into iPoetTree, you agree to our <a>Terms of Service</a></p>
+      <p>By signing into iPoetTree, you agree to our <a href="/tos">Terms of Service</a></p>
     </div>
     <div class="login-greeting-panel">
       <h2><span class="green-highlight">Grow</span> Your Writing Skills With Us</h2>
@@ -73,6 +73,7 @@ While writing her books, Cassidy realized how much fun it was to write. But she 
 	const body = document.querySelector("body")
 	const loginModal = document.querySelector(".login-modal-ctr")
 	const signUp = document.querySelector("nav .primary-red")
+	const homeLogin = document.getElementById("home-login")
 	// Create & Mutate Elements
 	const overlay = document.createElement("div")
 	overlay.className = "hidden overlay"
@@ -116,6 +117,13 @@ While writing her books, Cassidy realized how much fun it was to write. But she 
 		renderLoginModal()
 
 	})
+	
+	homeLogin.addEventListener("click", (e) => {
+		e.preventDefault()
+		modalOverlayToggle()
+		renderLoginModal()
+	})
+	
 	overlay.addEventListener("click", (e) => {
 		const className = e.target.getAttribute("data")
 		modalChildClassToggle(className)
