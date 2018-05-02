@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
   
   get '/poettree' => 'poems#index'
+  get '/editor' => 'lesson_groups#index'
 
   
   resources :poems do
