@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
+<%= link_to 'Back to Editor', '/editor' %>
 
-<h1>Lessons</h1>
+<h1><%= @lesson_group.title %> - Lessons</h1>
+
 
 <table>
   <thead>
@@ -20,9 +22,9 @@
         <td><%= lesson.content %></td>
         <td><%= lesson.order %></td>
         <td><%= lesson.lesson_type %></td>
-        <td><%#= link_to 'Show', lesson_group_lesson_path(@lesson_group, lesson) %></td>
-        <td><%#= link_to 'Edit', edit_lesson_group_lesson_path([@lesson_group, lesson]) %></td>
-        <td><%#= link_to 'Destroy', [@lesson_group, lesson], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', "/lesson_groups/#{@lesson_group.id}/lessons/#{lesson.id}" %></td>
+        <td><%= link_to 'Edit', "/lesson_groups/#{@lesson_group.id}/lessons/#{lesson.id}/edit" %></td>
+        <td><%= link_to 'Destroy', "/lesson_groups/#{@lesson_group.id}/lessons/#{lesson.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Lesson', new_lesson_group_path %>
+<%= link_to 'New Lesson', "/lesson_groups/#{@lesson_group.id}/lessons/new" %>

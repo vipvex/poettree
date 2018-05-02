@@ -1,10 +1,12 @@
 class LessonGroupsController < ApplicationController
+  layout 'editor'
+  
   before_action :set_lesson_group, only: [:show, :edit, :update, :destroy]
 
   # GET /lesson_groups
   # GET /lesson_groups.json
   def index
-    @lesson_groups = LessonGroup.all
+    @lesson_groups = LessonGroup.all.order(:order)
   end
 
   # GET /lesson_groups/1
@@ -24,7 +26,6 @@ class LessonGroupsController < ApplicationController
   # POST /lesson_groups
   # POST /lesson_groups.json
   def create
-        photo.save
 
     
     @lesson_group = LessonGroup.new(lesson_group_params)

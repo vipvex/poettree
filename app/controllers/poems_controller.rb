@@ -12,6 +12,13 @@ class PoemsController < ApplicationController
     puts "\nPARAMS#{params[:search]}\n"
     @poems = Poem.where('title LIKE ? OR body LIKE ?', params[:search], params[:search])
   end
+  
+  def my_poems
+    
+    @poems = current_user.poems.page params[:page]
+    
+    render 'index'
+  end
 
   # GET /poems/1
   # GET /poems/1.json

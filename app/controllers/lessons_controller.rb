@@ -1,12 +1,15 @@
 class LessonsController < ApplicationController
+  
+  layout 'editor', except: ['show']
+  
   before_action :set_lesson, only: [:show, :edit, :update, :destroy, :complete]
-  before_action :set_lesson_group, only: [:show, :edit, :update, :destroy, :new]
+  before_action :set_lesson_group, only: [:show, :edit, :update, :destroy, :new, :index]
 
 
   # GET /lessons
   # GET /lessons.json
   def index
-    @lessons = Lesson.all
+    @lessons = @lesson_group.lessons
   end
 
   # GET /lessons/1
@@ -28,10 +31,11 @@ class LessonsController < ApplicationController
   # POST /lessons.json
   def create
     @lesson = Lesson.new(lesson_params)
+    @lesson.lesson_group_id = params[:lesson_group_id]
 
     respond_to do |format|
       if @lesson.save
-        format.html { redirect_to lesson_group_lessons_path @lesson_group, notice: 'Lesson was successfully created.' }
+        format.html { redirect_to "/lesson_groups/#{params[:lesson_group_id]}/lessons/#{@lesson.id}", notice: 'Lesson was successfully created.' }
         format.json { render :show, status: :created, location: @lesson }
       else
         format.html { render :new }
@@ -51,7 +55,7 @@ class LessonsController < ApplicationController
   def update
     respond_to do |format|
       if @lesson.update(lesson_params)
-        format.html { redirect_to @lesson, notice: 'Lesson was successfully updated.' }
+        format.html { redirect_to "/lesson_groups/#{@lesson_group.id}/lessons/#{@lesson.id}", notice: 'Lesson was successfully updated.' }
         format.json { render :show, status: :ok, location: @lesson }
       else
         format.html { render :edit }
@@ -77,6 +81,7 @@ class LessonsController < ApplicationController
     end
     
     def set_lesson_group
+      puts "\n#{params[:lesson_group_id]}\n"
       @lesson_group = LessonGroup.find(params[:lesson_group_id])
     end
 

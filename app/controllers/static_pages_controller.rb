@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
   end
   
   def dashboard
-    @lesson_groups = LessonGroup.includes(:lessons)
+    @lesson_groups = LessonGroup.includes(:lessons).order(:order)
   end
   
   def tos

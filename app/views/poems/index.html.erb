@@ -11,7 +11,7 @@
           <%- if @poems[0] %>
             <%= image_tag('leaves.svg', class:'leaf') %>
             <div class="poem-details-ctr">
-              <p class="poettree-poem-title"> <%= @poems[0].title %></p>
+              <p class="poettree-poem-title"> <%= truncate(@poems[0].title, length: 35) %></p>
               <p class="poettree-poem-author"><%= @poems[0].user.email.split('@')[0] %></p>
             </div>
           <% end -%>
@@ -21,7 +21,7 @@
           <%- if @poems[1] %>
             <%= image_tag('leaves.svg', class:'leaf leaf-right') %>
              <div class="poem-details-ctr poem-details-ctr-right">
-              <p class="poettree-poem-title"> <%= @poems[1].title %></p>
+              <p class="poettree-poem-title"> <%= truncate(@poems[1].title, length: 35) %></p>
               <p class="poettree-poem-author"><%= @poems[1].user.email.split('@')[0] %></p>            
             </div>
           <% end -%>
@@ -31,7 +31,7 @@
           <%- if @poems[2] %>
             <%= image_tag('leaves.svg', class:'leaf') %>
              <div class="poem-details-ctr">
-              <p class="poettree-poem-title"> <%= @poems[2].title %></p>
+              <p class="poettree-poem-title"> <%= truncate(@poems[2].title, length: 35) %></p>
               <p class="poettree-poem-author"><%= @poems[2].user.email.split('@')[0] %></p>            
             </div>
           <% end -%>
@@ -41,7 +41,7 @@
           <%- if @poems[3] %>
             <%= image_tag('leaves.svg', class:'leaf leaf-right') %>
              <div class="poem-details-ctr poem-details-ctr-right">
-              <p class="poettree-poem-title"> <%= @poems[3].title %></p>
+              <p class="poettree-poem-title"> <%= truncate(@poems[3].title, length: 35) %></p>
               <p class="poettree-poem-author"><%= @poems[3].user.email.split('@')[0] %></p>            
             </div>
           <% end -%>
@@ -51,7 +51,7 @@
           <%- if @poems[4] %>
             <%= image_tag('leaves.svg', class:'leaf') %>
              <div class="poem-details-ctr">
-              <p class="poettree-poem-title"> <%= @poems[4].title %></p>
+              <p class="poettree-poem-title"> <%= truncate(@poems[4].title, length: 35) %></p>
               <p class="poettree-poem-author"><%= @poems[4].user.email.split('@')[0] %></p>            
             </div>
           <% end -%>
@@ -61,7 +61,8 @@
     </div>
   </div>
 
-  <%= paginate @poems %>
+  <%= link_to_next_page @poems, 'Next Page' %>
+  <%= link_to_previous_page @poems, 'Last Page' %>
 
   <div id="search" class="poettree-icon-btn poettree-search-btn" title="Search for Poems">
     <%= image_tag('search-icon.svg', class:'poettree-search-icon') %>
@@ -69,23 +70,24 @@
   <div id="info" class="poettree-icon-btn poettree-info-btn" title="Information About This Page">
     <p>?</p>
   </div>
-  <div id="myPoems" class="poettree-icon-btn poettree-my-poems-btn" title="All of Your Poems">
+  <a href="/poettree/my_poems" id="myPoems" class="poettree-icon-btn poettree-my-poems-btn" title="All of Your Poems">
     <%= image_tag('my-poems-icon.svg', class:'poettree-my-poems-icon') %>
-  </div>
-  <%= form_for poems_path, method: :get do |f| %>
+  </a>
 
-  <%= text_field_tag :search, params[:search] %>
-  <%= f.submit 'Search' %>
-
-  <% end %>
 
 </main>
 <div class="poettree-search-modal hidden">
   <h2>Search for Poems</h2>
-  <div class="poettree-search-bar">
-    <input class="poettree-search-bar-input" type="search" placeholder="Enter an author, a title, or words from a poem">
-    <a class="poettree-search-bar-btn" href="#">Search</a>
-  </div>
+  
+    <%= form_for poems_path, method: :get, html: { class: "poettree-search-bar" } do |f| %>
+  
+      <%= text_field_tag :search, params[:search], class: 'poettree-search-bar-input' %>
+      <%= f.submit 'Search', class: 'poettree-search-bar-btn' %>
+
+  
+    <% end %>
+  
+   
 </div>
 <div class="poettree-info-modal hidden">
   <h2>Welcome to the Poettree</h2>
