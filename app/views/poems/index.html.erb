@@ -63,13 +63,13 @@
 
   <%= paginate @poems %>
 
-  <div id="search" class="poettree-icon-btn poettree-search-btn">
+  <div id="search" class="poettree-icon-btn poettree-search-btn" title="Search for Poems">
     <%= image_tag('search-icon.svg', class:'poettree-search-icon') %>
   </div>
-  <div id="info" class="poettree-icon-btn poettree-info-btn">
+  <div id="info" class="poettree-icon-btn poettree-info-btn" title="Information About This Page">
     <p>?</p>
   </div>
-  <div id="myPoems" class="poettree-icon-btn poettree-my-poems-btn">
+  <div id="myPoems" class="poettree-icon-btn poettree-my-poems-btn" title="All of Your Poems">
     <%= image_tag('my-poems-icon.svg', class:'poettree-my-poems-icon') %>
   </div>
   <%= form_for poems_path, method: :get do |f| %>
@@ -87,6 +87,10 @@
     <a class="poettree-search-bar-btn" href="#">Search</a>
   </div>
 </div>
+<div class="poettree-info-modal hidden">
+  <h2>Welcome to the Poettree</h2>
+  <p>Here you can find any poems that other students have decided to post to the PoetTree. You can search for poems by clicking the search icon in the top right corner. You can also see all of your poems by clicking the little person icon in the bottom right corner. Have fun and check out what your friends have added to the PoetTree!</p>
+</div>
 
 <script>
   $(document).ready(function() {
@@ -97,16 +101,13 @@
   const info = document.getElementById("info")
   const myPoems = document.getElementById("myPoems")
   const searchModal = document.querySelector(".poettree-search-modal")
-  const btns = [search, info, myPoems]
+  const btns = [search, info]
 	// Create & Mutate Elements
 	const overlay = document.createElement("div")
 	overlay.className = "hidden overlay"
-	const modal = document.createElement("div")
-	modal.className = "hidden poettree-modal"
 
 	//Add Elements to Page
 	body.appendChild(overlay)
-	body.appendChild(modal)
 
 	// Event Functions
 
