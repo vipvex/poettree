@@ -160,7 +160,7 @@ little bit of work each day.”</p>
         </ul>
       <% end -%>
       
-      <p>By signing into iPoetTree, you agree to our <a>Terms of Service</a></p>
+      <p>By signing into iPoetTree, you agree to our <a href="/tos">Terms of Service</a></p>
     </div>
     <div class="login-greeting-panel">
       <h2><span class="green-highlight">Grow</span> Your Writing Skills With Us</h2>
@@ -195,6 +195,7 @@ little bit of work each day.”</p>
 	const loginModal = document.querySelector(".login-modal-ctr")
 	const signUp = document.querySelector("nav .primary-red")
 	const videoPreview = document.querySelector(".preview-video-ctr")
+	const homeLogin = document.getElementById("home-login")
 	// Create & Mutate Elements
 	const overlay = document.createElement("div")
 	overlay.className = "hidden overlay"
@@ -244,7 +245,12 @@ little bit of work each day.”</p>
 		e.preventDefault()
 		modalOverlayToggle()
 		renderLoginModal()
-
+	})
+	
+	homeLogin.addEventListener("click", (e) => {
+		e.preventDefault()
+		modalOverlayToggle()
+		renderLoginModal()
 	})
 	
 	previewBtn.addEventListener("click", () => {
