@@ -1,18 +1,4 @@
-<nav class="ctr-margin logged-out-nav">
-    <%= link_to root_url do %>
-      <p class="logo">iPoetTree</p>
-    <% end %>
-    <a href="#">Donate</a>
-    <%= link_to "About Us", about_us_url %>
-    <a href="#">Login</a>
-    <a href="#" class="primary-red" data="login-modal-ctr">Sign Up</a>
-    <div id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-</nav>
+<%= render 'layouts/nav' %>
 <div class="ctr-margin mobile-nav-box hidden">
   <a href="#">Donate</a>
   <a href="/about_us">About Us</a>
@@ -713,3 +699,111 @@
 
 
 </div>
+<div class="login-modal-ctr hidden">
+  <div class="login-modal">
+    <div class="login-auth-panel">
+
+      <%= link_to omniauth_authorize_path(resource_name, :google_oauth2), class: 'login-modal-link google' do |a| %>
+        Login with Google
+      <% end %>
+      
+      <%= link_to omniauth_authorize_path(resource_name, :facebook), class: 'login-modal-link facebook' do |a| %>
+        Login with Facebook
+      <% end %>
+      
+      <%- if devise_mapping.omniauthable? %>
+        <ul class="image-list signin-icons">
+          <%- resource_class.omniauth_providers.each do |provider| %>
+            <li><%= link_to omniauth_authorize_path(resource_name, provider), :title => "Sign in with #{provider.to_s.titleize}" do %>
+              <%#= image_tag "oauth_#{provider}.png", :alt => "Sign in with #{provider.to_s.titleize}" %>
+              <%= provider.to_s.titleize %>
+              <% end -%>
+            </li>
+          <% end %>
+        </ul>
+      <% end -%>
+      
+      <p>By signing into iPoetTree, you agree to our <a href="/tos">Terms of Service</a></p>
+    </div>
+    <div class="login-greeting-panel">
+      <h2><span class="green-highlight">Grow</span> Your Writing Skills With Us</h2>
+      <p>learn with free video lessons - share with peers - express yourself</p>
+      <div class="footer">
+        <p class="logo">iPoetTree</p>
+        <%= image_tag("poetree-pot.svg", class: "poetree-pot") %>
+      </div>
+    </div>
+  </div>  
+</div>
+<script>
+   $(document).ready(function() {
+	$('#hamburger').click(function() {
+		$(this).toggleClass('open');
+		$('.mobile-nav-box').toggleClass('hidden')
+	})
+
+
+	// Find Elements
+	const body = document.querySelector("body")
+	const loginModal = document.querySelector(".login-modal-ctr")
+	const signUp = document.querySelector("nav .primary-red")
+	const homeLogin = document.getElementById("home-login")
+	// Create & Mutate Elements
+	const overlay = document.createElement("div")
+	overlay.className = "hidden overlay"
+	const modal = document.createElement("div")
+	modal.className = "hidden modal"
+
+	//Add Elements to Page
+	body.appendChild(overlay)
+	body.appendChild(modal)
+
+	// Event Functions
+	const overlayToggle = () => {
+		overlay.classList.toggle("hidden")
+	}
+	const modalToggle = () => {
+		modal.innerHTML = ""
+		modal.classList.toggle("hidden")
+	}
+	const modalOverlayToggle = () => {
+		overlay.classList.toggle("hidden")
+		modal.innerHTML = ""
+		modal.classList.toggle("hidden")
+	}
+
+	const modalChildClassToggle = (className) => {
+		const ele = document.querySelector("." + className)
+		ele.classList.toggle("hidden")
+	}
+
+	const renderLoginModal = () => {
+		loginModal.classList.toggle("hidden")
+		overlay.setAttribute('data', 'login-modal-ctr')
+		modal.appendChild(loginModal)
+	}
+
+	// Attach Event Listeners
+
+	signUp.addEventListener("click", (e) => {
+		e.preventDefault()
+		modalOverlayToggle()
+		renderLoginModal()
+
+	})
+	
+	homeLogin.addEventListener("click", (e) => {
+		e.preventDefault()
+		modalOverlayToggle()
+		renderLoginModal()
+	})
+	
+	overlay.addEventListener("click", (e) => {
+		const className = e.target.getAttribute("data")
+		modalChildClassToggle(className)
+		modalOverlayToggle()
+		overlay.setAttribute("data", "")
+	})
+
+})
+</script>
