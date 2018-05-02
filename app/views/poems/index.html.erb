@@ -20,7 +20,7 @@
           <%= image_tag('right-branch.svg', class:'branch branch-right') %>
           <%- if @poems[1] %>
             <%= image_tag('leaves.svg', class:'leaf leaf-right') %>
-             <div class="poem-details-ctr">
+             <div class="poem-details-ctr poem-details-ctr-right">
               <p class="poettree-poem-title"> <%= @poems[1].title %></p>
               <p class="poettree-poem-author"><%= @poems[1].user.email.split('@')[0] %></p>            
             </div>
@@ -40,7 +40,7 @@
           <%= image_tag('right-branch.svg', class:'branch branch-right') %>
           <%- if @poems[3] %>
             <%= image_tag('leaves.svg', class:'leaf leaf-right') %>
-             <div class="poem-details-ctr">
+             <div class="poem-details-ctr poem-details-ctr-right">
               <p class="poettree-poem-title"> <%= @poems[3].title %></p>
               <p class="poettree-poem-author"><%= @poems[3].user.email.split('@')[0] %></p>            
             </div>
@@ -101,6 +101,7 @@
   const info = document.getElementById("info")
   const myPoems = document.getElementById("myPoems")
   const searchModal = document.querySelector(".poettree-search-modal")
+  const infoModal = document.querySelector(".poettree-info-modal")
   const btns = [search, info]
 	// Create & Mutate Elements
 	const overlay = document.createElement("div")
@@ -125,7 +126,18 @@
 	const searchModalToggle = () => {
     searchModal.classList.toggle("hidden")
 	}
+	const infoModalToggle = () => {
+    infoModal.classList.toggle("hidden")
+	}
 	
+	const modalToggle = (type) => {
+	  if(type === "") {
+	    infoModalToggle()
+	  }
+	  else if(type === "") {
+	    searchModalToggle()
+	  }
+	}
 	//Attach Events
 	btns.map((ele) => {
 	  ele.addEventListener("click", overlayToggle)
@@ -134,8 +146,9 @@
 	search.addEventListener("click", searchModalToggle)
 	
 	overlay.addEventListener("click", (e) => {
-		const className = e.target.getAttribute("data")
-		modalToggle()
+		const modalType = e.target.getAttribute("data")
+		modalToggle(modalType)
+		overlayToggle()
 	})
 })
 </script>
