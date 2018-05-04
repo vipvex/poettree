@@ -6,7 +6,7 @@
   <div class="poettree-ctr">
     <div class="poettree-trunk">
 
-      <div class="leaf-branch-ctr-1 leaf-branch-ctr-left leaf-branch-ctr">
+      <div data="poettree-poem-modal" class="leaf-branch-ctr-1 leaf-branch-ctr-left leaf-branch-ctr">
           <%= image_tag('left-branch.svg', class:'branch branch-left') %>
           <%- if @poems[0] %>
             <%= image_tag('leaves.svg', class:'leaf') %>
@@ -16,7 +16,7 @@
             </div>
           <% end -%>
       </div>
-      <div class="leaf-branch-ctr-2 leaf-branch-ctr-right leaf-branch-ctr">
+      <div data="poettree-poem-modal" class="leaf-branch-ctr-2 leaf-branch-ctr-right leaf-branch-ctr">
           <%= image_tag('right-branch.svg', class:'branch branch-right') %>
           <%- if @poems[1] %>
             <%= image_tag('leaves.svg', class:'leaf leaf-right') %>
@@ -26,7 +26,7 @@
             </div>
           <% end -%>
       </div>
-      <div class="leaf-branch-ctr-3 leaf-branch-ctr-left leaf-branch-ctr">
+      <div data="poettree-poem-modal" class="leaf-branch-ctr-3 leaf-branch-ctr-left leaf-branch-ctr">
           <%= image_tag('left-branch.svg', class:'branch branch-left') %>
           <%- if @poems[2] %>
             <%= image_tag('leaves.svg', class:'leaf') %>
@@ -36,7 +36,7 @@
             </div>
           <% end -%>
       </div>
-      <div class="leaf-branch-ctr-4 leaf-branch-ctr-right leaf-branch-ctr">
+      <div data="poettree-poem-modal" class="leaf-branch-ctr-4 leaf-branch-ctr-right leaf-branch-ctr">
           <%= image_tag('right-branch.svg', class:'branch branch-right') %>
           <%- if @poems[3] %>
             <%= image_tag('leaves.svg', class:'leaf leaf-right') %>
@@ -46,7 +46,7 @@
             </div>
           <% end -%>
       </div>      
-      <div class="leaf-branch-ctr-5 leaf-branch-ctr-left leaf-branch-ctr">
+      <div data="poettree-poem-modal" class="leaf-branch-ctr-5 leaf-branch-ctr-left leaf-branch-ctr">
           <%= image_tag('left-branch.svg', class:'branch branch-left') %>
           <%- if @poems[4] %>
             <%= image_tag('leaves.svg', class:'leaf') %>
@@ -93,6 +93,36 @@
   <h2>Welcome to the Poettree</h2>
   <p>Here you can find any poems that other students have decided to post to the PoetTree. You can search for poems by clicking the search icon in the top right corner. You can also see all of your poems by clicking the little person icon in the bottom right corner. Have fun and check out what your friends have added to the PoetTree!</p>
 </div>
+<div class="poettree-poem-modal hidden">
+  <h2 class="poettree-poem-modal-title">All the Kings Men</h2>
+  <span class="poettree-poem-modal-author">by Ms Poetry Master</span> 
+  <p class="poettree-poem-modal-body">
+        Do not go gentle into that good night,
+    Old age should burn and rave at close of day;
+    Rage, rage against the dying of the light.
+    
+    Though wise men at their end know dark is right,
+    Because their words had forked no lightning they
+    Do not go gentle into that good night.
+    
+    Good men, the last wave by, crying how bright
+    Their frail deeds might have danced in a green bay,
+    Rage, rage against the dying of the light.
+    
+    Wild men who caught and sang the sun in flight,
+    And learn, too late, they grieved it on its way,
+    Do not go gentle into that good night.
+    
+    Grave men, near death, who see with blinding sight
+    Blind eyes could blaze like meteors and be gay,
+    Rage, rage against the dying of the light.
+    
+    And you, my father, there on the sad height,
+    Curse, bless, me now with your fierce tears, I pray.
+    Do not go gentle into that good night.
+    Rage, rage against the dying of the light.
+  </p>
+</div>
 
 <script>
   $(document).ready(function() {
@@ -104,7 +134,9 @@
   const myPoems = document.getElementById("myPoems")
   const searchModal = document.querySelector(".poettree-search-modal")
   const infoModal = document.querySelector(".poettree-info-modal")
+  const poemModal = document.querySelector(".poettree-poem-modal")
   const btns = [search, info]
+  const branches = Array.from(document.querySelectorAll(".leaf-branch-ctr"))
 	// Create & Mutate Elements
 	const overlay = document.createElement("div")
 	overlay.setAttribute("data", "")
@@ -139,6 +171,13 @@
 	  }
     infoModal.classList.toggle("hidden")
 	}
+	const poemModalToggle = (e) => {
+	  if(overlay.getAttribute("data") == ""){
+	    console.log(e.target)
+  	  overlay.setAttribute("data", e.target.getAttribute("data"))
+	  }
+    poemModal.classList.toggle("hidden")
+	}
 	
 	const modalToggle = (type) => {
 	  if(type === "poettree-info-modal") {
@@ -147,10 +186,17 @@
 	  else if(type === "poettree-search-modal") {
 	    searchModalToggle()
 	  }
+	  else if(type === "poettree-poem-modal" ){
+	    poemModalToggle()
+	  }
 	}
 	//Attach Events
 	btns.map((ele) => {
 	  ele.addEventListener("click", overlayToggle)
+	})
+	branches.map((ele) => {
+  	ele.addEventListener("click", overlayToggle)
+	  ele.addEventListener("click", poemModalToggle)
 	})
 	
 	search.addEventListener("click", searchModalToggle)
