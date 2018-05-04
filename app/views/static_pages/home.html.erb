@@ -136,42 +136,8 @@ little bit of work each day.”</p>
 </div>
 
 
-<div class="login-modal-ctr hidden">
-  <div class="login-modal">
-    <div class="login-auth-panel">
+<%= render 'layouts/login_modal' %>
 
-      <%= link_to omniauth_authorize_path(resource_name, :google_oauth2), class: 'login-modal-link google' do |a| %>
-        Login with Google
-      <% end %>
-      
-      <%= link_to omniauth_authorize_path(resource_name, :facebook), class: 'login-modal-link facebook' do |a| %>
-        Login with Facebook
-      <% end %>
-      
-      <%- if devise_mapping.omniauthable? && Rails.env.development? %>
-        <ul class="image-list signin-icons">
-          <%- resource_class.omniauth_providers.each do |provider| %>
-            <li><%= link_to omniauth_authorize_path(resource_name, provider), :title => "Sign in with #{provider.to_s.titleize}" do %>
-              <%#= image_tag "oauth_#{provider}.png", :alt => "Sign in with #{provider.to_s.titleize}" %>
-              <%= provider.to_s.titleize %>
-              <% end -%>
-            </li>
-          <% end %>
-        </ul>
-      <% end -%>
-      
-      <p>By signing into iPoetTree, you agree to our <a href="/tos">Terms of Service</a></p>
-    </div>
-    <div class="login-greeting-panel">
-      <h2><span class="green-highlight">Grow</span> Your Writing Skills With Us</h2>
-      <p>learn with free video lessons - share with peers - express yourself</p>
-      <div class="footer">
-        <p class="logo">iPoetTree</p>
-        <%= image_tag("poetree-pot.svg", class: "poetree-pot") %>
-      </div>
-    </div>
-  </div>  
-</div>
 <div class="preview-video-ctr hidden">
   <h2>This is What We Do</h2>
   <iframe class="preview-video" frameborder="0" allow="encrpyted-media" src="https://www.youtube.com/embed/rA9pZwDn6mU"></iframe>
