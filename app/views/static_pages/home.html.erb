@@ -144,10 +144,6 @@ little bit of work each day.”</p>
         Login with Google
       <% end %>
       
-      <%= link_to omniauth_authorize_path(resource_name, :facebook), class: 'login-modal-link facebook' do |a| %>
-        Login with Facebook
-      <% end %>
-      
       <%- if devise_mapping.omniauthable? && Rails.env.development? %>
         <ul class="image-list signin-icons">
           <%- resource_class.omniauth_providers.each do |provider| %>
