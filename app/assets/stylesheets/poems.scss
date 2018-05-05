@@ -52,7 +52,7 @@ $author-profile-green: #A7DB72;
 }
 
 .poettree-info-btn {
-    z-index: 2;
+    z-index: 1;
     background-color: #FFF;
     position: absolute;
     left: 1.5%;
@@ -60,7 +60,7 @@ $author-profile-green: #A7DB72;
 }
 
 .poettree-my-poems-btn {
-    z-index: 3;
+    z-index: 1;
     background-color: #FFF;
     position: absolute;
     right: 1.5%;
@@ -213,6 +213,10 @@ $author-profile-green: #A7DB72;
     height: 150px;
 }
 
+.poem-details-ctr-right {
+    left: 29%;
+}
+
 .poettree-poem-title,
 .poettree-poem-author {
     color: #FFF;
@@ -244,7 +248,7 @@ $author-profile-green: #A7DB72;
 .poettree-info-modal {
     background-color: white;
     max-width: 700px;
-    height: 200px;
+    height: 500px;
     border-radius: 20px 0 20px 0;
     position: fixed;
     margin: auto;
@@ -255,6 +259,20 @@ $author-profile-green: #A7DB72;
     padding: 50px 50px;
     z-index: 5;
 }
+.poettree-poem-modal {
+    background-color: white;
+    max-width: 700px;
+    border-radius: 20px 0 20px 0;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 50px 50px;
+    z-index: 5;
+}
+
 
 
 .poettree-search-bar {
@@ -279,6 +297,21 @@ $author-profile-green: #A7DB72;
   color: #FFF;
   cursor: pointer;
 }
+
+.poettree-poem-modal-title {
+    font-size: 24px;
+    font-family: 'Crimson Text', serif;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.poettree-poem-modal-author {
+    font-size: 16px;
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+    margin-bottom: 25px;
+    display: block;
+}
+.poettree-poem-modal-body {}
 /*===
 
     BEGIN DESKTOP STYLES

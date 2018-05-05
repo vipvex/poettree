@@ -136,9 +136,8 @@ little bit of work each day.”</p>
 </div>
 
 
-<div class="login-modal-ctr hidden">
-  <div class="login-modal">
-    <div class="login-auth-panel">
+<%= render 'layouts/login_modal' %>
+
 
       <%= link_to omniauth_authorize_path(resource_name, :google_oauth2), class: 'login-modal-link google' do |a| %>
         Login with Google
