@@ -322,6 +322,16 @@ $author-profile-green: #A7DB72;
     align-items: center;
     cursor: pointer;
 }
+.poettree-poem-modal-icon:nth-of-type(1) {
+    position: relative;
+    bottom: -42.5%;
+    right: -80%;    
+}
+.poettree-poem-modal-icon:nth-of-type(2) {
+    position: relative;
+    bottom: -34%;
+    right: -93%;     
+}
 .poettree-poem-modal-icon-active {
     background-color: $dark-green;
 }
