@@ -350,6 +350,29 @@ $author-profile-green: #A7DB72;
     height: 22px;
 }
 
+.next-poem-btn {
+    background: #FFF;
+    height: 60px;
+    width: 175px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.60);
+    position: absolute;
+    z-index: 1;
+    bottom: 3.5%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 0 20px 0 0;
+
+}
+
+.prev-poem-btn {
+    margin-right: 20px;
+}
+
 .active-modal {}
 /*===
 

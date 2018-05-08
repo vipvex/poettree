@@ -60,10 +60,11 @@
       
     </div>
   </div>
-
-  <%= link_to_next_page @poems, 'Next Page' %>
-  <%= link_to_previous_page @poems, 'Last Page' %>
-
+  <div class="next-poem-btn">
+    <%= link_to_previous_page @poems, 'Last Page', class: "prev-poem-btn" %>
+    <%= link_to_next_page @poems, 'Next Page' %>
+  </div>
+  
   <div data="poettree-search-modal" id="search" class="poettree-icon-btn poettree-search-btn" title="Search for Poems">
     <%= image_tag('search-icon.svg', class:'poettree-search-icon') %>
   </div>
@@ -190,6 +191,7 @@
 	
 	search.addEventListener("click", searchModalToggle)
 	info.addEventListener("click", infoModalToggle)
+	
 	redExit.addEventListener("click", () => {
     const activeModal = document.querySelector(".active-modal")
     activeModal.classList.toggle("hidden")
