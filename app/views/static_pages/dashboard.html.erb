@@ -41,6 +41,7 @@
   
         <% locked = lg.locked_for?(current_user) %>
         <% locked_class = locked ? 'locked' : 'unlocked' %>
+        <% completed = current_user.lesson_completeds.in_lesson_group(lg).count == lg.lessons.count %>
   
         <div class="lesson-card"> 
         
@@ -65,8 +66,9 @@
             
             <p class="lessons-complete"><%= "#{lg.completed_lessons_by(current_user).count} / #{lg.lessons.count}" %></p>
             
-            <%= link_to locked ? '#' : current_user.next_lesson_with_group, class: "btn btn-#{locked_class}" do %>
-              <p><%= locked ? "Locked" : "Continue" %></p>
+            <%= link_to locked ? '#' : completed ? "/lesson_groups/#{lg.id}/lessons/#{lg.lessons.first.try(:id)}" : current_user.next_lesson_with_group, class: "btn btn-#{locked_class}" do %>
+              <%=  %>
+              <p><%= locked ? "Locked" : completed ? 'Review' : "Continue" %></p>
               <%= image_tag(locked ? "course-locked.svg" : "right-arrow.svg") %>
             <% end %>
             
