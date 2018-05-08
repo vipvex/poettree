@@ -94,6 +94,9 @@
   <p>Here you can find any poems that other students have decided to post to the PoetTree. You can search for poems by clicking the search icon in the top right corner. You can also see all of your poems by clicking the little person icon in the bottom right corner. Have fun and check out what your friends have added to the PoetTree!</p>
 </div>
 <div class="poettree-poem-modal hidden">
+  <div class="red-exit-ctr">
+    <%= image_tag("red-exit", class: "red-exit-icon")  %>
+  </div>
   <h2 class="poettree-poem-modal-title">All the Kings Men</h2>
   <span class="poettree-poem-modal-author">by Ms Poetry Master</span> 
   <p class="poettree-poem-modal-body">
@@ -122,12 +125,15 @@
     Do not go gentle into that good night.
     Rage, rage against the dying of the light.
   </p>
-  <div class="poettree-poem-modal-icon poettree-poem-modal-icon-active">
-    <%= image_tag('preview-poem-icon.svg', class: "poettree-preview-poem-icon") %>
+  <div class="poettree-poem-modal-icon-ctr">
+    <div class="poettree-poem-modal-icon poettree-poem-modal-icon-active">
+      <%= image_tag('preview-poem-icon.svg', class: "poettree-preview-poem-icon") %>
+    </div>
+    <div class="poettree-poem-modal-icon poettree-poem-modal-icon-inactive">
+      <%= image_tag('preview-img-icon.svg', class: "poettree-preview-img-icon") %>
+    </div>
   </div>
-  <div class="poettree-poem-modal-icon poettree-poem-modal-icon-inactive">
-    <%= image_tag('preview-img-icon.svg', class: "poettree-preview-img-icon") %>
-  </div>
+
 </div>
 
 <script>
@@ -143,6 +149,7 @@
   const poemModal = document.querySelector(".poettree-poem-modal")
   const btns = [search, info]
   const poemDetailsCtr = Array.from(document.querySelectorAll(".poem-details-ctr"))
+  const redExit = document.querySelector(".red-exit-icon")
 	// Create & Mutate Elements
 	const overlay = document.createElement("div")
 	overlay.setAttribute("data", "")
@@ -159,42 +166,19 @@
 		overlay.classList.toggle("hidden")
 	}
 	
-	const modalOverlayToggle = () => {
-		overlay.classList.toggle("hidden")
-		modal.innerHTML = ""
-		modal.classList.toggle("hidden")
-	}
-	
 	const searchModalToggle = (e) => {
-	  if(overlay.getAttribute("data") == ""){
-  	  overlay.setAttribute("data", "poettree-search-modal")
-	  }
     searchModal.classList.toggle("hidden")
+    searchModal.classList.toggle("active-modal")
 	}
 	const infoModalToggle = (e) => {
-	  if(overlay.getAttribute("data") == ""){
-  	  overlay.setAttribute("data", e.target.getAttribute("data"))
-	  }
     infoModal.classList.toggle("hidden")
+    infoModal.classList.toggle("active-modal")
 	}
 	const poemModalToggle = (e) => {
-	  if(overlay.getAttribute("data") == ""){
-  	  overlay.setAttribute("data", "poettree-poem-modal")
-	  }
     poemModal.classList.toggle("hidden")
+    poemModal.classList.toggle("active-modal")
 	}
 	
-	const modalToggle = (type) => {
-	  if(type === "poettree-info-modal") {
-	    infoModalToggle()
-	  }
-	  else if(type === "poettree-search-modal") {
-	    searchModalToggle()
-	  }
-	  else if(type === "poettree-poem-modal" ){
-	    poemModalToggle()
-	  }
-	}
 	//Attach Events
 	btns.map((ele) => {
 	  ele.addEventListener("click", overlayToggle)
@@ -206,12 +190,18 @@
 	
 	search.addEventListener("click", searchModalToggle)
 	info.addEventListener("click", infoModalToggle)
+	redExit.addEventListener("click", () => {
+    const activeModal = document.querySelector(".active-modal")
+    activeModal.classList.toggle("hidden")
+    activeModal.classList.toggle("active-modal")
+		overlayToggle()	  
+	})
 	
 	overlay.addEventListener("click", (e) => {
-		const modalType = e.target.getAttribute("data")
-		modalToggle(modalType)
+    const activeModal = document.querySelector(".active-modal")
+    activeModal.classList.toggle("hidden")
+    activeModal.classList.toggle("active-modal")
 		overlayToggle()
-		overlay.setAttribute("data", "")
 	})
 })
 </script>
