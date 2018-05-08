@@ -179,8 +179,7 @@
 	}
 	const poemModalToggle = (e) => {
 	  if(overlay.getAttribute("data") == ""){
-	    console.log(e.target)
-  	  overlay.setAttribute("data", e.target.getAttribute("data"))
+  	  overlay.setAttribute("data", "poettree-poem-modal")
 	  }
     poemModal.classList.toggle("hidden")
 	}
