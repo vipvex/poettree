@@ -312,6 +312,26 @@ $author-profile-green: #A7DB72;
     display: block;
 }
 .poettree-poem-modal-body {}
+
+.poettree-poem-modal-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.poettree-poem-modal-icon-active {
+    background-color: $dark-green;
+}
+.poettree-poem-modal-icon-inactive {
+    background-color: gray;
+}
+.poettree-preview-img-icon {
+    width: 26px;
+    height: 22px;
+}
 /*===
 
     BEGIN DESKTOP STYLES
