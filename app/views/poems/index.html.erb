@@ -6,7 +6,7 @@
   <div class="poettree-ctr">
     <div class="poettree-trunk">
 
-      <div class="leaf-branch-ctr-1 leaf-branch-ctr-left leaf-branch-ctr">
+      <div class="leaf-branch-ctr-1 leaf-branch-ctr-left leaf-branch-ctr" data-title="<%= @poems[0].title %>">
           <%= image_tag('left-branch.svg', class:'branch branch-left') %>
           <%- if @poems[0] %>
             <%= image_tag('leaves.svg', class:'leaf') %>
@@ -181,8 +181,13 @@
 	  if(overlay.getAttribute("data") == ""){
 	    console.log(e.target)
   	  overlay.setAttribute("data", e.target.getAttribute("data"))
+  	  console.log();
 	  }
     poemModal.classList.toggle("hidden")
+    // here 
+    $(".poettree-poem-modal-body").text( $(e.target).data("title") );
+    // poettree-poem-modal-title
+    // poettree-poem-modal-author
 	}
 	
 	const modalToggle = (type) => {
