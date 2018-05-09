@@ -151,6 +151,9 @@
   const btns = [search, info]
   const poemDetailsCtr = Array.from(document.querySelectorAll(".poem-details-ctr"))
   const redExit = document.querySelector(".red-exit-icon")
+  const poettreePoemModalIcons = Array.from(document.querySelectorAll(".poettree-poem-modal-icon"))
+  const poemPreview = document.querySelector(".poettree-preview-poem-icon")
+  const imgPreview = document.querySelector(".poettree-preview-img-icon")
 	// Create & Mutate Elements
 	const overlay = document.createElement("div")
 	overlay.setAttribute("data", "")
@@ -180,6 +183,14 @@
     poemModal.classList.toggle("active-modal")
 	}
 	
+	const togglePoemContent = () => {
+	  const active = document.querySelector(".poettree-poem-modal-icon-active")
+	  const inactive = document.querySelector(".poettree-poem-modal-icon-inactive")
+	  active.classList.toggle("poettree-poem-modal-icon-active")
+	  active.classList.toggle("poettree-poem-modal-icon-inactive")
+	  inactive.classList.toggle("poettree-poem-modal-icon-active")
+	  inactive.classList.toggle("poettree-poem-modal-icon-inactive")
+	}
 	//Attach Events
 	btns.map((ele) => {
 	  ele.addEventListener("click", overlayToggle)
@@ -204,6 +215,10 @@
     activeModal.classList.toggle("hidden")
     activeModal.classList.toggle("active-modal")
 		overlayToggle()
+	})
+	
+	poettreePoemModalIcons.map((ele) => {
+	  ele.addEventListener("click", togglePoemContent)
 	})
 })
 </script>
