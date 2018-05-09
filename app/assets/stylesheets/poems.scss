@@ -211,6 +211,7 @@ $author-profile-green: #A7DB72;
     top: -28%;
     width: 250px;
     height: 150px;
+    cursor: pointer;
 }
 
 .poem-details-ctr-right {
@@ -261,14 +262,11 @@ $author-profile-green: #A7DB72;
 }
 .poettree-poem-modal {
     background-color: white;
-    max-width: 700px;
-    border-radius: 20px 0 20px 0;
-    position: fixed;
+    height: auto;
+    position: absolute;
     margin: auto;
     top: 0;
     left: 0;
-    bottom: 0;
-    right: 0;
     padding: 50px 50px;
     z-index: 5;
 }
@@ -311,7 +309,23 @@ $author-profile-green: #A7DB72;
     margin-bottom: 25px;
     display: block;
 }
-.poettree-poem-modal-body {}
+.poettree-poem-modal-body {
+}
+.poettree-poem-modal-icon-ctr {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.red-exit-ctr {
+    display: flex;
+    justify-content: flex-end;
+}
+.red-exit-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
 
 .poettree-poem-modal-icon {
     width: 60px;
@@ -323,14 +337,7 @@ $author-profile-green: #A7DB72;
     cursor: pointer;
 }
 .poettree-poem-modal-icon:nth-of-type(1) {
-    position: relative;
-    bottom: -42.5%;
-    right: -80%;    
-}
-.poettree-poem-modal-icon:nth-of-type(2) {
-    position: relative;
-    bottom: -34%;
-    right: -93%;     
+    margin-right: 15px;
 }
 .poettree-poem-modal-icon-active {
     background-color: $dark-green;
@@ -342,6 +349,31 @@ $author-profile-green: #A7DB72;
     width: 26px;
     height: 22px;
 }
+
+.next-poem-btn {
+    background: #FFF;
+    height: 60px;
+    width: 175px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.60);
+    position: absolute;
+    z-index: 1;
+    bottom: 3.5%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 0 20px 0 0;
+
+}
+
+.prev-poem-btn {
+    margin-right: 20px;
+}
+
+.active-modal {}
 /*===
 
     BEGIN DESKTOP STYLES
