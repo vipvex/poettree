@@ -6,53 +6,53 @@
   <div class="poettree-ctr">
     <div class="poettree-trunk">
 
-      <div class="leaf-branch-ctr-1 leaf-branch-ctr-left leaf-branch-ctr" data-title="<%= @poems[0].title %>">
+      <div class="leaf-branch-ctr-1 leaf-branch-ctr-left leaf-branch-ctr" data-leaf="1" data-title="<%= @poems[0].title %>" data-author="<%= @poems[0].author %>" data-body="<%= @poems[0].body %>" data-image="<%= @poems[0].image_url %>">
           <%= image_tag('left-branch.svg', class:'branch branch-left') %>
           <%- if @poems[0] %>
             <%= image_tag('leaves.svg', class:'leaf') %>
-            <div class="poem-details-ctr" data="poettree-poem-modal">
-              <p class="poettree-poem-title"> <%= truncate(@poems[0].title, length: 35) %></p>
-              <p class="poettree-poem-author"><%= @poems[0].user.email.split('@')[0] %></p>
+            <div class="poem-details-ctr" data="poettree-poem-modal" data-leaf="1">
+              <p class="poettree-poem-title" data-leaf="1"> <%= truncate(@poems[0].title, length: 35) %></p>
+              <p class="poettree-poem-author" data-leaf="1"><%= @poems[0].author %></p>
             </div>
           <% end -%>
       </div>
-      <div class="leaf-branch-ctr-2 leaf-branch-ctr-right leaf-branch-ctr">
+      <div class="leaf-branch-ctr-2 leaf-branch-ctr-right leaf-branch-ctr" data-leaf="2" data-title="<%= @poems[1].title %>" data-author="<%= @poems[1].author %>" data-body="<%= @poems[1].body %>" data-image="<%= @poems[1].image_url %>">
           <%= image_tag('right-branch.svg', class:'branch branch-right') %>
           <%- if @poems[1] %>
             <%= image_tag('leaves.svg', class:'leaf leaf-right') %>
-             <div class="poem-details-ctr poem-details-ctr-right" data="poettree-poem-modal">
-              <p class="poettree-poem-title"> <%= truncate(@poems[1].title, length: 35) %></p>
-              <p class="poettree-poem-author"><%= @poems[1].user.email.split('@')[0] %></p>            
+             <div class="poem-details-ctr poem-details-ctr-right" data="poettree-poem-modal" data-leaf="2">
+              <p class="poettree-poem-title" data-leaf="2"> <%= truncate(@poems[1].title, length: 35) %></p>
+              <p class="poettree-poem-author" data-leaf="2"><%= @poems[1].author %></p>            
             </div>
           <% end -%>
       </div>
-      <div class="leaf-branch-ctr-3 leaf-branch-ctr-left leaf-branch-ctr">
+      <div class="leaf-branch-ctr-3 leaf-branch-ctr-left leaf-branch-ctr" data-leaf="3" data-title="<%= @poems[2].title %>" data-author="<%= @poems[2].author %>" data-body="<%= @poems[2].body %>" data-image="<%= @poems[2].image_url %>">
           <%= image_tag('left-branch.svg', class:'branch branch-left') %>
           <%- if @poems[2] %>
             <%= image_tag('leaves.svg', class:'leaf') %>
-             <div class="poem-details-ctr" data="poettree-poem-modal">
-              <p class="poettree-poem-title"> <%= truncate(@poems[2].title, length: 35) %></p>
-              <p class="poettree-poem-author"><%= @poems[2].user.email.split('@')[0] %></p>            
+             <div class="poem-details-ctr" data="poettree-poem-modal" data-leaf="3">
+              <p class="poettree-poem-title" data-leaf="3"> <%= truncate(@poems[2].title, length: 35) %></p>
+              <p class="poettree-poem-author" data-leaf="3"><%= @poems[2].author %></p>            
             </div>
           <% end -%>
       </div>
-      <div class="leaf-branch-ctr-4 leaf-branch-ctr-right leaf-branch-ctr">
+      <div class="leaf-branch-ctr-4 leaf-branch-ctr-right leaf-branch-ctr" data-leaf="4" data-title="<%= @poems[3].title %>" data-author="<%= @poems[3].author %>" data-body="<%= @poems[3].body %>" data-image="<%= @poems[3].image_url %>">
           <%= image_tag('right-branch.svg', class:'branch branch-right') %>
           <%- if @poems[3] %>
             <%= image_tag('leaves.svg', class:'leaf leaf-right') %>
-             <div class="poem-details-ctr poem-details-ctr-right" data="poettree-poem-modal">
-              <p class="poettree-poem-title"> <%= truncate(@poems[3].title, length: 35) %></p>
-              <p class="poettree-poem-author"><%= @poems[3].user.email.split('@')[0] %></p>            
+             <div class="poem-details-ctr poem-details-ctr-right" data="poettree-poem-modal" data-leaf="4">
+              <p class="poettree-poem-title" data-leaf="4"> <%= truncate(@poems[3].title, length: 35) %></p>
+              <p class="poettree-poem-author" data-leaf="4"><%= @poems[3].author %></p>            
             </div>
           <% end -%>
       </div>      
-      <div class="leaf-branch-ctr-5 leaf-branch-ctr-left leaf-branch-ctr">
+      <div class="leaf-branch-ctr-5 leaf-branch-ctr-left leaf-branch-ctr" data-leaf="5" data-title="<%= @poems[4].title %>" data-author="<%= @poems[4].author %>" data-body="<%= @poems[4].body %>" data-image="<%= @poems[4].image_url %>">
           <%= image_tag('left-branch.svg', class:'branch branch-left') %>
           <%- if @poems[4] %>
             <%= image_tag('leaves.svg', class:'leaf') %>
-             <div class="poem-details-ctr" data="poettree-poem-modal">
-              <p class="poettree-poem-title"> <%= truncate(@poems[4].title, length: 35) %></p>
-              <p class="poettree-poem-author"><%= @poems[4].user.email.split('@')[0] %></p>            
+             <div class="poem-details-ctr" data="poettree-poem-modal" data-leaf="5">
+              <p class="poettree-poem-title" data-leaf="5"> <%= truncate(@poems[4].title, length: 35) %></p>
+              <p class="poettree-poem-author" data-leaf="5"><%= @poems[4].author %></p>            
             </div>
           <% end -%>
       </div>
@@ -183,8 +183,17 @@
     poemModal.classList.toggle("active-modal")
     // here 
     console.log($(e.target))
-    console.log("Title is " + $(e.target).data("title"))
-    $(".poettree-poem-modal-body").text( $(e.target).data("title") );
+    console.log("Leaf is " + $(e.target).data("leaf"))
+    
+    let leaf = $(e.target).data("leaf")
+    
+    const branchData = $(".leaf-branch-ctr-" + leaf);
+    
+    $(".poettree-poem-modal-title").text( branchData.data("title") );
+    $(".poettree-poem-modal-author").text( branchData.data("author") );
+    $(".poettree-poem-modal-body").text( branchData.data("body") );
+
+    
     // poettree-poem-modal-title
     // poettree-poem-modal-author
 	}

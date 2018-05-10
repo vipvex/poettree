@@ -4,6 +4,10 @@ class Poem < ApplicationRecord
 
   paginates_per 5
   
+  def author
+    user.email.split('@')[0]
+  end
+  
   def self.search(search)
     if search
       where('title LIKE ? OR body LIKE ?', "%#{search}%", "%#{search}%")
