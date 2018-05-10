@@ -1,5 +1,6 @@
 class Poem < ApplicationRecord
   belongs_to :user
+  belongs_to :lesson
 
   paginates_per 5
   
