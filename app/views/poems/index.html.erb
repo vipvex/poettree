@@ -126,7 +126,7 @@
     Do not go gentle into that good night.
     Rage, rage against the dying of the light.
   </p>
-  <%= image_tag("", class:"hidden") %>
+  <%= image_tag("", class:"hidden poettree-poem-modal-img") %>
   <div class="poettree-poem-modal-icon-ctr">
     <div class="poettree-poem-modal-icon poettree-poem-modal-icon-active">
       <%= image_tag('preview-poem-icon.svg', class: "poettree-preview-poem-icon") %>
@@ -199,12 +199,17 @@
 	}
 	
 	const togglePoemContent = () => {
+    const poemBody = document.querySelector(".poettree-poem-modal-body")
+    const poemImg = document.querySelector(".poettree-poem-modal-img")
 	  const active = document.querySelector(".poettree-poem-modal-icon-active")
 	  const inactive = document.querySelector(".poettree-poem-modal-icon-inactive")
 	  active.classList.toggle("poettree-poem-modal-icon-active")
 	  active.classList.toggle("poettree-poem-modal-icon-inactive")
 	  inactive.classList.toggle("poettree-poem-modal-icon-active")
 	  inactive.classList.toggle("poettree-poem-modal-icon-inactive")
+	  
+    poemBody.classList.toggle("hidden")
+    poemImg.classList.toggle("hidden")
 	}
 	//Attach Events
 	btns.map((ele) => {
