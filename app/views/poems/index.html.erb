@@ -181,12 +181,6 @@
 	const poemModalToggle = (e) => {
     poemModal.classList.toggle("hidden")
     poemModal.classList.toggle("active-modal")
-	  if(overlay.getAttribute("data") == ""){
-	    console.log(e.target)
-  	  overlay.setAttribute("data", e.target.getAttribute("data"))
-  	  console.log();
-	  }
-    poemModal.classList.toggle("hidden")
     // here 
     console.log($(e.target))
     console.log("Title is " + $(e.target).data("title"))
