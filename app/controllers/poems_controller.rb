@@ -41,10 +41,10 @@ class PoemsController < ApplicationController
 
     respond_to do |format|
       if @poem.save
-        format.html { redirect_to @poem, notice: 'Poem was successfully created.' }
+        format.html { redirect_back(fallback_location: root_path) }
         format.json { render :show, status: :created, location: @poem }
       else
-        format.html { render :new }
+        format.html { redirect_back(fallback_location: root_path) }
         format.json { render json: @poem.errors, status: :unprocessable_entity }
       end
     end
@@ -55,10 +55,10 @@ class PoemsController < ApplicationController
   def update
     respond_to do |format|
       if @poem.update(poem_params)
-        format.html { redirect_to @poem, notice: 'Poem was successfully updated.' }
+        format.html { redirect_back(fallback_location: root_path)  }
         format.json { render :show, status: :ok, location: @poem }
       else
-        format.html { render :edit }
+        format.html { redirect_back(fallback_location: root_path) }
         format.json { render json: @poem.errors, status: :unprocessable_entity }
       end
     end
@@ -82,6 +82,6 @@ class PoemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def poem_params
-      params.require(:poem).permit(:title, :body, :user_id, :image_url, :shared)
+      params.require(:poem).permit(:title, :body, :user_id, :image_url, :shared, :lesson_id)
     end
 end

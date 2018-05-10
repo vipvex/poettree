@@ -1,4 +1,4 @@
-<%= form_with(model: poem, remote: true, html: { id: 'poem_form' }) do |form| %>
+<%= form_for @poem do |form| %>
   <% if poem.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(poem.errors.count, "error") %> prohibited this poem from being saved:</h2>
@@ -13,6 +13,7 @@
 
   <div class="field">
     <%= form.text_field :title, id: :poem_title, placeholder: "Title*" %>
+    <%= form.hidden_field :lesson_id, value: @lesson.id %>
   </div>
 
   <div class="field">
@@ -40,6 +41,6 @@
 
 <script>
   
-  $("#poem_form").bind('ajax:complete', function(xhr, status) { $("#poem_form").html("<h3>Thank you! Your poem was saved.</h3>") });
+  //$("#poem_form").bind('ajax:complete', function(xhr, status) { $("#poem_form").html("<h3>Thank you! Your poem was saved.</h3>") });
   
 </script>

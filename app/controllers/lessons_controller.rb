@@ -15,7 +15,7 @@ class LessonsController < ApplicationController
   # GET /lessons/1
   # GET /lessons/1.json
   def show
-    @poem = Poem.new
+    @poem = Poem.find_by(user_id: current_user.id, lesson_id: @lesson.id) || Poem.new
   end
 
   # GET /lessons/new

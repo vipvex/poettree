@@ -1,7 +1,12 @@
 class Poem < ApplicationRecord
   belongs_to :user
+  belongs_to :lesson
 
   paginates_per 5
+  
+  def author
+    user.email.split('@')[0]
+  end
   
   def self.search(search)
     if search
