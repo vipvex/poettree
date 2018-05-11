@@ -5,7 +5,7 @@ class PoemsController < ApplicationController
   # GET /poems
   # GET /poems.json
   def index
-    @poems = Poem.all.search(params[:search]).page params[:page]
+    @poems = Poem.search(params[:search]).page params[:page]
   end
 
   def search
@@ -82,6 +82,6 @@ class PoemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def poem_params
-      params.require(:poem).permit(:title, :body, :user_id, :image_url, :shared, :lesson_id)
+      params.require(:poem).permit(:title, :body, :user_id, :image_url, :shared, :lesson_id, :author_name)
     end
 end
