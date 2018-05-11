@@ -38,6 +38,8 @@ While writing her books, Cassidy realized how much fun it was to write. But she 
 	const loginModal = document.querySelector(".login-modal-ctr")
 	const signUp = document.querySelector("nav .primary-red")
 	const homeLogin = document.getElementById("home-login")
+	const mobileLogin = document.getElementById("mobileLogin")
+	const mobileSignUp = document.getElementById("mobileSignUp")
 	// Create & Mutate Elements
 	const overlay = document.createElement("div")
 	overlay.className = "hidden overlay"
@@ -83,6 +85,18 @@ While writing her books, Cassidy realized how much fun it was to write. But she 
 	})
 	
 	homeLogin.addEventListener("click", (e) => {
+		e.preventDefault()
+		modalOverlayToggle()
+		renderLoginModal()
+	})
+	
+	mobileLogin.addEventListener("click", (e) => {
+		e.preventDefault()
+		modalOverlayToggle()
+		renderLoginModal()
+	})
+	
+	mobileSignUp.addEventListener("click", (e) => {
 		e.preventDefault()
 		modalOverlayToggle()
 		renderLoginModal()
