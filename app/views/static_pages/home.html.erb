@@ -164,6 +164,8 @@ little bit of work each day.”</p>
 	const signUp = document.querySelector("nav .primary-red")
 	const videoPreview = document.querySelector(".preview-video-ctr")
 	const homeLogin = document.getElementById("home-login")
+	const mobileLogin = document.getElementById("mobileLogin")
+	const mobileSignUp = document.getElementById("mobileSignUp")
 	// Create & Mutate Elements
 	const overlay = document.createElement("div")
 	overlay.className = "hidden overlay"
@@ -216,6 +218,18 @@ little bit of work each day.”</p>
 	})
 	
 	homeLogin.addEventListener("click", (e) => {
+		e.preventDefault()
+		modalOverlayToggle()
+		renderLoginModal()
+	})
+	
+	mobileLogin.addEventListener("click", (e) => {
+		e.preventDefault()
+		modalOverlayToggle()
+		renderLoginModal()
+	})
+	
+	mobileSignUp.addEventListener("click", (e) => {
 		e.preventDefault()
 		modalOverlayToggle()
 		renderLoginModal()
