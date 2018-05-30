@@ -1,0 +1,16 @@
+<div class="overlay"></div>
+<div class="ui modal">
+  <i class="close icon"></i>
+  <div class="header">
+    <h2>Set Your Username</h2>
+  </div>
+  
+  <%= form_for current_user do |f| %>
+  
+    <%= f.label :first_name, 'Username' %>
+    <%= f.text_field :first_name %>
+    <%= f.submit 'Save' %>
+    
+  <% end %>
+  
+</div>

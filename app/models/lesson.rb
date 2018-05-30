@@ -1,6 +1,7 @@
 class Lesson < ApplicationRecord
   belongs_to :lesson_group
-  has_many :lesson_completeds
+  has_many :lesson_completeds, :dependent => :delete
+  has_many :poems, :dependent => :delete
   
   enum lesson_types: [ :video, :assignment ]
   

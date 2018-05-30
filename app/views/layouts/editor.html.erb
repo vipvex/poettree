@@ -13,6 +13,7 @@
 
   <body>
     <div style="max-width: 1024px; margin: auto; margin-top: 3em">
+      <%= render 'layouts/admin_login' if current_user && current_user.admin? == false %>
       <%= yield %>
     </div>
   </body>

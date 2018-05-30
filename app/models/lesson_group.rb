@@ -1,5 +1,7 @@
 class LessonGroup < ApplicationRecord
-  has_many :lessons
+  has_many :lessons, :dependent => :destroy
+  
+  
   
   before_save :get_google_photo_id
   

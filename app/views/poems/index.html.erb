@@ -6,7 +6,7 @@
   <div class="poettree-ctr">
     <div class="poettree-trunk">
 
-      <div class="leaf-branch-ctr-1 leaf-branch-ctr-left leaf-branch-ctr" data-leaf="1" data-title="<%= @poems[0].try(:title) %>" data-author="<%= @poems[0].try(:author) %>" data-body="<%= @poems[0].try(:body) %>" data-image="<%= @poems[0].try(:image_url) %>">
+      <div class="leaf-branch-ctr-1 leaf-branch-ctr-left leaf-branch-ctr" data-leaf="1" data-title="<%= @poems[0].try(:title) %>" data-author="<%= @poems[0].try(:author) %>" data-body="<%= @poems[0].try(:markdown_body) %>" data-image="<%= @poems[0].try(:image_url) %>">
           <%= image_tag('left-branch.svg', class:'branch branch-left') %>
           <%- if @poems[0] %>
             <%= image_tag('leaves.svg', class:'leaf') %>
@@ -16,7 +16,7 @@
             </div>
           <% end -%>
       </div>
-      <div class="leaf-branch-ctr-2 leaf-branch-ctr-right leaf-branch-ctr" data-leaf="2" data-title="<%= @poems[1].try(:title) %>" data-author="<%= @poems[1].try(:author) %>" data-body="<%= @poems[1].try(:body) %>" data-image="<%= @poems[1].try(:image_url) %>">
+      <div class="leaf-branch-ctr-2 leaf-branch-ctr-right leaf-branch-ctr" data-leaf="2" data-title="<%= @poems[1].try(:title) %>" data-author="<%= @poems[1].try(:author) %>" data-body="<%= @poems[1].try(:markdown_body) %>" data-image="<%= @poems[1].try(:image_url) %>">
           <%= image_tag('right-branch.svg', class:'branch branch-right') %>
           <%- if @poems[1] %>
             <%= image_tag('leaves.svg', class:'leaf leaf-right') %>
@@ -26,7 +26,7 @@
             </div>
           <% end -%>
       </div>
-      <div class="leaf-branch-ctr-3 leaf-branch-ctr-left leaf-branch-ctr" data-leaf="3" data-title="<%= @poems[2].try(:title) %>" data-author="<%= @poems[2].try(:author) %>" data-body="<%= @poems[2].try(:body) %>" data-image="<%= @poems[2].try(:image_url) %>">
+      <div class="leaf-branch-ctr-3 leaf-branch-ctr-left leaf-branch-ctr" data-leaf="3" data-title="<%= @poems[2].try(:title) %>" data-author="<%= @poems[2].try(:author) %>" data-body="<%= @poems[2].try(:markdown_body) %>" data-image="<%= @poems[2].try(:image_url) %>">
           <%= image_tag('left-branch.svg', class:'branch branch-left') %>
           <%- if @poems[2] %>
             <%= image_tag('leaves.svg', class:'leaf') %>
@@ -36,7 +36,7 @@
             </div>
           <% end -%>
       </div>
-      <div class="leaf-branch-ctr-4 leaf-branch-ctr-right leaf-branch-ctr" data-leaf="4" data-title="<%= @poems[3].try(:title) %>" data-author="<%= @poems[3].try(:author) %>" data-body="<%= @poems[3].try(:body) %>" data-image="<%= @poems[3].try(:image_url) %>">
+      <div class="leaf-branch-ctr-4 leaf-branch-ctr-right leaf-branch-ctr" data-leaf="4" data-title="<%= @poems[3].try(:title) %>" data-author="<%= @poems[3].try(:author) %>" data-body="<%= @poems[3].try(:markdown_body) %>" data-image="<%= @poems[3].try(:image_url) %>">
           <%= image_tag('right-branch.svg', class:'branch branch-right') %>
           <%- if @poems[3] %>
             <%= image_tag('leaves.svg', class:'leaf leaf-right') %>
@@ -46,7 +46,7 @@
             </div>
           <% end -%>
       </div>      
-      <div class="leaf-branch-ctr-5 leaf-branch-ctr-left leaf-branch-ctr" data-leaf="5" data-title="<%= @poems[4].try(:title) %>" data-author="<%= @poems[4].try(:author) %>" data-body="<%= @poems[4].try(:body) %>" data-image="<%= @poems[4].try(:image_url) %>">
+      <div class="leaf-branch-ctr-5 leaf-branch-ctr-left leaf-branch-ctr" data-leaf="5" data-title="<%= @poems[4].try(:title) %>" data-author="<%= @poems[4].try(:author) %>" data-body="<%= @poems[4].try(:markdown_body) %>" data-image="<%= @poems[4].try(:image_url) %>">
           <%= image_tag('left-branch.svg', class:'branch branch-left') %>
           <%- if @poems[4] %>
             <%= image_tag('leaves.svg', class:'leaf') %>
@@ -195,7 +195,7 @@
     
     $(".poettree-poem-modal-title").text( branchData.data("title") );
     $(".poettree-poem-modal-author").text( branchData.data("author") );
-    $(".poettree-poem-modal-body").text( branchData.data("body") );
+    $(".poettree-poem-modal-body").html( branchData.data("body") );
     $(".poettree-poem-modal-img").attr("src", branchData.data("image") );
 
     

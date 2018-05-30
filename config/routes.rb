@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :users, :only => [:edit, :update]
+  post '/admin_login' => 'users#admin_login'
+
   resources :lesson_completeds
   
   resources :lesson_groups do

@@ -1,0 +1,16 @@
+<div class="overlay"></div>
+<div class="ui modal">
+  <i class="close icon"></i>
+  <div class="header">
+    <h2>Admin Login</h2>
+  </div>
+  
+  <%= form_tag '/admin_login' do |f| %>
+  
+    <%= label_tag :password, 'Password' %>
+    <%= text_field_tag :password %>
+    <%= submit_tag 'Save' %>
+    
+  <% end %>
+  
+</div>

@@ -15,6 +15,7 @@
     
     <%= yield %>
     <%= render 'layouts/footer' %>
-
+    <%= render 'layouts/username' if current_user && current_user.first_name.nil? %>
+  
   </body>
 </html>

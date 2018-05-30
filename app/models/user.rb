@@ -7,7 +7,11 @@ class User < ActiveRecord::Base
   has_many :lesson_completeds
 
   def name
-    "#{self.first_name} #{self.last_name}" || 'Name not set'
+    self.first_name || self.email
+  end
+
+  def admin?
+    self.admin
   end
 
   def next_lesson
