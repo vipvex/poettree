@@ -1,10 +1,4 @@
 <%= render 'layouts/nav' %>
-<div class="ctr-margin mobile-nav-box hidden">
-  <a href="#">Donate</a>
-  <a href="/about_us">About Us</a>
-  <a href="#">Login</a>
-  <a href="#">Sign Up</a>
-</div>
 <div class="nav-divider"></div>
 <div style="margin: auto; max-width: 800px; width: 90%;">
   <h1>iPoetTree Privacy Notice</h1>
@@ -669,6 +663,8 @@
 	const loginModal = document.querySelector(".login-modal-ctr")
 	const signUp = document.querySelector("nav .primary-red")
 	const homeLogin = document.getElementById("home-login")
+	const mobileLogin = document.getElementById("mobileLogin")
+	const mobileSignUp = document.getElementById("mobileSignUp")
 	// Create & Mutate Elements
 	const overlay = document.createElement("div")
 	overlay.className = "hidden overlay"
@@ -714,6 +710,18 @@
 	})
 	
 	homeLogin.addEventListener("click", (e) => {
+		e.preventDefault()
+		modalOverlayToggle()
+		renderLoginModal()
+	})
+
+	mobileLogin.addEventListener("click", (e) => {
+		e.preventDefault()
+		modalOverlayToggle()
+		renderLoginModal()
+	})
+	
+	mobileSignUp.addEventListener("click", (e) => {
 		e.preventDefault()
 		modalOverlayToggle()
 		renderLoginModal()

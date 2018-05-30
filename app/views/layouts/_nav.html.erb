@@ -25,7 +25,7 @@
     <%= link_to 'Dashboard', dashboard_path %>
     <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
   <% else %>
-    <a href="#" data="login-modal-ctr">Log In</a>
-    <a href="#" class="primary-red" data="login-modal-ctr">Sign Up</a>
+    <a href="#" data="login-modal-ctr" id="mobileLogin">Log In</a>
+    <a href="#" class="primary-red" data="login-modal-ctr" id="mobileSignUp">Sign Up</a>
   <% end %>
 </div>

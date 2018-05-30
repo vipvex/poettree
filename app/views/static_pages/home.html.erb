@@ -60,7 +60,9 @@
       <p>The best poems are selected in June and, with parent approval, are published in a book for purchase on Amazon. The next step is stardom, are you ready?  Check out one of the books Cassidy has already published!</p>
     </div>
     <div class="get-published-img-ctr">
-      <%= image_tag("cassidys-book.jpg", class: "cassidys-book author-ctr") %>
+      <%= link_to 'https://www.amazon.com/Cassidy-Kao/e/B00OGRD690', target: "_blank" do %>
+        <%= image_tag("cassidys-book.jpg", class: "cassidys-book author-ctr") %>
+      <% end %>
     </div>
   </div>
 </div>
@@ -162,6 +164,8 @@ little bit of work each day.”</p>
 	const signUp = document.querySelector("nav .primary-red")
 	const videoPreview = document.querySelector(".preview-video-ctr")
 	const homeLogin = document.getElementById("home-login")
+	const mobileLogin = document.getElementById("mobileLogin")
+	const mobileSignUp = document.getElementById("mobileSignUp")
 	// Create & Mutate Elements
 	const overlay = document.createElement("div")
 	overlay.className = "hidden overlay"
@@ -214,6 +218,18 @@ little bit of work each day.”</p>
 	})
 	
 	homeLogin.addEventListener("click", (e) => {
+		e.preventDefault()
+		modalOverlayToggle()
+		renderLoginModal()
+	})
+	
+	mobileLogin.addEventListener("click", (e) => {
+		e.preventDefault()
+		modalOverlayToggle()
+		renderLoginModal()
+	})
+	
+	mobileSignUp.addEventListener("click", (e) => {
 		e.preventDefault()
 		modalOverlayToggle()
 		renderLoginModal()
