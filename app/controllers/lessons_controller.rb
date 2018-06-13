@@ -45,7 +45,7 @@ class LessonsController < ApplicationController
   end
   
   def complete
-    current_user.lesson_completeds.create(lesson_id: @lesson.id)
+    current_user.lesson_completeds.create(lesson_id: @lesson.id) if current_user.lesson_completeds.where(lesson_id: @lesson.id).first.nil?
     
     redirect_to current_user.next_lesson_with_group
   end
