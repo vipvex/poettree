@@ -2,10 +2,17 @@ class PoemsController < ApplicationController
   before_action :set_poem, only: [:show, :edit, :update, :destroy]
   layout 'poettree'
 
+  layout 'editor', only: ['show']
+
+
   # GET /poems
   # GET /poems.json
   def index
     @poems = Poem.search(params[:search]).page params[:page]
+  end
+
+  def poem_editor
+    @poems = Poem.all
   end
 
   def search

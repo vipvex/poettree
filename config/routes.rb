@@ -20,7 +20,8 @@ Rails.application.routes.draw do
 
 
   get '/editor' => 'lesson_groups#index'
-
+  get '/poem_editor' => 'poems#poem_editor'
+  
   
   resources :poems do
   

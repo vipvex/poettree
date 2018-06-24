@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'Back to Editor', '/editor' %>
+
+<h1>Poems</h1>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Author</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @poems.each do |poem| %>
+      <tr>
+        <td><%= poem.title %></td>
+        <td><%= poem.body %></td>
+        <td><%= poem.author %></td>
+        <td><%= link_to 'Destroy', "/poems/#{poem.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
